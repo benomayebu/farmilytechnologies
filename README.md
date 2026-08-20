@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FARMILY website
 
-## Getting Started
+Marketing site for FARMILY — Next.js (App Router), TypeScript, Tailwind CSS v4, exported as static HTML/CSS/JS for Hostinger hosting.
 
-First, run the development server:
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000. Note: the contact form posts to `/contact-handler.php`, which only runs on a real PHP server — locally it will show the graceful error state (`Something went wrong...`) since Next's dev server doesn't execute PHP. That's expected; it works once deployed to Hostinger.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Page copy lives in `src/lib/content/*.ts`, one file per page — edit those rather than hunting through JSX for wording changes.
 
-## Learn More
+## Before going live
 
-To learn more about Next.js, take a look at the following resources:
+- **Logo**: drop the real FARMILY barn logo file into `public/` (e.g. `public/logo.svg` or `.png`) and swap it into `src/components/icons/index.tsx` (`BarnMark`) or reference it directly with `next/image` in `Header.tsx` / `Footer.tsx`. The current mark is a simplified placeholder.
+- **Research page DOI link**: `src/lib/content/research.ts` has a `#` placeholder for `citation.href` — replace with the live Springer DOI link before publishing.
+- **Contact form sender address**: `public/contact-handler.php` sends `From: no-reply@farmilytechnologies.com`. Point this at a real mailbox on your Hostinger domain (or set up that alias) — mail servers are more likely to deliver mail whose `From` matches the sending domain.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build & deploy (Hostinger)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+This produces a fully static site in `out/`. Upload the **contents** of `out/` (not the folder itself) to your Hostinger `public_html/` directory via File Manager or FTP — `contact-handler.php` is already included in `out/` since anything in `public/` is copied through at build time; just confirm it lands at the root alongside `index.html`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Point your `farmilytechnologies.com` domain at that hosting in Hostinger's domain settings if it isn't already.

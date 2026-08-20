@@ -16,6 +16,7 @@
 # next.js
 /.next/
 /out/
+farmily-site-deploy.zip
 
 # production
 /build
