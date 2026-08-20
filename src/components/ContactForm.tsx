@@ -4,6 +4,8 @@ import { useState, type FormEvent } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mljrzevr";
+
 const fieldClasses =
   "w-full rounded-xl border border-ink/20 bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-teal";
 
@@ -19,27 +21,34 @@ export default function ContactForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    // Formspree's own honeypot check, in addition to our hidden field.
+    if (formData.get("website")) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
     try {
-      const response = await fetch("/contact-handler.php", {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
         body: formData,
+        headers: { Accept: "application/json" },
       });
-      const data = await response.json().catch(() => null);
 
-      if (response.ok && data?.success) {
+      if (response.ok) {
         setStatus("success");
         form.reset();
       } else {
+        const data = await response.json().catch(() => null);
         setStatus("error");
         setErrorMessage(
-          data?.error ?? "Something went wrong. Please email us directly."
+          data?.errors?.[0]?.message ??
+            "Something went wrong. Please email us directly."
         );
       }
     } catch {
       setStatus("error");
-      setErrorMessage(
-        "Something went wrong. Please email us directly."
-      );
+      setErrorMessage("Something went wrong. Please email us directly.");
     }
   }
 
@@ -65,6 +74,7 @@ export default function ContactForm() {
         className="hidden"
         aria-hidden="true"
       />
+      <input type="hidden" name="_subject" value="New message from farmilytechnologies.com" />
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
