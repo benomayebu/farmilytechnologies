@@ -52,9 +52,19 @@ export default function Footer() {
       </Container>
 
       <div className="border-t border-paper/10">
-        <Container className="py-5 text-xs text-paper/45">
-          © {new Date().getFullYear()} Farmily Technologies. Built by a team
-          of one, working with early pilot partners.
+        <Container className="flex flex-col gap-3 py-5 text-xs text-paper/45 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} Farmily Technologies. Built by a
+            team of one, working with early pilot partners.
+          </p>
+          <div className="flex gap-5">
+            <Link href="/privacy" className="transition-colors hover:text-paper/80">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-paper/80">
+              Terms of Use
+            </Link>
+          </div>
         </Container>
       </div>
     </footer>
