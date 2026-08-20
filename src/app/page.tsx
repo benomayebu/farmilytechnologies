@@ -16,8 +16,14 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-ink text-paper">
-        <Container className="relative py-24 sm:py-28 md:py-32">
+      <section className="relative isolate flex min-h-[640px] items-center overflow-hidden bg-ink text-paper sm:min-h-[760px] lg:min-h-[840px]">
+        <div className="absolute inset-0 -z-20 opacity-[0.32]">
+          <ColdChainIllustration />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-transparent to-ink/40" />
+
+        <Container className="relative py-24 sm:py-28">
           <div className="max-w-3xl animate-hero-in">
             <Eyebrow tone="paper">
               Compliance software for food supply chains
@@ -42,13 +48,6 @@ export default function Home() {
                 </span>
               </a>
             </div>
-          </div>
-
-          <div
-            className="animate-hero-in mt-16 max-w-2xl sm:mt-20"
-            style={{ animationDelay: "150ms" }}
-          >
-            <ColdChainIllustration />
           </div>
         </Container>
       </section>
