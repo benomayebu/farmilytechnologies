@@ -2,6 +2,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
+import ColdChainIllustration from "@/components/ColdChainIllustration";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
 import { closingCta, hero, pillars, whatWeDo } from "@/lib/content/home";
 
@@ -15,17 +16,8 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/hero-wheat-field.jpg"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/85 to-ink/45" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/70 via-ink/20 to-transparent" />
-        <Container className="relative py-28 sm:py-36 md:py-44">
+      <section className="relative isolate overflow-hidden bg-ink text-paper">
+        <Container className="relative py-24 sm:py-28 md:py-32">
           <div className="max-w-3xl animate-hero-in">
             <Eyebrow tone="paper">
               Compliance software for food supply chains
@@ -50,6 +42,13 @@ export default function Home() {
                 </span>
               </a>
             </div>
+          </div>
+
+          <div
+            className="animate-hero-in mt-16 max-w-2xl sm:mt-20"
+            style={{ animationDelay: "150ms" }}
+          >
+            <ColdChainIllustration />
           </div>
         </Container>
       </section>
