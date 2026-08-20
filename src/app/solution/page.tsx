@@ -47,7 +47,9 @@ export default function SolutionPage() {
                 the night before an audit.
               </p>
             </div>
-            <ProductPreview />
+            <Reveal delay={120} variant="materialize">
+              <ProductPreview />
+            </Reveal>
           </Reveal>
         </Container>
       </section>
@@ -62,7 +64,7 @@ export default function SolutionPage() {
                 <Reveal
                   key={pillar.key}
                   delay={i * 90}
-                  className="rounded-2xl border border-line bg-paper p-8 transition-shadow duration-300 hover:shadow-lg hover:shadow-ink/5"
+                  className="rounded-2xl border border-line bg-paper p-8 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5"
                 >
                   <Icon className="h-11 w-11 text-teal-deep" />
                   <h2 className="mt-6 font-display text-2xl text-ink">

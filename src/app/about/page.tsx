@@ -23,7 +23,7 @@ export default function AboutPage() {
         <Container className="py-16 sm:py-20">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow>{mission.eyebrow}</Eyebrow>
-            <p className="max-w-2xl font-display text-2xl leading-snug text-ink sm:text-3xl">
+            <p className="max-w-2xl font-display text-2xl leading-snug text-ink sm:text-3xl sm:tracking-[-0.02em]">
               {mission.statement}
             </p>
           </Reveal>

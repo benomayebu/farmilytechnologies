@@ -145,6 +145,19 @@ body {
   transform: translateY(0);
 }
 
+/* Materialize, don't just fade (Apple HIG §12) — for surfaces/cards that
+   should read as arriving as an object rather than sliding into place. */
+.reveal-materialize {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 550ms var(--ease-out), transform 550ms var(--ease-out);
+}
+
+.reveal-materialize.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
 @keyframes pop-in {
   from {
     opacity: 0;
@@ -187,7 +200,8 @@ body {
     animation: none;
   }
 
-  .reveal {
+  .reveal,
+  .reveal-materialize {
     opacity: 1;
     transform: none;
     transition: none;
@@ -224,7 +238,8 @@ body {
     border-bottom: 1px solid var(--ink);
   }
 
-  .reveal {
+  .reveal,
+  .reveal-materialize {
     transition-duration: 200ms;
   }
 }

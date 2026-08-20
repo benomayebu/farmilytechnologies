@@ -6,10 +6,14 @@ export default function Reveal({
   children,
   delay = 0,
   className = "",
+  variant = "slide",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  /** "materialize" scales in instead of sliding — use for surfaces/cards
+   *  that should read as arriving as an object, per Apple HIG §12. */
+  variant?: "slide" | "materialize";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -35,7 +39,7 @@ export default function Reveal({
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      className={`${variant === "materialize" ? "reveal-materialize" : "reveal"} ${visible ? "is-visible" : ""} ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

@@ -110,7 +110,7 @@ export default function Home() {
       <section className="bg-ink text-paper">
         <Container className="py-20 sm:py-24">
           <Reveal className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-xl font-display text-2xl leading-snug sm:text-3xl">
+            <p className="max-w-xl font-display text-2xl leading-snug sm:text-3xl sm:tracking-[-0.02em]">
               {closingCta.line}
             </p>
             <Button href="/contact" variant="primary" className="shrink-0">
