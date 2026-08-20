@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
 import ColdChainIllustration from "@/components/ColdChainIllustration";
+import Parallax from "@/components/Parallax";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
 import { closingCta, hero, pillars, whatWeDo } from "@/lib/content/home";
 
@@ -17,27 +18,43 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate flex min-h-[640px] items-center overflow-hidden bg-ink text-paper sm:min-h-[760px] lg:min-h-[840px]">
-        <div className="absolute inset-0 -z-20 opacity-[0.32]">
+        <Parallax strength={18} className="-z-20 opacity-[0.32]">
           <ColdChainIllustration />
-        </div>
+        </Parallax>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-transparent to-ink/40" />
 
         <Container className="relative py-24 sm:py-28">
-          <div className="max-w-3xl animate-hero-in">
-            <Eyebrow tone="paper">
+          <div className="max-w-3xl">
+            <Eyebrow
+              tone="paper"
+              className="animate-hero-line"
+              style={{ animationDelay: "40ms" }}
+            >
               Compliance software for food supply chains
             </Eyebrow>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] tracking-tight text-paper sm:text-6xl sm:tracking-[-0.03em] md:text-7xl md:tracking-[-0.035em]">
+            <h1
+              className="animate-hero-line mt-6 font-display text-5xl leading-[1.05] tracking-tight text-paper sm:text-6xl sm:tracking-[-0.03em] md:text-7xl md:tracking-[-0.035em]"
+              style={{ animationDelay: "130ms" }}
+            >
               {hero.headline}
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper/80 sm:text-xl">
+            <p
+              className="animate-hero-line mt-7 max-w-xl text-lg leading-relaxed text-paper/80 sm:text-xl"
+              style={{ animationDelay: "240ms" }}
+            >
               {hero.subLine}
             </p>
-            <p className="mt-5 max-w-lg font-display text-xl italic leading-snug text-wheat sm:text-2xl">
+            <p
+              className="animate-hero-line mt-5 max-w-lg font-display text-xl italic leading-snug text-wheat sm:text-2xl"
+              style={{ animationDelay: "330ms" }}
+            >
               &ldquo;{hero.supportingLine}&rdquo;
             </p>
-            <div className="mt-10">
+            <div
+              className="animate-hero-line mt-10"
+              style={{ animationDelay: "420ms" }}
+            >
               <a
                 href="#what-we-do"
                 className="group inline-flex items-center gap-2.5 rounded-full bg-teal px-6 py-3.5 text-[15px] font-medium tracking-wide text-paper transition-all duration-200 hover:bg-teal-deep active:scale-[0.97]"

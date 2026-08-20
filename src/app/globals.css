@@ -102,6 +102,37 @@ body {
   animation: illustration-in 1000ms var(--ease-out) both;
 }
 
+/* Ambient loop, not a one-shot — the dashed route "flows" slowly to read as a
+   live, continuously-tracked shipment rather than a static diagram. Kept far
+   under the ~0.2Hz threshold that reads as distracting per Apple HIG §14. */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
+.animate-flow-dash {
+  animation: flow-dash 14s linear infinite;
+}
+
+/* Staggered hero entrance — each line arrives slightly after the last so the
+   block reads as choreographed rather than one flat slab. */
+@keyframes hero-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-line {
+  opacity: 0;
+  animation: hero-in-up 800ms var(--ease-out) both;
+}
+
 /* Reveal: fades/slides content in once as it enters the viewport (see Reveal.tsx) */
 .reveal {
   opacity: 0;
@@ -144,9 +175,15 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-in,
+  .animate-hero-line,
   .animate-illustration-in,
   .animate-pop-in,
   .animate-fade-in {
+    animation: none;
+    opacity: 1;
+  }
+
+  .animate-flow-dash {
     animation: none;
   }
 

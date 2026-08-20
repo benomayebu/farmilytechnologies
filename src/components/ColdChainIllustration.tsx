@@ -28,6 +28,7 @@ export default function ColdChainIllustration() {
           className="pointer-events-none absolute left-[10%] right-[10%] top-[76px] h-16 w-[80%] sm:top-[112px] lg:top-[140px]"
         >
           <path
+            className="animate-flow-dash"
             d="M0 45 Q 300 5 600 15 Q 900 25 1200 45"
             fill="none"
             stroke="var(--teal)"
