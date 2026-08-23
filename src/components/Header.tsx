@@ -75,7 +75,7 @@ export default function Header() {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
-          className="text-ink transition-transform duration-150 active:scale-90 md:hidden"
+          className="-mr-2 p-2 text-ink transition-transform duration-150 active:scale-90 md:hidden"
         >
           {open ? <CloseIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
         </button>
