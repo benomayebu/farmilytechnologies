@@ -7,7 +7,7 @@ type Status = "idle" | "sending" | "success" | "error";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mljrzevr";
 
 const fieldClasses =
-  "w-full rounded-xl border border-ink/20 bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-teal";
+  "w-full rounded-xl border border-ink/20 bg-paper px-4 py-3 text-base text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-teal";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
