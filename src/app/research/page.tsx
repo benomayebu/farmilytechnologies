@@ -34,7 +34,7 @@ export default function ResearchPage() {
               href={citation.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal-deep underline decoration-teal-deep/40 underline-offset-4 transition-colors hover:text-teal"
+              className="mt-5 inline-flex items-center gap-2 py-3 text-sm font-medium text-teal-deep underline decoration-teal-deep/40 underline-offset-4 transition-colors hover:text-teal"
             >
               {citation.linkLabel} →
             </a>
