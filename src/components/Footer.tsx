@@ -33,7 +33,7 @@ export default function Footer() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-paper/70 transition-colors hover:text-paper"
+              className="py-3 text-paper/70 transition-colors hover:text-paper"
             >
               {item.label}
             </Link>
@@ -44,7 +44,7 @@ export default function Footer() {
           <p className="text-paper/50">Get in touch</p>
           <a
             href="mailto:benjamin.omayebu@farmilytechnologies.com"
-            className="mt-1 inline-block text-paper transition-colors hover:text-wheat"
+            className="mt-1 inline-block py-3 text-paper transition-colors hover:text-wheat"
           >
             benjamin.omayebu@farmilytechnologies.com
           </a>
@@ -58,10 +58,10 @@ export default function Footer() {
             team of one, working with early pilot partners.
           </p>
           <div className="flex gap-5">
-            <Link href="/privacy" className="transition-colors hover:text-paper/80">
+            <Link href="/privacy" className="py-3 transition-colors hover:text-paper/80">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="transition-colors hover:text-paper/80">
+            <Link href="/terms" className="py-3 transition-colors hover:text-paper/80">
               Terms of Use
             </Link>
           </div>
