@@ -1,6 +1,6 @@
 # Responsive Audit & Touch-Target Fixes Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Confirm the FARMILY site (7 pages) renders correctly on iPhone/iPad/laptop/desktop widths, and fix the concrete touch-target sizing issues found during the audit.
 
@@ -17,7 +17,7 @@
 
 The hamburger/close button currently has no padding, so its clickable box is exactly the icon's rendered size (28×28px — confirmed via `getBoundingClientRect()` during the audit). Apple HIG (already the standard this project follows — see `.claude/skills/apple-design/SKILL.md` §10) calls for ~44×44px. Adding `p-2` (8px each side) brings the box to 28+16=44px; `-mr-2` compensates so the icon's visual right edge stays flush with where it was (otherwise the added padding would shift the icon 8px left of the container's edge).
 
-- [ ] **Step 1: Confirm the current tap-target size (baseline)**
+- [x] **Step 1: Confirm the current tap-target size (baseline)**
 
 Run (from the project root, with the dev server running — start it first with `npm run dev` in a background shell if it isn't already running):
 
@@ -37,7 +37,7 @@ const { chromium } = require('playwright');
 
 Expected: `width: 28, height: 28` (or similar — under 44).
 
-- [ ] **Step 2: Apply the fix**
+- [x] **Step 2: Apply the fix**
 
 In `src/components/Header.tsx`, change:
 
@@ -61,12 +61,12 @@ to:
         >
 ```
 
-- [ ] **Step 3: Re-run the check to confirm the fix**
+- [x] **Step 3: Re-run the check to confirm the fix**
 
 Run the same script as Step 1.
 Expected: `width: 44, height: 44`.
 
-- [ ] **Step 4: Visual check — confirm the icon still sits flush with the header's right edge**
+- [x] **Step 4: Visual check — confirm the icon still sits flush with the header's right edge**
 
 ```bash
 node -e "
@@ -83,7 +83,7 @@ const { chromium } = require('playwright');
 
 Open `/tmp/header-check.png` (via the Read tool) and confirm the hamburger icon looks the same as before — same visual position, just a larger invisible tap area around it.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/Header.tsx
@@ -99,7 +99,7 @@ git commit -m "Enlarge mobile menu button tap target to 44x44px"
 
 Three groups of links in the footer render with only their text's natural line-height as the tap area (20px for the `text-sm` nav/email links, 16px for the `text-xs` Privacy/Terms links) — no padding. All three groups are already flex children (`nav` is `flex flex-wrap`, the legal row is `flex gap-5`), so padding added to each link grows its own box without disturbing the surrounding layout.
 
-- [ ] **Step 1: Confirm current tap-target sizes (baseline)**
+- [x] **Step 1: Confirm current tap-target sizes (baseline)**
 
 ```bash
 node -e "
@@ -119,7 +119,7 @@ const { chromium } = require('playwright');
 
 Expected: heights around 16-20px for all three.
 
-- [ ] **Step 2: Apply the fix to the nav links**
+- [x] **Step 2: Apply the fix to the nav links**
 
 In `src/components/Footer.tsx`, change:
 
@@ -153,7 +153,7 @@ to:
         </nav>
 ```
 
-- [ ] **Step 3: Apply the fix to the email link**
+- [x] **Step 3: Apply the fix to the email link**
 
 In the same file, change:
 
@@ -173,7 +173,7 @@ to:
           >
 ```
 
-- [ ] **Step 4: Apply the fix to the Privacy/Terms links**
+- [x] **Step 4: Apply the fix to the Privacy/Terms links**
 
 In the same file, change:
 
@@ -201,12 +201,12 @@ to:
           </div>
 ```
 
-- [ ] **Step 5: Re-run the check to confirm the fix**
+- [x] **Step 5: Re-run the check to confirm the fix**
 
 Run the same script as Step 1.
 Expected: heights around 40-44px for all three (the `text-xs` Privacy/Terms links land around 40px since their base line-height is smaller; the `text-sm` links land at 44px).
 
-- [ ] **Step 6: Visual check**
+- [x] **Step 6: Visual check**
 
 ```bash
 node -e "
@@ -225,7 +225,7 @@ const { chromium } = require('playwright');
 
 Open `/tmp/footer-check.png` and confirm the footer still looks visually balanced — no overlapping rows, no awkward extra whitespace.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add src/components/Footer.tsx
@@ -239,7 +239,7 @@ git commit -m "Enlarge footer link tap targets"
 **Files:**
 - Modify: `src/app/research/page.tsx:33-40`
 
-- [ ] **Step 1: Apply the fix**
+- [x] **Step 1: Apply the fix**
 
 Change:
 
@@ -263,7 +263,7 @@ to:
             >
 ```
 
-- [ ] **Step 2: Confirm the fix**
+- [x] **Step 2: Confirm the fix**
 
 ```bash
 node -e "
@@ -281,7 +281,7 @@ const { chromium } = require('playwright');
 
 Expected: height around 44px (was 20px).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/app/research/page.tsx
@@ -295,7 +295,7 @@ git commit -m "Enlarge Research page citation link tap target"
 **Files:**
 - Modify: `src/app/contact/page.tsx:28-36`
 
-- [ ] **Step 1: Apply the fix**
+- [x] **Step 1: Apply the fix**
 
 Change:
 
@@ -325,7 +325,7 @@ to:
           </Reveal>
 ```
 
-- [ ] **Step 2: Confirm the fix**
+- [x] **Step 2: Confirm the fix**
 
 ```bash
 node -e "
@@ -345,7 +345,7 @@ const { chromium } = require('playwright');
 
 Expected: height around 44px (was 20px).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add src/app/contact/page.tsx
@@ -361,7 +361,7 @@ git commit -m "Enlarge Contact page email link tap target"
 
 Every input/textarea in the form shares `fieldClasses`, which sets `text-[15px]` (15px). iOS Safari auto-zooms the viewport when a focused input's font-size is under 16px — a jarring, unintended zoom the instant a visitor taps into the Name/Company/Email/Message fields on an iPhone. Bumping to `text-base` (Tailwind's 16px utility) fixes it site-wide in one place, since every field shares this constant.
 
-- [ ] **Step 1: Confirm the current font size (baseline)**
+- [x] **Step 1: Confirm the current font size (baseline)**
 
 ```bash
 node -e "
@@ -379,7 +379,7 @@ const { chromium } = require('playwright');
 
 Expected: `15px`.
 
-- [ ] **Step 2: Apply the fix**
+- [x] **Step 2: Apply the fix**
 
 In `src/components/ContactForm.tsx`, change:
 
@@ -395,12 +395,12 @@ const fieldClasses =
   "w-full rounded-xl border border-ink/20 bg-paper px-4 py-3 text-base text-ink placeholder:text-ink/40 outline-none transition-colors focus:border-teal";
 ```
 
-- [ ] **Step 3: Re-run the check to confirm the fix**
+- [x] **Step 3: Re-run the check to confirm the fix**
 
 Run the same script as Step 1.
 Expected: `16px`.
 
-- [ ] **Step 4: Visual check — confirm the slightly larger text doesn't break the two-column Name/Company row on mobile**
+- [x] **Step 4: Visual check — confirm the slightly larger text doesn't break the two-column Name/Company row on mobile**
 
 ```bash
 node -e "
@@ -417,7 +417,7 @@ const { chromium } = require('playwright');
 
 Open `/tmp/contact-form-check.png` and confirm all four fields render cleanly with no overflow or label/input crowding (the form already stacks to a single column below `sm:` per the existing `grid gap-5 sm:grid-cols-2`, so this is a low-risk change).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/ContactForm.tsx
@@ -432,7 +432,7 @@ git commit -m "Bump contact form input font size to 16px to prevent iOS auto-zoo
 
 Re-run the complete breakpoint sweep from the original audit (7 pages × 6 breakpoints: 375, 390, 768, 1024, 1280, 1920px) to confirm zero regressions and zero remaining touch-target issues, then ship.
 
-- [ ] **Step 1: Write the audit script**
+- [x] **Step 1: Write the audit script**
 
 Save as `/tmp/full-audit.mjs`:
 
@@ -513,7 +513,7 @@ console.log(failures === 0 ? 'ALL CLEAR' : `${failures} breakpoint(s) with issue
 process.exit(failures === 0 ? 0 : 1);
 ```
 
-- [ ] **Step 2: Run it**
+- [x] **Step 2: Run it**
 
 ```bash
 node /tmp/full-audit.mjs
@@ -521,7 +521,7 @@ node /tmp/full-audit.mjs
 
 Expected: `ALL CLEAR`. If anything fails, fix it before proceeding (do not skip this gate).
 
-- [ ] **Step 3: Run the project's standard verification**
+- [x] **Step 3: Run the project's standard verification**
 
 ```bash
 npm run lint
@@ -530,7 +530,7 @@ npm run build
 
 Expected: both exit clean, as with every prior change in this project.
 
-- [ ] **Step 4: Push**
+- [x] **Step 4: Push**
 
 ```bash
 git push origin main
