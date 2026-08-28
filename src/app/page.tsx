@@ -4,8 +4,15 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
 import ColdChainIllustration from "@/components/ColdChainIllustration";
 import Parallax from "@/components/Parallax";
+import LazyLoopVideo from "@/components/LazyLoopVideo";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
-import { closingCta, hero, pillars, whatWeDo } from "@/lib/content/home";
+import {
+  closingCta,
+  hero,
+  pillars,
+  videoSection,
+  whatWeDo,
+} from "@/lib/content/home";
 
 const pillarIcons = {
   sense: SenseIcon,
@@ -103,6 +110,33 @@ export default function Home() {
               );
             })}
           </div>
+        </Container>
+      </section>
+
+      {/* Shipment journey video */}
+      <section className="border-t border-line bg-paper-deep">
+        <Container className="py-20 sm:py-28">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <Eyebrow>{videoSection.eyebrow}</Eyebrow>
+            <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]">
+              {videoSection.headline}
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink/65">
+              {videoSection.body}
+            </p>
+          </Reveal>
+          <Reveal delay={120} variant="materialize" className="mt-12">
+            <div className="overflow-hidden rounded-2xl border border-line shadow-lg shadow-ink/5">
+              <LazyLoopVideo
+                src="/videos/shipment-journey.mp4"
+                poster="/videos/shipment-journey-poster.jpg"
+                width={1280}
+                height={720}
+                className="h-auto w-full"
+                ariaLabel="Animated walkthrough of a FARMILY-monitored shipment: loaded, in transit, an exception caught early, proof delivered on arrival, and trust carried downstream."
+              />
+            </div>
+          </Reveal>
         </Container>
       </section>
 

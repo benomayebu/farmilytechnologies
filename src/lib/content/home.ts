@@ -33,6 +33,12 @@ export const pillars = [
   },
 ] as const;
 
+export const videoSection = {
+  eyebrow: "How it works",
+  headline: "One shipment, from dock to proof.",
+  body: "A sensor goes in with the cargo. FARMILY watches the whole route, catches problems early, and hands over a record anyone downstream can trust.",
+};
+
 export const closingCta = {
   line: "We're currently working with early pilot partners to build this with real operators, not around them.",
   cta: "Talk to us about piloting",
