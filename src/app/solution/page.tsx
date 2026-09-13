@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ProductPreview from "@/components/ProductPreview";
+import HowItWorksDemo from "@/components/how-it-works/Demo";
 import {
   DetectIcon,
   ProveIcon,
@@ -79,6 +80,8 @@ export default function SolutionPage() {
           </div>
         </Container>
       </section>
+
+      <HowItWorksDemo />
 
       {/* Segments */}
       <section className="border-y border-line bg-ink text-paper">
