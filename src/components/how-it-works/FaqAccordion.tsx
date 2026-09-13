@@ -25,15 +25,21 @@ export default function FaqAccordion({ hint }: { hint: string }) {
                 <span className="font-display text-lg leading-snug text-ink sm:text-xl">
                   {faq.question}
                 </span>
-                <span className="shrink-0 text-2xl font-light text-ink/40">
-                  {open ? "−" : "+"}
+                <span
+                  className={`shrink-0 text-2xl font-light text-ink/40 transition-transform duration-150 ease-out ${open ? "rotate-45" : ""}`}
+                >
+                  +
                 </span>
               </button>
-              {open && (
-                <p className="animate-fade-in max-w-3xl pb-6 text-[16px] leading-relaxed text-ink/65">
-                  {faq.answer}
-                </p>
-              )}
+              <div
+                className={`grid transition-[grid-template-rows] duration-300 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+              >
+                <div className="overflow-hidden">
+                  <p className="max-w-3xl pb-6 text-[16px] leading-relaxed text-ink/65">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
             </div>
           );
         })}

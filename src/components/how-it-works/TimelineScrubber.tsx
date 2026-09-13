@@ -16,10 +16,16 @@ import type { CurveSegments } from "@/lib/shipmentPhysics";
 // brand color (would wrongly imply good/bad) works.
 const NEUTRAL = "#8CA0B3";
 
+// Matches ProductPreview.tsx's exception-tag red on this same Solution page
+// — an actual breach should read as visibly more severe than "still just a
+// warning," and reusing this color ties the two features together instead
+// of inventing a second "danger" hue.
+const DANGER = "#B3453A";
+
 const STATUS_COLOR: Record<string, string> = {
   inRange: "var(--teal)",
   noSignal: NEUTRAL,
-  aboveLimit: "var(--wheat)",
+  aboveLimit: DANGER,
   alertSent: "var(--wheat)",
   rising: "var(--wheat)",
   cooling: "var(--teal)",
@@ -138,7 +144,16 @@ export default function TimelineScrubber({
           opacity={0.6}
         />
         <path d={segments.cool} stroke="var(--teal)" strokeWidth={4} fill="none" strokeLinejoin="round" strokeLinecap="round" />
-        <path d={segments.hot} stroke="var(--wheat)" strokeWidth={4} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+        <path
+          d={segments.hot}
+          stroke={DANGER}
+          strokeWidth={4}
+          fill="none"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          className="transition-opacity duration-500 motion-reduce:transition-none"
+          opacity={segments.hot ? 1 : 0}
+        />
         <path d={segments.gap} stroke="var(--paper)" strokeWidth={4} fill="none" strokeDasharray="6 9" strokeLinecap="round" opacity={0.35} />
         <line
           x1={hx}

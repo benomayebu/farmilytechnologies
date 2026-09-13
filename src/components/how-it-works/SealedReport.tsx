@@ -31,11 +31,15 @@ export default function SealedReport({
         >
           {proof.tamperToggle}
         </button>
-        {tamperOpen && (
-          <div className="animate-fade-in mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-[15px] leading-relaxed text-ink/80">
-            {proof.tamperBody}
+        <div
+          className={`grid transition-[grid-template-rows] duration-300 ease-out ${tamperOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+        >
+          <div className="overflow-hidden">
+            <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-[15px] leading-relaxed text-ink/80">
+              {proof.tamperBody}
+            </div>
           </div>
-        )}
+        </div>
       </div>
 
       <div key={fault ? "fault" : "clean"} className="animate-pop-in rounded-2xl border border-line bg-paper p-6 shadow-sm sm:p-8">

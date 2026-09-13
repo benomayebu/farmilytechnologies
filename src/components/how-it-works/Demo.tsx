@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import TimelineScrubber from "@/components/how-it-works/TimelineScrubber";
@@ -15,8 +15,14 @@ const SAFE_LIMIT = 6;
 
 export default function HowItWorksDemo() {
   const [step, setStep] = useState(1);
+  const [direction, setDirection] = useState<1 | -1>(1);
   const [pos, setPos] = useState(0.12);
   const [fault, setFault] = useState(false);
+
+  function goToStep(n: number) {
+    setDirection(n >= step ? 1 : -1);
+    setStep(n);
+  }
 
   const demo = useShipmentDemoState(pos, fault, SAFE_LIMIT);
   const showTimeline = step === 2 || step === 3;
@@ -41,7 +47,7 @@ export default function HowItWorksDemo() {
               <button
                 key={s.key}
                 type="button"
-                onClick={() => setStep(n)}
+                onClick={() => goToStep(n)}
                 aria-current={active ? "step" : undefined}
                 className="flex flex-col gap-3 py-1 text-left"
               >
@@ -62,7 +68,11 @@ export default function HowItWorksDemo() {
         </div>
 
         {/* Step content */}
-        <div key={step} className="animate-fade-in mt-12 sm:mt-14">
+        <div
+          key={step}
+          className="animate-step-in mt-12 sm:mt-14"
+          style={{ "--step-enter-x": direction > 0 ? "12px" : "-12px" } as CSSProperties}
+        >
           {step === 1 && <PairingChecklist />}
 
           {step === 2 && (
@@ -111,17 +121,19 @@ export default function HowItWorksDemo() {
                 </p>
 
                 {!fault && (
-                  <p className="mt-5 text-[17px] leading-relaxed text-ink/65">{warn.noEvent}</p>
+                  <p className="animate-fade-in mt-5 text-[17px] leading-relaxed text-ink/65">
+                    {warn.noEvent}
+                  </p>
                 )}
 
                 {fault && !demo.alertSent && (
-                  <p className="mt-5 text-[17px] leading-relaxed text-ink/65">
+                  <p className="animate-fade-in mt-5 text-[17px] leading-relaxed text-ink/65">
                     {warn.watching(demo.faultAtText)}
                   </p>
                 )}
 
                 {demo.predicting && (
-                  <div className="mt-5 rounded-xl border border-wheat bg-wheat/10 px-5 py-4">
+                  <div className="animate-fade-in mt-5 rounded-xl border border-wheat bg-wheat/10 px-5 py-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a6f1f]">
                       {warn.predictionLabel}
                     </p>
@@ -132,7 +144,7 @@ export default function HowItWorksDemo() {
                 )}
 
                 {demo.alertSent && (
-                  <div className="mt-5 flex items-start gap-4">
+                  <div className="animate-pop-in mt-5 flex items-start gap-4">
                     <svg width="38" height="60" viewBox="0 0 46 76" fill="none" aria-hidden="true" className="mt-1 shrink-0">
                       <rect x="1.5" y="1.5" width="43" height="73" rx="7" stroke="var(--teal)" strokeWidth={3} />
                       <rect x="16" y="7" width="14" height="3" rx="1.5" fill="var(--teal)" />
@@ -146,12 +158,12 @@ export default function HowItWorksDemo() {
                 )}
 
                 {demo.breached && (
-                  <p className="mt-5 text-[15.5px] leading-relaxed text-[#9a6f1f]">
+                  <p className="animate-fade-in mt-5 text-[15.5px] leading-relaxed text-[#9A3A30]">
                     {warn.breached(demo.leadMinutes)}
                   </p>
                 )}
                 {demo.resolved && (
-                  <p className="mt-5 text-[15.5px] leading-relaxed text-teal-deep">
+                  <p className="animate-fade-in mt-5 text-[15.5px] leading-relaxed text-teal-deep">
                     {warn.resolved(demo.excursionMinutes)}
                   </p>
                 )}
@@ -189,7 +201,7 @@ export default function HowItWorksDemo() {
           {step > 1 && (
             <button
               type="button"
-              onClick={() => setStep((s) => Math.max(1, s - 1))}
+              onClick={() => goToStep(step - 1)}
               className="rounded-xl border border-line px-6 py-3.5 text-[16px] text-ink/70 transition-colors hover:border-ink/40 hover:text-ink"
             >
               Back
@@ -198,7 +210,7 @@ export default function HowItWorksDemo() {
           {step < 4 && (
             <button
               type="button"
-              onClick={() => setStep((s) => Math.min(4, s + 1))}
+              onClick={() => goToStep(step + 1)}
               className="group inline-flex items-center gap-2.5 rounded-xl bg-teal px-6 py-3.5 text-[16px] font-medium text-paper transition-colors duration-200 hover:bg-teal-deep active:scale-[0.98]"
             >
               {step === 1 ? "See it watching" : step === 2 ? "Break it on purpose" : "See the proof"}
