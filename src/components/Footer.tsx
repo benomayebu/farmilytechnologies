@@ -43,7 +43,7 @@ export default function Footer() {
           <p className="text-paper/60">Get in touch</p>
           <a
             href="mailto:benjamin.omayebu@farmilytechnologies.com"
-            className="mt-1 inline-block py-3 text-paper transition-colors hover:text-wheat"
+            className="mt-1 inline-block py-3 text-paper [overflow-wrap:anywhere] transition-colors hover:text-wheat"
           >
             benjamin.omayebu@farmilytechnologies.com
           </a>

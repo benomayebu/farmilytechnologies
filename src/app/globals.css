@@ -61,6 +61,14 @@
   --text-eyebrow--letter-spacing: 0.16em;
 }
 
+/* With large text settings a single long word ("Compliance" at 96px) can be
+   wider than a phone. Break it only when it would otherwise overflow. */
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
 html {
   scroll-behavior: smooth;
 }

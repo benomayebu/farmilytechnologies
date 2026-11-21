@@ -49,7 +49,7 @@ export default function HowItWorksDemo() {
                 type="button"
                 onClick={() => goToStep(n)}
                 aria-current={active ? "step" : undefined}
-                className="flex flex-col gap-3 py-1 text-left"
+                className="flex min-w-0 flex-col gap-3 py-1 text-left"
               >
                 <span
                   className={`block h-1 rounded-full transition-colors duration-300 ${active ? "bg-teal" : "bg-line"}`}
@@ -61,7 +61,7 @@ export default function HowItWorksDemo() {
                   >
                     0{n}
                   </span>
-                  <span className="text-body text-ink">{s.label}</span>
+                  <span className="min-w-0 text-body text-ink">{s.label}</span>
                 </span>
               </button>
             );
@@ -84,7 +84,7 @@ export default function HowItWorksDemo() {
           )}
 
           {step === 3 && (
-            <div className="grid items-start gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
+            <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-14">
               <div>
                 <h3 className="font-display text-h3 text-ink">{warn.headline}</h3>
                 <p className="mt-4 text-body-lg text-ink/65">{warn.body}</p>

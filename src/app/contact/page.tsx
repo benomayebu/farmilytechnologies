@@ -29,7 +29,7 @@ export default function ContactPage() {
             <h2 className="font-display text-lg text-ink">Prefer email?</h2>
             <a
               href="mailto:benjamin.omayebu@farmilytechnologies.com"
-              className="mt-2 inline-block py-3 text-teal-deep underline decoration-teal-deep/40 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+              className="mt-2 inline-block py-3 text-teal-deep underline [overflow-wrap:anywhere] decoration-teal-deep/40 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
             >
               benjamin.omayebu@farmilytechnologies.com
             </a>

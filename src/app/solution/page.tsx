@@ -34,7 +34,7 @@ export default function SolutionPage() {
       {/* What it produces */}
       <section>
         <Container className="section-compact">
-          <Reveal className="grid items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
+          <Reveal className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
             <div>
               <p className="text-eyebrow font-semibold uppercase text-teal-deep">
                 What you get
@@ -61,14 +61,14 @@ export default function SolutionPage() {
           <h2 id="pillars-heading" className="sr-only">
             What FARMILY does
           </h2>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {pillars.map((pillar, i) => {
               const Icon = pillarIcons[pillar.key];
               return (
                 <Reveal
                   key={pillar.key}
                   delay={i * 90}
-                  className="rounded-2xl border border-line bg-paper p-8 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5"
+                  className="rounded-2xl border border-line bg-paper p-6 sm:p-8 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5"
                 >
                   <Icon className="h-11 w-11 text-teal-deep" />
                   <h3 className="mt-6 font-display text-2xl text-ink">

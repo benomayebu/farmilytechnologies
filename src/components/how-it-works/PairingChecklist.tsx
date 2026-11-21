@@ -22,7 +22,7 @@ export default function PairingChecklist() {
   const done = progress >= pairing.checklist.length;
 
   return (
-    <div className="grid items-start gap-10 md:grid-cols-2 md:gap-14">
+    <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-14">
       <div>
         <h3 className="font-display text-h3 text-ink">{pairing.headline}</h3>
         <p className="mt-4 text-body-lg text-ink/65">{pairing.body}</p>
