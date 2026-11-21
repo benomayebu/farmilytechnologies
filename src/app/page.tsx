@@ -13,7 +13,6 @@ import {
   hero,
   pillars,
   videoSection,
-  whatWeDo,
 } from "@/lib/content/home";
 
 const pillarIcons = {
@@ -91,25 +90,23 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* What We Do */}
-      <section id="what-we-do" className="border-y border-line bg-paper-deep scroll-mt-16">
-        <Container className="py-20 sm:py-24">
-          <Reveal className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-            <Eyebrow as="h2">{whatWeDo.eyebrow}</Eyebrow>
-            <p className="max-w-2xl text-2xl leading-relaxed text-ink sm:text-[1.75rem]">
-              {whatWeDo.body}
+      {/* How it works: the three parts, then one shipment end to end */}
+      <section aria-labelledby="how-heading" className="border-t border-line bg-paper-deep">
+        <Container className="py-20 sm:py-28">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <Eyebrow>{videoSection.eyebrow}</Eyebrow>
+            <h2
+              id="how-heading"
+              className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]"
+            >
+              {videoSection.headline}
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink/65">
+              {videoSection.body}
             </p>
           </Reveal>
-        </Container>
-      </section>
 
-      {/* Three pillars */}
-      <section aria-labelledby="pillars-heading">
-        <Container className="py-20 sm:py-28">
-          <h2 id="pillars-heading" className="sr-only">
-            What FARMILY does
-          </h2>
-          <div className="grid gap-x-10 gap-y-14 sm:grid-cols-3">
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-3">
             {pillars.map((pillar, i) => {
               const Icon = pillarIcons[pillar.key];
               return (
@@ -128,22 +125,8 @@ export default function Home() {
               );
             })}
           </div>
-        </Container>
-      </section>
 
-      {/* Shipment journey video */}
-      <section className="border-t border-line bg-paper-deep">
-        <Container className="py-20 sm:py-28">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <Eyebrow>{videoSection.eyebrow}</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]">
-              {videoSection.headline}
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink/65">
-              {videoSection.body}
-            </p>
-          </Reveal>
-          <Reveal delay={120} variant="materialize" className="mt-12">
+          <Reveal delay={120} variant="materialize" className="mt-14">
             <div className="overflow-hidden rounded-2xl border border-line shadow-lg shadow-ink/5">
               <LazyLoopVideo
                 src="/videos/shipment-journey.mp4"

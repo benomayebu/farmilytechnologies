@@ -25,13 +25,9 @@ export default function Footer() {
               className="h-12 w-auto invert"
             />
           </Link>
-          <p className="mt-4 text-sm leading-relaxed text-paper/60">
-            Supply chain compliance, automated — for the distributors and
-            importers who don&apos;t have an enterprise budget for it.
-          </p>
         </div>
 
-        <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
           {NAV.map((item) => (
             <Link
               key={item.href}
