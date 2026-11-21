@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   },
 };
 
+const NO_SCRIPT_CSS =
+  ".reveal,.reveal-materialize,.animate-hero-line{opacity:1!important;transform:none!important;animation:none!important}";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -46,6 +49,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${publicSans.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body antialiased">
+        {/* With JavaScript off, Reveal never adds .is-visible, so everything below
+            the hero would stay at opacity 0. This only applies when scripts are
+            disabled; visitors with JavaScript see no change. */}
+        <noscript>
+          <style>{NO_SCRIPT_CSS}</style>
+        </noscript>
         <a
           href="#main"
           className="sr-only rounded-full bg-ink text-sm font-medium text-paper focus:not-sr-only focus:fixed focus:px-5 focus:py-3 focus:top-3 focus:left-3 focus:z-[60]"

@@ -63,8 +63,16 @@ export default function ContactForm() {
     );
   }
 
+  // action + method let the form still send (to Formspree directly) when
+  // JavaScript is off; with JavaScript, handleSubmit takes over.
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form
+      action={FORMSPREE_ENDPOINT}
+      method="POST"
+      onSubmit={handleSubmit}
+      className="space-y-5"
+      noValidate
+    >
       {/* Honeypot — hidden from real visitors, catches simple bots */}
       <input
         type="text"
