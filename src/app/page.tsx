@@ -39,19 +39,19 @@ export default function Home() {
             <Eyebrow
               tone="paper"
               className="animate-hero-line"
-              style={{ animationDelay: "40ms" }}
+              style={{ animationDelay: "0ms" }}
             >
               Compliance software for food supply chains
             </Eyebrow>
             <h1
               className="animate-hero-line mt-6 font-display text-display text-paper"
-              style={{ animationDelay: "130ms" }}
+              style={{ animationDelay: "60ms" }}
             >
               {hero.headline}
             </h1>
             <p
               className="animate-hero-line mt-7 max-w-xl text-body-lg text-paper/80 sm:text-xl"
-              style={{ animationDelay: "240ms" }}
+              style={{ animationDelay: "120ms" }}
             >
               {hero.subLine}
             </p>
@@ -60,7 +60,7 @@ export default function Home() {
           {/* Product proof: one sealed report, simulated and labelled as such. */}
           <div
             className="animate-pop-in mt-10 w-full max-w-md lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:max-w-none lg:self-center"
-            style={{ animationDelay: "300ms" }}
+            style={{ animationDelay: "120ms" }}
           >
             <HeroReport />
           </div>
@@ -68,13 +68,13 @@ export default function Home() {
           <div className="max-w-3xl lg:col-start-1 lg:row-start-2 lg:self-start">
             <p
               className="animate-hero-line mt-10 max-w-lg font-display text-title italic text-wheat lg:mt-6"
-              style={{ animationDelay: "330ms" }}
+              style={{ animationDelay: "180ms" }}
             >
               &ldquo;{hero.supportingLine}&rdquo;
             </p>
             <div
               className="animate-hero-line mt-10 lg:mt-8"
-              style={{ animationDelay: "420ms" }}
+              style={{ animationDelay: "240ms" }}
             >
               <div className="flex flex-wrap items-center gap-3">
                 <Button href={hero.primaryCta.href} variant="primary">

@@ -167,7 +167,7 @@ body {
 @keyframes hero-in-up {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -177,7 +177,8 @@ body {
 
 .animate-hero-line {
   opacity: 0;
-  animation: hero-in-up 800ms var(--ease-out) both;
+  /* 450ms a line, 60ms apart: the last line settles by 690ms. */
+  animation: hero-in-up 450ms var(--ease-out) both;
 }
 
 /* Reveal: fades/slides content in once as it enters the viewport (see Reveal.tsx) */
