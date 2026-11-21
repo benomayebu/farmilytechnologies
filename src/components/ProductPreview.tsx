@@ -13,7 +13,7 @@ export default function ProductPreview() {
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-6 py-4 sm:px-8">
         <div>
           <p className="font-display text-lg text-ink">Lot #4521</p>
-          <p className="text-xs text-ink/55">
+          <p className="text-xs text-ink/70">
             Chilled Seafood · 1,800 kg · Muscat → Abu Dhabi
           </p>
         </div>
@@ -23,7 +23,7 @@ export default function ProductPreview() {
       </div>
 
       <div className="px-6 py-6 sm:px-8">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink/45">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink/70">
           Temperature history
         </p>
         <svg
@@ -56,21 +56,21 @@ export default function ProductPreview() {
             strokeLinejoin="round"
           />
           <circle cx={300} cy={52.5} r={4.5} fill="#B3453A" />
-          <text x={200} y={200} textAnchor="middle" className="fill-ink/40" fontSize={10} fontFamily="var(--font-body)">
+          <text x={200} y={200} textAnchor="middle" className="fill-ink/70" fontSize={10} fontFamily="var(--font-body)">
             11 Aug
           </text>
-          <text x={410} y={200} textAnchor="middle" className="fill-ink/40" fontSize={10} fontFamily="var(--font-body)">
+          <text x={410} y={200} textAnchor="middle" className="fill-ink/70" fontSize={10} fontFamily="var(--font-body)">
             12 Aug
           </text>
         </svg>
-        <p className="mt-2 text-[13px] leading-relaxed text-ink/60">
+        <p className="mt-2 text-[13px] leading-relaxed text-ink/70">
           14:12 — power disconnect at Port of Jebel Ali, 22 min. Back in spec by 15:26.
         </p>
 
         <div className="mt-6 grid grid-cols-3 gap-3 border-t border-line pt-6">
           {STATS.map((stat) => (
             <div key={stat.label}>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/45">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/70">
                 {stat.label}
               </p>
               <p className="mt-1.5 font-display text-xl text-ink sm:text-2xl">
@@ -89,7 +89,7 @@ export default function ProductPreview() {
         </div>
       </div>
 
-      <p className="border-t border-line bg-paper-deep px-6 py-3 text-center text-[11px] text-ink/45 sm:px-8">
+      <p className="border-t border-line bg-paper-deep px-6 py-3 text-center text-[11px] text-ink/70 sm:px-8">
         Illustrative preview — fictional lot, not live shipment data.
       </p>
     </div>

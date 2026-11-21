@@ -27,7 +27,7 @@ export default function LegalPage({
 
       <section>
         <Container className="max-w-3xl py-16 sm:py-20">
-          <p className="text-sm text-ink/45">Last updated {lastUpdated}</p>
+          <p className="text-sm text-ink/70">Last updated {lastUpdated}</p>
 
           <div className="mt-8 flex flex-col gap-10">
             {sections.map((section, i) => (

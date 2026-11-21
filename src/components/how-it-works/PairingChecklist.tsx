@@ -11,7 +11,7 @@ function CheckIcon({ done }: { done: boolean }) {
     </svg>
   ) : (
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" className="shrink-0">
-      <circle cx="13" cy="13" r="11.4" stroke="var(--paper)" strokeOpacity={0.25} strokeWidth={2.8} />
+      <circle cx="13" cy="13" r="11.4" stroke="var(--ink)" strokeOpacity={0.55} strokeWidth={2.8} />
     </svg>
   );
 }
@@ -45,7 +45,7 @@ export default function PairingChecklist() {
           <div className="overflow-hidden">
             <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-[15px] leading-relaxed text-ink/80">
               {pairing.whoseSensor.body}
-              <p className="mt-3 text-sm text-ink/50">{pairing.whoseSensor.caveat}</p>
+              <p className="mt-3 text-sm text-ink/70">{pairing.whoseSensor.caveat}</p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function PairingChecklist() {
           {pairing.checklist.map((item, i) => (
             <div
               key={item}
-              className={`flex items-center gap-4 border-b border-line py-4 transition-opacity duration-300 last:border-b-0 ${i > progress ? "opacity-40" : "opacity-100"}`}
+              className={`flex items-center gap-4 border-b border-line py-4 transition-opacity duration-300 last:border-b-0 ${i > progress ? "opacity-70" : "opacity-100"}`}
             >
               <CheckIcon done={i < progress} />
               <span className="text-[17px] text-ink">{item}</span>

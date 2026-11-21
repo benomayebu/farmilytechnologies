@@ -127,7 +127,7 @@ export default function SolutionPage() {
       {/* Honest status note */}
       <section>
         <Container className="py-12">
-          <p className="max-w-2xl text-sm leading-relaxed text-ink/55">
+          <p className="max-w-2xl text-sm leading-relaxed text-ink/70">
             {statusNote}
           </p>
         </Container>

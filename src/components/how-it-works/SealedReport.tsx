@@ -50,7 +50,7 @@ export default function SealedReport({
           </svg>
           <div>
             <p className="font-display text-xl text-ink">{proof.reportTitle}</p>
-            <p className="mt-0.5 text-sm text-ink/55">{shipment.id} · {shipment.description}</p>
+            <p className="mt-0.5 text-sm text-ink/70">{shipment.id} · {shipment.description}</p>
           </div>
         </div>
 
@@ -62,7 +62,7 @@ export default function SealedReport({
             [proof.fields.flagged, flaggedValue],
           ].map(([label, value]) => (
             <div key={label} className="flex items-baseline justify-between border-t border-line py-3.5 text-[16px]">
-              <dt className="text-ink/60">{label}</dt>
+              <dt className="text-ink/70">{label}</dt>
               <dd className="font-display font-medium text-ink">{value}</dd>
             </div>
           ))}

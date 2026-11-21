@@ -96,7 +96,7 @@ export default function Home() {
               const Icon = pillarIcons[pillar.key];
               return (
                 <Reveal key={pillar.key} delay={i * 90}>
-                  <span className="font-display text-sm text-ink/35">
+                  <span aria-hidden="true" className="font-display text-sm text-ink/55">
                     0{i + 1}
                   </span>
                   <Icon className="mt-4 h-11 w-11 text-teal-deep" />

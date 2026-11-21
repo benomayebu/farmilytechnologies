@@ -60,7 +60,7 @@ export default function AboutPage() {
                     {p}
                   </p>
                 ))}
-                <p className="mt-6 border-t border-line pt-6 text-sm leading-relaxed text-ink/55">
+                <p className="mt-6 border-t border-line pt-6 text-sm leading-relaxed text-ink/70">
                   {founderStory.bio}
                 </p>
               </div>

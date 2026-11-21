@@ -41,7 +41,7 @@ export default function Footer() {
         </nav>
 
         <div className="text-sm">
-          <p className="text-paper/50">Get in touch</p>
+          <p className="text-paper/60">Get in touch</p>
           <a
             href="mailto:benjamin.omayebu@farmilytechnologies.com"
             className="mt-1 inline-block py-3 text-paper transition-colors hover:text-wheat"
@@ -52,7 +52,7 @@ export default function Footer() {
       </Container>
 
       <div className="border-t border-paper/10">
-        <Container className="flex flex-col gap-3 py-5 text-xs text-paper/45 sm:flex-row sm:items-center sm:justify-between">
+        <Container className="flex flex-col gap-3 py-5 text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Farmily Technologies. Built by a
             team of one, working with early pilot partners.

@@ -9,7 +9,7 @@ export default function FaqAccordion({ hint }: { hint: string }) {
   return (
     <div className="mt-16 border-t border-line pt-10 sm:mt-20 sm:pt-12">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-deep">{faqLabel}</p>
-      <p className="mt-2 text-base text-ink/60">{hint}</p>
+      <p className="mt-2 text-base text-ink/70">{hint}</p>
 
       <div className="mt-6 border-t border-line">
         {faqs.map((faq) => {
@@ -26,7 +26,8 @@ export default function FaqAccordion({ hint }: { hint: string }) {
                   {faq.question}
                 </span>
                 <span
-                  className={`shrink-0 text-2xl font-light text-ink/40 transition-transform duration-150 ease-out ${open ? "rotate-45" : ""}`}
+                  aria-hidden="true"
+                  className={`shrink-0 text-2xl font-light text-ink/55 transition-transform duration-150 ease-out ${open ? "rotate-45" : ""}`}
                 >
                   +
                 </span>

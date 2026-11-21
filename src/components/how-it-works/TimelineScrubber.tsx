@@ -75,16 +75,16 @@ export default function TimelineScrubber({
     <div className="rounded-2xl border border-line/20 bg-ink-soft p-6 sm:p-8">
       <div className="flex flex-wrap items-baseline justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-paper/45">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-paper/70">
             {chart.title}
           </p>
           <div className="mt-2 flex items-baseline gap-3">
             <span className="font-display text-4xl text-paper sm:text-5xl">
               {temp.toFixed(1)}°C
             </span>
-            <span className="text-base text-paper/60">at {clockText}</span>
+            <span className="text-base text-paper/70">at {clockText}</span>
           </div>
-          <p className="mt-1.5 text-[13px] text-wheat/90">
+          <p className="mt-1.5 text-[13px] text-wheat-light">
             {chart.safeLimitLabel(`${limit}°C`)}
           </p>
         </div>
@@ -176,7 +176,7 @@ export default function TimelineScrubber({
         />
       </svg>
 
-      <div className="mt-2 flex justify-between text-[13px] text-paper/45">
+      <div className="mt-2 flex justify-between text-[13px] text-paper/70">
         <span>{chart.startLabel}</span>
         <span>{chart.endLabel}</span>
       </div>
@@ -186,7 +186,7 @@ export default function TimelineScrubber({
           No signal here — still recording, and it syncs once back in range.
         </p>
       )}
-      <p className="mt-4 text-sm text-paper/40">{chart.hint}</p>
+      <p className="mt-4 text-sm text-paper/70">{chart.hint}</p>
     </div>
   );
 }

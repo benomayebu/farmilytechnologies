@@ -52,7 +52,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`relative py-1 text-[15px] font-medium transition-colors active:opacity-60 ${
-                  active ? "text-ink" : "text-ink/60 hover:text-ink"
+                  active ? "text-ink" : "text-ink/70 hover:text-ink"
                 }`}
               >
                 {item.label}

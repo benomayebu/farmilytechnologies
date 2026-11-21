@@ -56,7 +56,8 @@ export default function HowItWorksDemo() {
                 />
                 <span className="flex items-baseline gap-2.5">
                   <span
-                    className={`font-display text-[15px] font-semibold transition-colors duration-300 ${active ? "text-teal-deep" : "text-ink/35"}`}
+                    aria-hidden="true"
+                    className={`font-display text-[15px] font-semibold transition-colors duration-300 ${active ? "text-teal-deep" : "text-ink/55"}`}
                   >
                     0{n}
                   </span>
@@ -116,7 +117,7 @@ export default function HowItWorksDemo() {
               </div>
 
               <div className="min-h-[220px] rounded-2xl border border-line bg-paper-deep p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/45">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/70">
                   {warn.panelLabel}
                 </p>
 
@@ -134,7 +135,7 @@ export default function HowItWorksDemo() {
 
                 {demo.predicting && (
                   <div className="animate-fade-in mt-5 rounded-xl border border-wheat bg-wheat/10 px-5 py-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a6f1f]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#7d5816]">
                       {warn.predictionLabel}
                     </p>
                     <p className="mt-2 font-display text-xl leading-snug text-ink sm:text-2xl">
@@ -152,7 +153,7 @@ export default function HowItWorksDemo() {
                     </svg>
                     <div className="rounded-2xl rounded-bl-md bg-teal-deep px-5 py-4 text-[15px] leading-relaxed text-paper">
                       {warn.alert.message}
-                      <p className="mt-2 text-[13px] text-paper/70">{warn.alert.sentAt(demo.sentAtText)}</p>
+                      <p className="mt-2 text-[13px] text-paper/80">{warn.alert.sentAt(demo.sentAtText)}</p>
                     </div>
                   </div>
                 )}
