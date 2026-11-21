@@ -264,3 +264,19 @@ body {
     transition-duration: 200ms;
   }
 }
+
+/* Keyboard focus — one ring everywhere, only for keyboard (not mouse) focus.
+   teal-deep on paper is 7.81:1; on dark sections it switches to wheat
+   (5.98:1 on ink) so the ring never disappears into the background. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--teal-deep);
+    outline-offset: 3px;
+  }
+
+  .bg-ink :focus-visible,
+  .bg-ink-soft :focus-visible,
+  footer :focus-visible {
+    outline-color: var(--wheat);
+  }
+}

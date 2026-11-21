@@ -106,7 +106,7 @@ export default function TimelineScrubber({
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(pos * 100)}
-        className="mt-6 w-full touch-none outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-4 focus-visible:ring-offset-ink-soft"
+        className="mt-6 w-full touch-none outline-none focus-visible:ring-2 focus-visible:ring-wheat focus-visible:ring-offset-4 focus-visible:ring-offset-ink-soft"
         style={{ overflow: "visible", cursor: "ew-resize" }}
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId);

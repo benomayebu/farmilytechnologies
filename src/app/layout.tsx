@@ -46,9 +46,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${publicSans.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body antialiased">
+        <a
+          href="#main"
+          className="sr-only rounded-full bg-ink text-sm font-medium text-paper focus:not-sr-only focus:fixed focus:px-5 focus:py-3 focus:top-3 focus:left-3 focus:z-[60]"
+        >
+          Skip to main content
+        </a>
         <IOSTapFix />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main" tabIndex={-1} className="flex-1 scroll-mt-20 outline-none">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
