@@ -32,7 +32,7 @@ export default function LegalPage({
           <div className="mt-8 flex flex-col gap-10">
             {sections.map((section, i) => (
               <Reveal key={section.heading} delay={Math.min(i * 60, 300)}>
-                <h2 className="font-display text-xl text-ink sm:text-2xl">
+                <h2 className="font-display text-title text-ink">
                   {section.heading}
                 </h2>
                 <div className="mt-3 flex flex-col gap-3">

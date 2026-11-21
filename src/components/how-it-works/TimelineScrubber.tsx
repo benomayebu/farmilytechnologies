@@ -75,7 +75,7 @@ export default function TimelineScrubber({
     <div className="rounded-2xl border border-line/20 bg-ink-soft p-6 sm:p-8">
       <div className="flex flex-wrap items-baseline justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-paper/70">
+          <p className="text-eyebrow font-semibold uppercase text-paper/70">
             {chart.title}
           </p>
           <div className="mt-2 flex items-baseline gap-3">

@@ -17,7 +17,7 @@ export default function Eyebrow({
 }) {
   return (
     <Tag
-      className={`inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] ${
+      className={`inline-flex items-center gap-2.5 text-eyebrow font-semibold uppercase ${
         tone === "paper" ? "text-paper/70" : "text-teal-deep"
       } ${className}`}
       style={style}

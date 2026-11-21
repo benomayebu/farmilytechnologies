@@ -52,7 +52,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
           <p className="font-display text-lg leading-tight">{r.title}</p>
           <p className="mt-1 text-sm text-ink/70">{r.lot}</p>
         </div>
-        <span className="shrink-0 whitespace-nowrap rounded-full border border-ink/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-ink/70">
+        <span className="shrink-0 whitespace-nowrap rounded-full border border-ink/20 px-2.5 py-1 text-eyebrow font-semibold uppercase text-ink/70">
           {r.simulatedLabel}
         </span>
       </div>

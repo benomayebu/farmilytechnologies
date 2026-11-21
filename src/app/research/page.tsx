@@ -18,7 +18,7 @@ export default function ResearchPage() {
       <section>
         <Container className="py-16 sm:py-20">
           <Reveal>
-            <p className="max-w-3xl text-lg leading-relaxed text-ink/75">
+            <p className="max-w-3xl text-body-lg text-ink/75">
               {framing}
             </p>
           </Reveal>

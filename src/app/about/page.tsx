@@ -23,7 +23,7 @@ export default function AboutPage() {
         <Container className="py-16 sm:py-20">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow as="h2">{mission.eyebrow}</Eyebrow>
-            <p className="max-w-2xl font-display text-2xl leading-snug text-ink sm:text-3xl sm:tracking-[-0.02em]">
+            <p className="max-w-2xl font-display text-h3 text-ink">
               {mission.statement}
             </p>
           </Reveal>
@@ -35,7 +35,7 @@ export default function AboutPage() {
         <Container className="py-16 sm:py-20">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow as="h2">{approach.eyebrow}</Eyebrow>
-            <p className="max-w-2xl text-lg leading-relaxed text-ink/75">
+            <p className="max-w-2xl text-body-lg text-ink/75">
               {approach.body}
             </p>
           </Reveal>
@@ -55,7 +55,7 @@ export default function AboutPage() {
                 {founderStory.paragraphs.map((p) => (
                   <p
                     key={p.slice(0, 24)}
-                    className="mt-4 text-lg leading-relaxed text-ink/80 first:mt-0"
+                    className="mt-4 text-body-lg text-ink/80 first:mt-0"
                   >
                     {p}
                   </p>

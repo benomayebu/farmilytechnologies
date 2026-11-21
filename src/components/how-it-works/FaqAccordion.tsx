@@ -8,7 +8,7 @@ export default function FaqAccordion({ hint }: { hint: string }) {
 
   return (
     <div className="mt-16 border-t border-line pt-10 sm:mt-20 sm:pt-12">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-deep">{faqLabel}</p>
+      <p className="text-eyebrow font-semibold uppercase text-teal-deep">{faqLabel}</p>
       <p className="mt-2 text-base text-ink/70">{hint}</p>
 
       <div className="mt-6 border-t border-line">
@@ -36,7 +36,7 @@ export default function FaqAccordion({ hint }: { hint: string }) {
                 className={`grid transition-[grid-template-rows] duration-300 ease-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
               >
                 <div className="overflow-hidden">
-                  <p className="max-w-3xl pb-6 text-[16px] leading-relaxed text-ink/65">
+                  <p className="max-w-3xl pb-6 text-body text-ink/65">
                     {faq.answer}
                   </p>
                 </div>

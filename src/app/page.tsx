@@ -44,13 +44,13 @@ export default function Home() {
               Compliance software for food supply chains
             </Eyebrow>
             <h1
-              className="animate-hero-line mt-6 font-display text-5xl leading-[1.05] tracking-tight text-paper sm:text-6xl sm:tracking-[-0.03em] lg:text-[3.5rem] lg:tracking-[-0.03em]"
+              className="animate-hero-line mt-6 font-display text-display text-paper"
               style={{ animationDelay: "130ms" }}
             >
               {hero.headline}
             </h1>
             <p
-              className="animate-hero-line mt-7 max-w-xl text-lg leading-relaxed text-paper/80 sm:text-xl"
+              className="animate-hero-line mt-7 max-w-xl text-body-lg text-paper/80 sm:text-xl"
               style={{ animationDelay: "240ms" }}
             >
               {hero.subLine}
@@ -67,7 +67,7 @@ export default function Home() {
 
           <div className="max-w-3xl lg:col-start-1 lg:row-start-2 lg:self-start">
             <p
-              className="animate-hero-line mt-10 max-w-lg font-display text-xl italic leading-snug text-wheat sm:text-2xl lg:mt-6"
+              className="animate-hero-line mt-10 max-w-lg font-display text-title italic text-wheat lg:mt-6"
               style={{ animationDelay: "330ms" }}
             >
               &ldquo;{hero.supportingLine}&rdquo;
@@ -97,11 +97,11 @@ export default function Home() {
             <Eyebrow>{videoSection.eyebrow}</Eyebrow>
             <h2
               id="how-heading"
-              className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]"
+              className="mt-4 font-display text-h2 text-ink"
             >
               {videoSection.headline}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink/65">
+            <p className="mx-auto mt-4 max-w-xl text-body-lg text-ink/65">
               {videoSection.body}
             </p>
           </Reveal>
@@ -149,11 +149,11 @@ export default function Home() {
               <Eyebrow>{demoTeaser.eyebrow}</Eyebrow>
               <h2
                 id="demo-teaser-heading"
-                className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]"
+                className="mt-4 font-display text-h2 text-ink"
               >
                 {demoTeaser.headline}
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-ink/70">
+              <p className="mt-4 text-body-lg text-ink/70">
                 {demoTeaser.body}
               </p>
             </div>
@@ -168,7 +168,7 @@ export default function Home() {
       <section className="bg-ink text-paper">
         <Container className="py-20 sm:py-24">
           <Reveal className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-xl font-display text-2xl leading-snug sm:text-3xl sm:tracking-[-0.02em]">
+            <p className="max-w-xl font-display text-h3">
               {closingCta.line}
             </p>
             <Button href="/contact" variant="primary" className="shrink-0">

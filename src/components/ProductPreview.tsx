@@ -23,7 +23,7 @@ export default function ProductPreview() {
       </div>
 
       <div className="px-6 py-6 sm:px-8">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink/70">
+        <p className="mb-3 text-eyebrow font-semibold uppercase text-ink/70">
           Temperature history
         </p>
         <svg
@@ -73,7 +73,7 @@ export default function ProductPreview() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/70">
                 {stat.label}
               </p>
-              <p className="mt-1.5 font-display text-xl text-ink sm:text-2xl">
+              <p className="mt-1.5 font-display text-title text-ink">
                 {stat.value}
               </p>
             </div>

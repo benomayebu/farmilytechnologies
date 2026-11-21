@@ -24,8 +24,8 @@ export default function PairingChecklist() {
   return (
     <div className="grid items-start gap-10 md:grid-cols-2 md:gap-14">
       <div>
-        <h3 className="font-display text-2xl text-ink sm:text-3xl">{pairing.headline}</h3>
-        <p className="mt-4 text-lg leading-relaxed text-ink/65">{pairing.body}</p>
+        <h3 className="font-display text-h3 text-ink">{pairing.headline}</h3>
+        <p className="mt-4 text-body-lg text-ink/65">{pairing.body}</p>
         <button
           type="button"
           onClick={() => setTipOpen((v) => !v)}
@@ -59,7 +59,7 @@ export default function PairingChecklist() {
               className={`flex items-center gap-4 border-b border-line py-4 transition-opacity duration-300 last:border-b-0 ${i > progress ? "opacity-70" : "opacity-100"}`}
             >
               <CheckIcon done={i < progress} />
-              <span className="text-[17px] text-ink">{item}</span>
+              <span className="text-body-lg text-ink">{item}</span>
             </div>
           ))}
         </div>
@@ -68,7 +68,7 @@ export default function PairingChecklist() {
           <button
             type="button"
             onClick={() => setProgress((p) => Math.min(pairing.checklist.length, p + 1))}
-            className="mt-6 w-full rounded-xl bg-teal-deep px-6 py-4 text-[17px] font-semibold text-paper transition-colors duration-200 hover:bg-ink active:scale-[0.98]"
+            className="mt-6 w-full rounded-xl bg-teal-deep px-6 py-4 text-body-lg font-semibold text-paper transition-colors duration-200 hover:bg-ink active:scale-[0.98]"
           >
             {pairing.ctaLabels[progress]}
           </button>
@@ -78,7 +78,7 @@ export default function PairingChecklist() {
               <circle cx="13" cy="13" r="13" fill="var(--teal)" />
               <path d="M7.5 13.5l3.8 3.8L18.5 9" stroke="var(--paper)" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="text-[17px] font-medium text-ink">{pairing.doneLabel}</span>
+            <span className="text-body-lg font-medium text-ink">{pairing.doneLabel}</span>
           </div>
         )}
       </div>

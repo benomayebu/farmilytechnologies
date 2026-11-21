@@ -21,8 +21,8 @@ export default function SealedReport({
   return (
     <div className="grid items-start gap-10 md:grid-cols-2 md:gap-14">
       <div>
-        <h3 className="font-display text-2xl text-ink sm:text-3xl">{proof.headline}</h3>
-        <p className="mt-4 text-lg leading-relaxed text-ink/65">{proof.body}</p>
+        <h3 className="font-display text-h3 text-ink">{proof.headline}</h3>
+        <p className="mt-4 text-body-lg text-ink/65">{proof.body}</p>
         <button
           type="button"
           onClick={() => setTamperOpen((v) => !v)}
@@ -61,7 +61,7 @@ export default function SealedReport({
             [proof.fields.signalGaps, proof.signalGapsValue],
             [proof.fields.flagged, flaggedValue],
           ].map(([label, value]) => (
-            <div key={label} className="flex items-baseline justify-between border-t border-line py-3.5 text-[16px]">
+            <div key={label} className="flex items-baseline justify-between border-t border-line py-3.5 text-body">
               <dt className="text-ink/70">{label}</dt>
               <dd className="font-display font-medium text-ink">{value}</dd>
             </div>

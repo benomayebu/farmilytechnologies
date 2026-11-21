@@ -36,10 +36,10 @@ export default function SolutionPage() {
         <Container className="py-16 sm:py-20">
           <Reveal className="grid items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-deep">
+              <p className="text-eyebrow font-semibold uppercase text-teal-deep">
                 What you get
               </p>
-              <h2 className="mt-4 font-display text-2xl leading-snug text-ink sm:text-3xl sm:tracking-[-0.02em]">
+              <h2 className="mt-4 font-display text-h3 text-ink">
                 A record that answers the question before anyone has to ask it twice.
               </h2>
               <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink/65">
@@ -90,7 +90,7 @@ export default function SolutionPage() {
       <section className="border-y border-line bg-ink text-paper">
         <Container className="py-20 sm:py-24">
           <Reveal>
-            <h2 className="font-display text-3xl tracking-tight sm:text-4xl sm:tracking-[-0.03em]">
+            <h2 className="font-display text-h2">
               Built around who you are
             </h2>
           </Reveal>
