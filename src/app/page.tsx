@@ -80,7 +80,7 @@ export default function Home() {
       <section id="what-we-do" className="border-y border-line bg-paper-deep scroll-mt-20">
         <Container className="py-20 sm:py-24">
           <Reveal className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-            <Eyebrow>{whatWeDo.eyebrow}</Eyebrow>
+            <Eyebrow as="h2">{whatWeDo.eyebrow}</Eyebrow>
             <p className="max-w-2xl text-2xl leading-relaxed text-ink sm:text-[1.75rem]">
               {whatWeDo.body}
             </p>
@@ -89,8 +89,11 @@ export default function Home() {
       </section>
 
       {/* Three pillars */}
-      <section>
+      <section aria-labelledby="pillars-heading">
         <Container className="py-20 sm:py-28">
+          <h2 id="pillars-heading" className="sr-only">
+            What FARMILY does
+          </h2>
           <div className="grid gap-x-10 gap-y-14 sm:grid-cols-3">
             {pillars.map((pillar, i) => {
               const Icon = pillarIcons[pillar.key];

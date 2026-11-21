@@ -56,8 +56,11 @@ export default function SolutionPage() {
       </section>
 
       {/* Pillars, expanded */}
-      <section className="border-t border-line bg-paper-deep">
+      <section className="border-t border-line bg-paper-deep" aria-labelledby="pillars-heading">
         <Container className="py-20 sm:py-24">
+          <h2 id="pillars-heading" className="sr-only">
+            What FARMILY does
+          </h2>
           <div className="grid gap-8 md:grid-cols-3">
             {pillars.map((pillar, i) => {
               const Icon = pillarIcons[pillar.key];
@@ -68,9 +71,9 @@ export default function SolutionPage() {
                   className="rounded-2xl border border-line bg-paper p-8 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5"
                 >
                   <Icon className="h-11 w-11 text-teal-deep" />
-                  <h2 className="mt-6 font-display text-2xl text-ink">
+                  <h3 className="mt-6 font-display text-2xl text-ink">
                     {pillar.name}
-                  </h2>
+                  </h3>
                   <p className="mt-3 text-[15px] leading-relaxed text-ink/65">
                     {pillar.description}
                   </p>

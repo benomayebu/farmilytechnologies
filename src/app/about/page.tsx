@@ -22,7 +22,7 @@ export default function AboutPage() {
       <section className="border-b border-line">
         <Container className="py-16 sm:py-20">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
-            <Eyebrow>{mission.eyebrow}</Eyebrow>
+            <Eyebrow as="h2">{mission.eyebrow}</Eyebrow>
             <p className="max-w-2xl font-display text-2xl leading-snug text-ink sm:text-3xl sm:tracking-[-0.02em]">
               {mission.statement}
             </p>
@@ -34,7 +34,7 @@ export default function AboutPage() {
       <section className="border-b border-line bg-paper-deep">
         <Container className="py-16 sm:py-20">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
-            <Eyebrow>{approach.eyebrow}</Eyebrow>
+            <Eyebrow as="h2">{approach.eyebrow}</Eyebrow>
             <p className="max-w-2xl text-lg leading-relaxed text-ink/75">
               {approach.body}
             </p>
@@ -46,7 +46,7 @@ export default function AboutPage() {
       <section>
         <Container className="py-20 sm:py-24">
           <Reveal>
-            <Eyebrow>{founderStory.eyebrow}</Eyebrow>
+            <Eyebrow as="h2">{founderStory.eyebrow}</Eyebrow>
             <div className="mt-8 grid gap-10 md:grid-cols-[auto_1fr] md:gap-14">
               <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-ink font-display text-2xl text-paper">
                 BO
