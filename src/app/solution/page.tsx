@@ -33,7 +33,7 @@ export default function SolutionPage() {
 
       {/* What it produces */}
       <section>
-        <Container className="py-16 sm:py-20">
+        <Container className="section-compact">
           <Reveal className="grid items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
             <div>
               <p className="text-eyebrow font-semibold uppercase text-teal-deep">
@@ -57,7 +57,7 @@ export default function SolutionPage() {
 
       {/* Pillars, expanded */}
       <section className="border-t border-line bg-paper-deep" aria-labelledby="pillars-heading">
-        <Container className="py-20 sm:py-24">
+        <Container className="section-standard">
           <h2 id="pillars-heading" className="sr-only">
             What FARMILY does
           </h2>
@@ -88,7 +88,7 @@ export default function SolutionPage() {
 
       {/* Segments */}
       <section className="border-y border-line bg-ink text-paper">
-        <Container className="py-20 sm:py-24">
+        <Container className="section-standard">
           <Reveal>
             <h2 className="font-display text-h2">
               Built around who you are
@@ -129,7 +129,7 @@ export default function SolutionPage() {
 
       {/* Honest status note */}
       <section>
-        <Container className="py-12">
+        <Container className="section-compact">
           <p className="max-w-2xl text-body text-ink/70">
             {statusNote}
           </p>

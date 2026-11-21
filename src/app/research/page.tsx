@@ -16,7 +16,7 @@ export default function ResearchPage() {
       <PageHero eyebrow={intro.eyebrow} title={intro.headline} />
 
       <section>
-        <Container className="py-16 sm:py-20">
+        <Container className="section-compact">
           <Reveal>
             <p className="max-w-3xl text-body-lg text-ink/75">
               {framing}

@@ -29,7 +29,7 @@ export default function HowItWorksDemo() {
 
   return (
     <section id="demo" className="scroll-mt-16 border-t border-line bg-paper">
-      <Container className="py-20 sm:py-28">
+      <Container className="section-spacious">
         <div className="max-w-2xl">
           <Eyebrow>{intro.eyebrow}</Eyebrow>
           <h2 className="mt-4 font-display text-h2 text-ink">

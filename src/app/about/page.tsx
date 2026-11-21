@@ -20,7 +20,7 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="border-b border-line">
-        <Container className="py-16 sm:py-20">
+        <Container className="section-compact">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow as="h2">{mission.eyebrow}</Eyebrow>
             <p className="max-w-2xl font-display text-h3 text-ink">
@@ -32,7 +32,7 @@ export default function AboutPage() {
 
       {/* Approach */}
       <section className="border-b border-line bg-paper-deep">
-        <Container className="py-16 sm:py-20">
+        <Container className="section-compact">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow as="h2">{approach.eyebrow}</Eyebrow>
             <p className="max-w-2xl text-body-lg text-ink/75">
@@ -44,7 +44,7 @@ export default function AboutPage() {
 
       {/* Founder story */}
       <section>
-        <Container className="py-20 sm:py-24">
+        <Container className="section-standard">
           <Reveal>
             <Eyebrow as="h2">{founderStory.eyebrow}</Eyebrow>
             <div className="mt-8 grid gap-10 md:grid-cols-[auto_1fr] md:gap-14">

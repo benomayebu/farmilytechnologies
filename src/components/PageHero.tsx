@@ -13,7 +13,7 @@ export default function PageHero({
 }) {
   return (
     <section className="border-b border-line bg-paper-deep">
-      <Container className="py-20 sm:py-24">
+      <Container className="section-standard">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-6 max-w-3xl font-display text-h1 text-ink">
           {title}

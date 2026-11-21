@@ -317,3 +317,27 @@ body {
     outline-color: var(--wheat);
   }
 }
+
+/* Section spacing. Three sizes on the 8px grid instead of a different
+   py-12/16/20/24/28 pair on every page:
+   compact   64px / 80px   content that follows a page hero, short notes
+   standard  80px / 96px   most sections
+   spacious  80px / 112px  the big interactive blocks (video, demo) */
+@utility section-compact {
+  padding-block: 4rem;
+  @media (width >= 40rem) {
+    padding-block: 5rem;
+  }
+}
+@utility section-standard {
+  padding-block: 5rem;
+  @media (width >= 40rem) {
+    padding-block: 6rem;
+  }
+}
+@utility section-spacious {
+  padding-block: 5rem;
+  @media (width >= 40rem) {
+    padding-block: 7rem;
+  }
+}

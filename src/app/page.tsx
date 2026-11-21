@@ -32,7 +32,7 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-transparent to-ink/40" />
 
-        <Container className="relative grid gap-x-14 py-20 sm:py-24 lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
+        <Container className="relative grid gap-x-14 section-standard lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
           {/* Claim. On large screens the report card sits beside the text; on
               small screens it comes straight after the sub-line. */}
           <div className="max-w-3xl lg:col-start-1 lg:row-start-1 lg:self-end">
@@ -92,7 +92,7 @@ export default function Home() {
 
       {/* How it works: the three parts, then one shipment end to end */}
       <section aria-labelledby="how-heading" className="border-t border-line bg-paper-deep">
-        <Container className="py-20 sm:py-28">
+        <Container className="section-spacious">
           <Reveal className="mx-auto max-w-2xl text-center">
             <Eyebrow>{videoSection.eyebrow}</Eyebrow>
             <h2
@@ -143,7 +143,7 @@ export default function Home() {
 
       {/* Try it: a pointer to the interactive demo, not a copy of it */}
       <section aria-labelledby="demo-teaser-heading" className="border-t border-line">
-        <Container className="py-20 sm:py-24">
+        <Container className="section-standard">
           <Reveal className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
             <div className="max-w-xl">
               <Eyebrow>{demoTeaser.eyebrow}</Eyebrow>
@@ -166,7 +166,7 @@ export default function Home() {
 
       {/* Closing CTA */}
       <section className="bg-ink text-paper">
-        <Container className="py-20 sm:py-24">
+        <Container className="section-standard">
           <Reveal className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
             <p className="max-w-xl font-display text-h3">
               {closingCta.line}

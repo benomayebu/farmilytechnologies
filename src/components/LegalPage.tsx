@@ -26,7 +26,7 @@ export default function LegalPage({
       </PageHero>
 
       <section>
-        <Container className="max-w-3xl py-16 sm:py-20">
+        <Container className="max-w-3xl section-compact">
           <p className="text-small text-ink/70">Last updated {lastUpdated}</p>
 
           <div className="mt-8 flex flex-col gap-10">

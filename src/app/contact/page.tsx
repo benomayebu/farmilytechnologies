@@ -20,7 +20,7 @@ export default function ContactPage() {
       </PageHero>
 
       <section>
-        <Container className="grid gap-14 py-16 sm:py-20 md:grid-cols-[2fr_1fr] md:gap-20">
+        <Container className="grid gap-14 section-compact md:grid-cols-[2fr_1fr] md:gap-20">
           <Reveal>
             <ContactForm />
           </Reveal>
