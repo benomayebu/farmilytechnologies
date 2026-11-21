@@ -3,6 +3,7 @@ import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
 import ColdChainIllustration from "@/components/ColdChainIllustration";
+import HeroReport from "@/components/HeroReport";
 import Parallax from "@/components/Parallax";
 import LazyLoopVideo from "@/components/LazyLoopVideo";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
@@ -24,15 +25,17 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate flex min-h-[640px] items-center overflow-hidden bg-ink text-paper sm:min-h-[760px] lg:min-h-[840px]">
+      <section className="relative isolate flex items-center overflow-hidden bg-ink text-paper lg:min-h-[min(840px,calc(100svh-5rem))]">
         <Parallax strength={18} className="-z-20 opacity-[0.32]">
           <ColdChainIllustration />
         </Parallax>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-transparent to-ink/40" />
 
-        <Container className="relative py-24 sm:py-28">
-          <div className="max-w-3xl">
+        <Container className="relative grid gap-x-14 py-20 sm:py-24 lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
+          {/* Claim. On large screens the report card sits beside the text; on
+              small screens it comes straight after the sub-line. */}
+          <div className="max-w-3xl lg:col-start-1 lg:row-start-1 lg:self-end">
             <Eyebrow
               tone="paper"
               className="animate-hero-line"
@@ -41,7 +44,7 @@ export default function Home() {
               Compliance software for food supply chains
             </Eyebrow>
             <h1
-              className="animate-hero-line mt-6 font-display text-5xl leading-[1.05] tracking-tight text-paper sm:text-6xl sm:tracking-[-0.03em] md:text-7xl md:tracking-[-0.035em]"
+              className="animate-hero-line mt-6 font-display text-5xl leading-[1.05] tracking-tight text-paper sm:text-6xl sm:tracking-[-0.03em] lg:text-[3.5rem] lg:tracking-[-0.03em]"
               style={{ animationDelay: "130ms" }}
             >
               {hero.headline}
@@ -52,14 +55,25 @@ export default function Home() {
             >
               {hero.subLine}
             </p>
+          </div>
+
+          {/* Product proof: one sealed report, simulated and labelled as such. */}
+          <div
+            className="animate-pop-in mt-10 w-full max-w-md lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:max-w-none lg:self-center"
+            style={{ animationDelay: "300ms" }}
+          >
+            <HeroReport />
+          </div>
+
+          <div className="max-w-3xl lg:col-start-1 lg:row-start-2 lg:self-start">
             <p
-              className="animate-hero-line mt-5 max-w-lg font-display text-xl italic leading-snug text-wheat sm:text-2xl"
+              className="animate-hero-line mt-10 max-w-lg font-display text-xl italic leading-snug text-wheat sm:text-2xl lg:mt-6"
               style={{ animationDelay: "330ms" }}
             >
               &ldquo;{hero.supportingLine}&rdquo;
             </p>
             <div
-              className="animate-hero-line mt-10"
+              className="animate-hero-line mt-10 lg:mt-8"
               style={{ animationDelay: "420ms" }}
             >
               <a
@@ -71,6 +85,7 @@ export default function Home() {
                   ↓
                 </span>
               </a>
+              <p className="mt-5 text-sm text-paper/70">{hero.status}</p>
             </div>
           </div>
         </Container>

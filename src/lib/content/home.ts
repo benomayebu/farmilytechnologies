@@ -44,3 +44,24 @@ export const closingCta = {
   line: "Built and tested with simulated data. We're looking for our first pilot partners.",
   cta: "Talk to us about piloting",
 };
+
+// Hero report card. Numbers come from the FARMILY simulator's power_loss
+// scenario (S2), a 2-hour run with one reading a minute. Always labelled
+// as simulated.
+export const heroReport = {
+  title: "Sealed shipment report",
+  lot: "Lot S2-DEMO · Chilled seafood",
+  simulatedLabel: "Simulated data",
+  chartLabel: "Temperature over 2 hours",
+  limitLabel: "Limit 5°C",
+  excursionNote: "Reefer power lost for 22 minutes. Peak 9.4°C.",
+  stats: [
+    { label: "Peak", value: "9.4°C" },
+    { label: "Above limit", value: "22 min" },
+    { label: "In spec", value: "98 of 120 min" },
+  ],
+  integrityLabel: "Sealed record unchanged",
+  integrityValue: "Integrity: PASS",
+  ariaLabel:
+    "Example sealed shipment report, simulated data. Lot S2-DEMO, chilled seafood. Over a 2-hour run, reefer power was lost for 22 minutes and the temperature rose above the 5°C limit for 22 minutes, peaking at 9.4°C. In spec 98 of 120 minutes. Integrity check: pass.",
+} as const;
