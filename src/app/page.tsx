@@ -76,15 +76,14 @@ export default function Home() {
               className="animate-hero-line mt-10 lg:mt-8"
               style={{ animationDelay: "420ms" }}
             >
-              <a
-                href="#what-we-do"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-teal-deep px-6 py-3.5 text-[15px] font-medium tracking-wide text-paper transition-all duration-200 hover:bg-ink active:scale-[0.97]"
-              >
-                {hero.cta}
-                <span className="transition-transform duration-200 group-hover:translate-y-0.5">
-                  ↓
-                </span>
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button href={hero.primaryCta.href} variant="primary">
+                  {hero.primaryCta.label}
+                </Button>
+                <Button href={hero.secondaryCta.href} variant="ghostOnDark">
+                  {hero.secondaryCta.label}
+                </Button>
+              </div>
               <p className="mt-5 text-sm text-paper/70">{hero.status}</p>
             </div>
           </div>

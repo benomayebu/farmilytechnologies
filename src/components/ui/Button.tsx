@@ -5,7 +5,7 @@ import { ArrowRight } from "@/components/icons";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "ghostOnDark";
   className?: string;
 };
 
@@ -14,6 +14,9 @@ const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
   secondary: "bg-ink text-paper hover:bg-ink-soft",
   ghost:
     "bg-transparent text-ink border border-ink/25 hover:border-ink hover:bg-ink/5",
+  // Quiet secondary on ink sections: border paper/40 (3.47:1), text 14.32:1.
+  ghostOnDark:
+    "bg-transparent text-paper border border-paper/40 hover:border-paper hover:bg-paper/10",
 };
 
 export default function Button({

@@ -4,7 +4,8 @@ export const hero = {
     "Sensor monitoring, smart rules, early warnings and audit-ready records. Built for food distributors and importers, not enterprise budgets.",
   supportingLine:
     "When a shipment arrives, or an auditor asks for proof, you shouldn't have to scramble for it.",
-  cta: "See the problem we're solving",
+  primaryCta: { label: "Talk to us about piloting", href: "/contact" },
+  secondaryCta: { label: "See how it works", href: "/solution#demo" },
   status: "Working prototype. Tested with simulated sensors. First real device next.",
 };
 
