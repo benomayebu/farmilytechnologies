@@ -57,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </noscript>
         <a
           href="#main"
-          className="sr-only rounded-full bg-ink text-sm font-medium text-paper focus:not-sr-only focus:fixed focus:px-5 focus:py-3 focus:top-3 focus:left-3 focus:z-[60]"
+          className="sr-only rounded-full bg-ink text-small font-medium text-paper focus:not-sr-only focus:fixed focus:px-5 focus:py-3 focus:top-3 focus:left-3 focus:z-[60]"
         >
           Skip to main content
         </a>

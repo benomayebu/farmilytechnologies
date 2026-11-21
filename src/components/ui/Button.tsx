@@ -26,7 +26,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const isExternal = href.startsWith("http") || href.startsWith("mailto:");
-  const classes = `group inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-[15px] font-medium tracking-wide transition-all duration-200 active:scale-[0.97] ${variants[variant]} ${className}`;
+  const classes = `group inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-body font-medium tracking-wide transition-all duration-200 active:scale-[0.97] ${variants[variant]} ${className}`;
 
   const content = (
     <>

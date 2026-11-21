@@ -27,7 +27,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3 text-small">
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -39,7 +39,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        <div className="text-sm">
+        <div className="text-small">
           <p className="text-paper/60">Get in touch</p>
           <a
             href="mailto:benjamin.omayebu@farmilytechnologies.com"

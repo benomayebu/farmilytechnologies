@@ -63,14 +63,14 @@ export default function ProductPreview() {
             12 Aug
           </text>
         </svg>
-        <p className="mt-2 text-[13px] leading-relaxed text-ink/70">
+        <p className="mt-2 text-small text-ink/70">
           14:12 — power disconnect at Port of Jebel Ali, 22 min. Back in spec by 15:26.
         </p>
 
         <div className="mt-6 grid grid-cols-3 gap-3 border-t border-line pt-6">
           {STATS.map((stat) => (
             <div key={stat.label}>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/70">
+              <p className="text-eyebrow font-semibold uppercase text-ink/70">
                 {stat.label}
               </p>
               <p className="mt-1.5 font-display text-title text-ink">
@@ -80,7 +80,7 @@ export default function ProductPreview() {
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-2 border-t border-line pt-5 text-sm font-medium text-teal-deep">
+        <div className="mt-6 flex items-center gap-2 border-t border-line pt-5 text-body font-medium text-teal-deep">
           <svg viewBox="0 0 20 20" className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8}>
             <path d="M10 2.5 16 5v4.5C16 13.5 13.5 16.5 10 17.5 6.5 16.5 4 13.5 4 9.5V5z" strokeLinejoin="round" />
             <path d="M7.3 9.7 9.2 11.6 12.8 8" strokeLinecap="round" strokeLinejoin="round" />
@@ -89,7 +89,7 @@ export default function ProductPreview() {
         </div>
       </div>
 
-      <p className="border-t border-line bg-paper-deep px-6 py-3 text-center text-[11px] text-ink/70 sm:px-8">
+      <p className="border-t border-line bg-paper-deep px-6 py-3 text-center text-small text-ink/70 sm:px-8">
         Illustrative preview — fictional lot, not live shipment data.
       </p>
     </div>

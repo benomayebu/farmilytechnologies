@@ -42,7 +42,7 @@ export default function SolutionPage() {
               <h2 className="mt-4 font-display text-h3 text-ink">
                 A record that answers the question before anyone has to ask it twice.
               </h2>
-              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink/65">
+              <p className="mt-4 max-w-md text-body text-ink/65">
                 Every lot gets its own temperature history, its flagged exceptions, and a
                 sealed compliance record — generated automatically, not assembled by hand
                 the night before an audit.
@@ -74,7 +74,7 @@ export default function SolutionPage() {
                   <h3 className="mt-6 font-display text-2xl text-ink">
                     {pillar.name}
                   </h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-ink/65">
+                  <p className="mt-3 text-body text-ink/65">
                     {pillar.description}
                   </p>
                 </Reveal>
@@ -116,7 +116,7 @@ export default function SolutionPage() {
                     <h3 className="mt-5 font-display text-xl">
                       {segment.name}
                     </h3>
-                    <p className="mt-2.5 text-[15px] leading-relaxed text-paper/75">
+                    <p className="mt-2.5 text-body text-paper/75">
                       {segment.line}
                     </p>
                   </div>
@@ -130,7 +130,7 @@ export default function SolutionPage() {
       {/* Honest status note */}
       <section>
         <Container className="py-12">
-          <p className="max-w-2xl text-sm leading-relaxed text-ink/70">
+          <p className="max-w-2xl text-body text-ink/70">
             {statusNote}
           </p>
         </Container>

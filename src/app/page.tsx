@@ -84,7 +84,7 @@ export default function Home() {
                   {hero.secondaryCta.label}
                 </Button>
               </div>
-              <p className="mt-5 text-sm text-paper/70">{hero.status}</p>
+              <p className="mt-5 text-small text-paper/70">{hero.status}</p>
             </div>
           </div>
         </Container>
@@ -111,14 +111,14 @@ export default function Home() {
               const Icon = pillarIcons[pillar.key];
               return (
                 <Reveal key={pillar.key} delay={i * 90}>
-                  <span aria-hidden="true" className="font-display text-sm text-ink/55">
+                  <span aria-hidden="true" className="font-display text-small text-ink/55">
                     0{i + 1}
                   </span>
                   <Icon className="mt-4 h-11 w-11 text-teal-deep" />
                   <h3 className="mt-5 font-display text-2xl text-ink">
                     {pillar.name}
                   </h3>
-                  <p className="mt-2.5 text-[15px] leading-relaxed text-ink/65">
+                  <p className="mt-2.5 text-body text-ink/65">
                     {pillar.description}
                   </p>
                 </Reveal>

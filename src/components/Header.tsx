@@ -87,7 +87,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`relative rounded-sm py-1 text-[15px] font-medium transition-colors active:opacity-60 ${
+                className={`relative rounded-sm py-1 text-body font-medium transition-colors active:opacity-60 ${
                   active ? "text-ink" : "text-ink/70 hover:text-ink"
                 }`}
               >
@@ -102,7 +102,7 @@ export default function Header() {
 
         <Link
           href="/contact"
-          className="hidden rounded-full border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition-all duration-200 hover:border-ink hover:bg-ink/5 active:scale-[0.97] md:inline-flex"
+          className="hidden rounded-full border border-ink/25 px-5 py-2.5 text-body font-medium text-ink transition-all duration-200 hover:border-ink hover:bg-ink/5 active:scale-[0.97] md:inline-flex"
         >
           Talk to us
         </Link>

@@ -27,7 +27,7 @@ export default function SealedReport({
           type="button"
           onClick={() => setTamperOpen((v) => !v)}
           aria-expanded={tamperOpen}
-          className="mt-7 inline-flex items-center rounded-lg border border-line px-5 py-3 text-[15px] font-medium text-teal-deep transition-colors hover:border-teal"
+          className="mt-7 inline-flex items-center rounded-lg border border-line px-5 py-3 text-body font-medium text-teal-deep transition-colors hover:border-teal"
         >
           {proof.tamperToggle}
         </button>
@@ -35,7 +35,7 @@ export default function SealedReport({
           className={`grid transition-[grid-template-rows] duration-300 ease-out ${tamperOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
         >
           <div className="overflow-hidden">
-            <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-[15px] leading-relaxed text-ink/80">
+            <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-body text-ink/80">
               {proof.tamperBody}
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function SealedReport({
           </svg>
           <div>
             <p className="font-display text-xl text-ink">{proof.reportTitle}</p>
-            <p className="mt-0.5 text-sm text-ink/70">{shipment.id} · {shipment.description}</p>
+            <p className="mt-0.5 text-small text-ink/70">{shipment.id} · {shipment.description}</p>
           </div>
         </div>
 
@@ -72,7 +72,7 @@ export default function SealedReport({
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
             <path d="M10 1l8 3.2v5.9c0 5.1-3.3 8.8-8 10.1-4.7-1.3-8-5-8-10.1V4.2z" fill="var(--teal-deep)" />
           </svg>
-          <span className="text-sm text-teal-deep">{proof.footer}</span>
+          <span className="text-small text-teal-deep">{proof.footer}</span>
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="font-display text-lg leading-tight">{r.title}</p>
-          <p className="mt-1 text-sm text-ink/70">{r.lot}</p>
+          <p className="mt-1 text-small text-ink/70">{r.lot}</p>
         </div>
         <span className="shrink-0 whitespace-nowrap rounded-full border border-ink/20 px-2.5 py-1 text-eyebrow font-semibold uppercase text-ink/70">
           {r.simulatedLabel}
@@ -94,7 +94,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
           />
           <circle cx={x(PEAK_MINUTE)} cy={y(940)} r={3.5} fill="#B3453A" stroke="var(--paper)" strokeWidth={1.5} />
         </svg>
-        <p className="mt-2 text-sm text-[#9A3A30]">{r.excursionNote}</p>
+        <p className="mt-2 text-small text-[#9A3A30]">{r.excursionNote}</p>
       </div>
 
       <dl className="mt-4 grid grid-cols-3 gap-3 border-t border-line pt-4">
@@ -107,7 +107,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
       </dl>
 
       <div className="mt-4 flex items-center justify-between gap-3 rounded-xl bg-teal-deep/[0.08] px-4 py-3">
-        <span className="flex items-center gap-2 text-sm text-teal-deep">
+        <span className="flex items-center gap-2 text-small text-teal-deep">
           <svg viewBox="0 0 20 20" className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
             <path d="M10 2.5 16 5v4.5C16 13.5 13.5 16.5 10 17.5 6.5 16.5 4 13.5 4 9.5V5z" strokeLinejoin="round" />
             <path d="M7.3 9.7 9.2 11.6 12.8 8" strokeLinecap="round" strokeLinejoin="round" />

@@ -25,7 +25,7 @@ export default function ContactPage() {
             <ContactForm />
           </Reveal>
 
-          <Reveal delay={100} className="text-sm">
+          <Reveal delay={100} className="text-small">
             <h2 className="font-display text-lg text-ink">Prefer email?</h2>
             <a
               href="mailto:benjamin.omayebu@farmilytechnologies.com"

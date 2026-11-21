@@ -84,7 +84,7 @@ export default function TimelineScrubber({
             </span>
             <span className="text-base text-paper/70">at {clockText}</span>
           </div>
-          <p className="mt-1.5 text-[13px] text-wheat-light">
+          <p className="mt-1.5 text-small text-wheat-light">
             {chart.safeLimitLabel(`${limit}°C`)}
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function TimelineScrubber({
             className="h-2.5 w-2.5 shrink-0 rounded-full transition-colors duration-200"
             style={{ backgroundColor: statusColor }}
           />
-          <span className="text-[15px] font-medium text-paper">{chart.status[status]}</span>
+          <span className="text-body font-medium text-paper">{chart.status[status]}</span>
         </div>
       </div>
 
@@ -176,17 +176,17 @@ export default function TimelineScrubber({
         />
       </svg>
 
-      <div className="mt-2 flex justify-between text-[13px] text-paper/70">
+      <div className="mt-2 flex justify-between text-small text-paper/70">
         <span>{chart.startLabel}</span>
         <span>{chart.endLabel}</span>
       </div>
 
       {inGap && (
-        <p className="animate-fade-in mt-4 rounded-lg border-l-[3px] border-paper/30 bg-ink px-5 py-4 text-[15px] leading-relaxed text-paper">
+        <p className="animate-fade-in mt-4 rounded-lg border-l-[3px] border-paper/30 bg-ink px-5 py-4 text-body text-paper">
           No signal here — still recording, and it syncs once back in range.
         </p>
       )}
-      <p className="mt-4 text-sm text-paper/70">{chart.hint}</p>
+      <p className="mt-4 text-small text-paper/70">{chart.hint}</p>
     </div>
   );
 }

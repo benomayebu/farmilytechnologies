@@ -30,7 +30,7 @@ export default function PairingChecklist() {
           type="button"
           onClick={() => setTipOpen((v) => !v)}
           aria-expanded={tipOpen}
-          className="mt-7 inline-flex items-center gap-2.5 rounded-lg border border-line px-5 py-3 text-[15px] font-medium text-teal-deep transition-colors hover:border-teal"
+          className="mt-7 inline-flex items-center gap-2.5 rounded-lg border border-line px-5 py-3 text-body font-medium text-teal-deep transition-colors hover:border-teal"
         >
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <circle cx="10" cy="10" r="8.5" stroke="currentColor" strokeWidth={2} />
@@ -43,9 +43,9 @@ export default function PairingChecklist() {
           className={`grid transition-[grid-template-rows] duration-300 ease-out ${tipOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
         >
           <div className="overflow-hidden">
-            <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-[15px] leading-relaxed text-ink/80">
+            <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-body text-ink/80">
               {pairing.whoseSensor.body}
-              <p className="mt-3 text-sm text-ink/70">{pairing.whoseSensor.caveat}</p>
+              <p className="mt-3 text-small text-ink/70">{pairing.whoseSensor.caveat}</p>
             </div>
           </div>
         </div>

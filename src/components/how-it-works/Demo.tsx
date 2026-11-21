@@ -57,11 +57,11 @@ export default function HowItWorksDemo() {
                 <span className="flex items-baseline gap-2.5">
                   <span
                     aria-hidden="true"
-                    className={`font-display text-[15px] font-semibold transition-colors duration-300 ${active ? "text-teal-deep" : "text-ink/55"}`}
+                    className={`font-display text-body font-semibold transition-colors duration-300 ${active ? "text-teal-deep" : "text-ink/55"}`}
                   >
                     0{n}
                   </span>
-                  <span className="text-[15px] text-ink">{s.label}</span>
+                  <span className="text-body text-ink">{s.label}</span>
                 </span>
               </button>
             );
@@ -151,20 +151,20 @@ export default function HowItWorksDemo() {
                       <rect x="16" y="7" width="14" height="3" rx="1.5" fill="var(--teal)" />
                       <circle cx="23" cy="66" r="3.4" fill="var(--teal)" />
                     </svg>
-                    <div className="rounded-2xl rounded-bl-md bg-teal-deep px-5 py-4 text-[15px] leading-relaxed text-paper">
+                    <div className="rounded-2xl rounded-bl-md bg-teal-deep px-5 py-4 text-body text-paper">
                       {warn.alert.message}
-                      <p className="mt-2 text-[13px] text-paper/80">{warn.alert.sentAt(demo.sentAtText)}</p>
+                      <p className="mt-2 text-small text-paper/80">{warn.alert.sentAt(demo.sentAtText)}</p>
                     </div>
                   </div>
                 )}
 
                 {demo.breached && (
-                  <p className="animate-fade-in mt-5 text-[15.5px] leading-relaxed text-[#9A3A30]">
+                  <p className="animate-fade-in mt-5 text-body text-[#9A3A30]">
                     {warn.breached(demo.leadMinutes)}
                   </p>
                 )}
                 {demo.resolved && (
-                  <p className="animate-fade-in mt-5 text-[15.5px] leading-relaxed text-teal-deep">
+                  <p className="animate-fade-in mt-5 text-body text-teal-deep">
                     {warn.resolved(demo.excursionMinutes)}
                   </p>
                 )}
