@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate flex items-center overflow-hidden bg-ink text-paper lg:min-h-[min(840px,calc(100svh-5rem))]">
+      <section className="relative isolate flex items-center overflow-hidden bg-ink text-paper lg:min-h-[min(840px,calc(100svh-4rem))]">
         <Parallax strength={18} className="-z-20 opacity-[0.32]">
           <ColdChainIllustration />
         </Parallax>
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* What We Do */}
-      <section id="what-we-do" className="border-y border-line bg-paper-deep scroll-mt-20">
+      <section id="what-we-do" className="border-y border-line bg-paper-deep scroll-mt-16">
         <Container className="py-20 sm:py-24">
           <Reveal className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow as="h2">{whatWeDo.eyebrow}</Eyebrow>

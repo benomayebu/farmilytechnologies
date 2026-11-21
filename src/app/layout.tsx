@@ -63,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <IOSTapFix />
         <Header />
-        <main id="main" tabIndex={-1} className="flex-1 scroll-mt-20 outline-none">
+        <main id="main" tabIndex={-1} className="flex-1 scroll-mt-16 outline-none">
           {children}
         </main>
         <Footer />

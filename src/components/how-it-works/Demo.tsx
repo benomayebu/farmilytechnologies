@@ -28,7 +28,7 @@ export default function HowItWorksDemo() {
   const showTimeline = step === 2 || step === 3;
 
   return (
-    <section id="demo" className="scroll-mt-20 border-t border-line bg-paper">
+    <section id="demo" className="scroll-mt-16 border-t border-line bg-paper">
       <Container className="py-20 sm:py-28">
         <div className="max-w-2xl">
           <Eyebrow>{intro.eyebrow}</Eyebrow>

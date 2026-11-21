@@ -56,27 +56,28 @@ export default function Header() {
       className={`material-header sticky top-0 z-50 ${scrolled ? "is-scrolled" : ""}`}
     >
 
-      <Container className="flex h-20 items-center justify-between">
+      <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"
           className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          {/* Source is 579x640; width/height are the largest size it is shown
-              at (64px tall), keeping that ratio, so Next serves a 1x/2x file
+          {/* Source is 579x640; width/height are the size it is shown at
+              (40px tall), keeping that ratio, so Next serves a 1x/2x file
               sized for the header instead of the full PNG. */}
           <Image
             src="/logo.png"
             alt="FARMILY"
-            width={58}
-            height={64}
+            width={36}
+            height={40}
             preload
-            className="h-14 w-auto sm:h-16"
+            className="h-10 w-auto"
           />
         </Link>
 
+        {/* Desktop nav leaves out "Home": the logo already links there. */}
         <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
-          {NAV.map((item) => {
+          {NAV.filter((item) => item.href !== "/").map((item) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
