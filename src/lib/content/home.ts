@@ -41,6 +41,13 @@ export const videoSection = {
   body: "A sensor goes in with the cargo. FARMILY watches the whole route, catches problems early, and hands over a record anyone downstream can trust.",
 };
 
+export const demoTeaser = {
+  eyebrow: "Try it yourself",
+  headline: "Break a shipment on purpose.",
+  body: "Step through one simulated trip. Cut the power, watch the early warning, and see the sealed report at the end.",
+  cta: { label: "Try the demo", href: "/solution#demo" },
+};
+
 export const closingCta = {
   line: "Built and tested with simulated data. We're looking for our first pilot partners.",
   cta: "Talk to us about piloting",

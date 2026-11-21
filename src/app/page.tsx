@@ -9,6 +9,7 @@ import LazyLoopVideo from "@/components/LazyLoopVideo";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
 import {
   closingCta,
+  demoTeaser,
   hero,
   pillars,
   videoSection,
@@ -153,6 +154,29 @@ export default function Home() {
                 ariaLabel="Animated walkthrough of a FARMILY-monitored shipment: loaded, in transit, an exception caught early, proof delivered on arrival, and trust carried downstream."
               />
             </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Try it: a pointer to the interactive demo, not a copy of it */}
+      <section aria-labelledby="demo-teaser-heading" className="border-t border-line">
+        <Container className="py-20 sm:py-24">
+          <Reveal className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-xl">
+              <Eyebrow>{demoTeaser.eyebrow}</Eyebrow>
+              <h2
+                id="demo-teaser-heading"
+                className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]"
+              >
+                {demoTeaser.headline}
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-ink/70">
+                {demoTeaser.body}
+              </p>
+            </div>
+            <Button href={demoTeaser.cta.href} variant="ghost" className="shrink-0">
+              {demoTeaser.cta.label}
+            </Button>
           </Reveal>
         </Container>
       </section>
