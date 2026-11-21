@@ -150,7 +150,7 @@ export default function HowItWorksDemo() {
                       <rect x="16" y="7" width="14" height="3" rx="1.5" fill="var(--teal)" />
                       <circle cx="23" cy="66" r="3.4" fill="var(--teal)" />
                     </svg>
-                    <div className="rounded-2xl rounded-bl-md bg-teal px-5 py-4 text-[15px] leading-relaxed text-paper">
+                    <div className="rounded-2xl rounded-bl-md bg-teal-deep px-5 py-4 text-[15px] leading-relaxed text-paper">
                       {warn.alert.message}
                       <p className="mt-2 text-[13px] text-paper/70">{warn.alert.sentAt(demo.sentAtText)}</p>
                     </div>
@@ -211,7 +211,7 @@ export default function HowItWorksDemo() {
             <button
               type="button"
               onClick={() => goToStep(step + 1)}
-              className="group inline-flex items-center gap-2.5 rounded-xl bg-teal px-6 py-3.5 text-[16px] font-medium text-paper transition-colors duration-200 hover:bg-teal-deep active:scale-[0.98]"
+              className="group inline-flex items-center gap-2.5 rounded-xl bg-teal-deep px-6 py-3.5 text-[16px] font-medium text-paper transition-colors duration-200 hover:bg-ink active:scale-[0.98]"
             >
               {step === 1 ? "See it watching" : step === 2 ? "Break it on purpose" : "See the proof"}
               <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>

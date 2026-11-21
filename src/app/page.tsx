@@ -64,7 +64,7 @@ export default function Home() {
             >
               <a
                 href="#what-we-do"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-teal px-6 py-3.5 text-[15px] font-medium tracking-wide text-paper transition-all duration-200 hover:bg-teal-deep active:scale-[0.97]"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-teal-deep px-6 py-3.5 text-[15px] font-medium tracking-wide text-paper transition-all duration-200 hover:bg-ink active:scale-[0.97]"
               >
                 {hero.cta}
                 <span className="transition-transform duration-200 group-hover:translate-y-0.5">

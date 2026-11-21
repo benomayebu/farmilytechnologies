@@ -68,7 +68,7 @@ export default function PairingChecklist() {
           <button
             type="button"
             onClick={() => setProgress((p) => Math.min(pairing.checklist.length, p + 1))}
-            className="mt-6 w-full rounded-xl bg-teal px-6 py-4 text-[17px] font-semibold text-paper transition-colors duration-200 hover:bg-teal-deep active:scale-[0.98]"
+            className="mt-6 w-full rounded-xl bg-teal-deep px-6 py-4 text-[17px] font-semibold text-paper transition-colors duration-200 hover:bg-ink active:scale-[0.98]"
           >
             {pairing.ctaLabels[progress]}
           </button>

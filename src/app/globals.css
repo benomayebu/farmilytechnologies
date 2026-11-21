@@ -39,7 +39,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-teal);
+  background: var(--color-teal-deep);
   color: var(--color-paper);
 }
 
