@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -61,8 +62,17 @@ export default function Header() {
           className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="FARMILY" className="h-14 w-auto sm:h-16" />
+          {/* Source is 579x640; width/height are the largest size it is shown
+              at (64px tall), keeping that ratio, so Next serves a 1x/2x file
+              sized for the header instead of the full PNG. */}
+          <Image
+            src="/logo.png"
+            alt="FARMILY"
+            width={58}
+            height={64}
+            preload
+            className="h-14 w-auto sm:h-16"
+          />
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-9 md:flex">

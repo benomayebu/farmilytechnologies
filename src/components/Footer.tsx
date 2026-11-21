@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
@@ -15,10 +16,12 @@ export default function Footer() {
       <Container className="flex flex-col gap-10 py-14 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
           <Link href="/" className="flex items-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            {/* 579x640 source, shown 48px tall. */}
+            <Image
               src="/logo.png"
               alt="FARMILY"
+              width={43}
+              height={48}
               className="h-12 w-auto invert"
             />
           </Link>
