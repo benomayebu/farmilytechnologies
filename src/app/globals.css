@@ -117,21 +117,6 @@ body {
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-@keyframes hero-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-hero-in {
-  animation: hero-in 700ms var(--ease-out) both;
-}
-
 /* Materialize, don't just fade — Apple HIG §12. Scale + opacity together so
    the background scene reads as arriving, not popping into existence. */
 @keyframes illustration-in {
@@ -146,20 +131,7 @@ body {
 }
 
 .animate-illustration-in {
-  animation: illustration-in 1000ms var(--ease-out) both;
-}
-
-/* Ambient loop, not a one-shot — the dashed route "flows" slowly to read as a
-   live, continuously-tracked shipment rather than a static diagram. Kept far
-   under the ~0.2Hz threshold that reads as distracting per Apple HIG §14. */
-@keyframes flow-dash {
-  to {
-    stroke-dashoffset: -400;
-  }
-}
-
-.animate-flow-dash {
-  animation: flow-dash 14s linear infinite;
+  animation: illustration-in 600ms var(--ease-out) both;
 }
 
 /* Staggered hero entrance — each line arrives slightly after the last so the
@@ -253,7 +225,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-hero-in,
   .animate-hero-line,
   .animate-illustration-in,
   .animate-pop-in,
@@ -261,10 +232,6 @@ body {
   .animate-step-in {
     animation: none;
     opacity: 1;
-  }
-
-  .animate-flow-dash {
-    animation: none;
   }
 
   .reveal,
