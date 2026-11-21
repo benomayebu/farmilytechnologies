@@ -4,7 +4,6 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
 import ColdChainIllustration from "@/components/ColdChainIllustration";
 import HeroReport from "@/components/HeroReport";
-import Parallax from "@/components/Parallax";
 import LazyLoopVideo from "@/components/LazyLoopVideo";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
 import {
@@ -26,9 +25,10 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate flex items-center overflow-hidden bg-ink text-paper lg:min-h-[min(840px,calc(100svh-4rem))]">
-        <Parallax strength={18} className="-z-20 opacity-[0.32]">
+        {/* Still background: it sits behind the text, so it should not move. */}
+        <div aria-hidden="true" className="absolute inset-0 -z-20 opacity-[0.32]">
           <ColdChainIllustration />
-        </Parallax>
+        </div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-transparent to-ink/40" />
 
