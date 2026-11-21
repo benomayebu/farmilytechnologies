@@ -14,7 +14,7 @@ export const pillars = [
   },
   {
     key: "detect",
-    name: "AI Exception Detection",
+    name: "Smart Rules and Early Warnings",
     description:
       "FARMILY flags a developing problem — a power disconnect, a door left open, a slow temperature drift — while there's still time to act, not after the shipment has already failed.",
   },
@@ -44,4 +44,4 @@ export const segments = [
 ] as const;
 
 export const statusNote =
-  "FARMILY is currently in active development, working directly with early pilot partners to shape the product around real operational needs.";
+  "FARMILY is in active development. It is built and tested with simulated data, and we're looking for our first pilot partners.";

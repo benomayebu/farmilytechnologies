@@ -19,7 +19,7 @@ const publicSans = Public_Sans({
 const siteUrl = "https://farmilytechnologies.com";
 const title = "FARMILY — Supply Chain Compliance, Automated";
 const description =
-  "IoT monitoring, AI exception detection, and audit-ready records — built for food distributors and importers, not enterprise budgets.";
+  "Sensor monitoring, smart rules, early warnings and audit-ready records. Built for food distributors and importers, not enterprise budgets.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

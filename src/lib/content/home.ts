@@ -1,10 +1,11 @@
 export const hero = {
   headline: "Supply Chain Compliance, Automated.",
   subLine:
-    "IoT monitoring, AI exception detection, and audit-ready records — built for food distributors and importers, not enterprise budgets.",
+    "Sensor monitoring, smart rules, early warnings and audit-ready records. Built for food distributors and importers, not enterprise budgets.",
   supportingLine:
     "When a shipment arrives, or an auditor asks for proof, you shouldn't have to scramble for it.",
   cta: "See the problem we're solving",
+  status: "Working prototype. Tested with simulated sensors. First real device next.",
 };
 
 export const whatWeDo = {
@@ -23,7 +24,7 @@ export const pillars = [
     key: "detect",
     name: "Detect",
     description:
-      "AI flags problems before they become a rejected shipment.",
+      "Smart rules and early warnings flag problems before they become a rejected shipment.",
   },
   {
     key: "prove",
@@ -40,6 +41,6 @@ export const videoSection = {
 };
 
 export const closingCta = {
-  line: "We're currently working with early pilot partners to build this with real operators, not around them.",
+  line: "Built and tested with simulated data. We're looking for our first pilot partners.",
   cta: "Talk to us about piloting",
 };

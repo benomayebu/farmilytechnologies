@@ -57,8 +57,7 @@ export default function Footer() {
       <div className="border-t border-paper/10">
         <Container className="flex flex-col gap-3 py-5 text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} Farmily Technologies. Built by a
-            team of one, working with early pilot partners.
+            © {new Date().getFullYear()} Farmily Technologies. Built by a team of one, looking for first pilot partners.
           </p>
           <div className="flex gap-5">
             <Link href="/privacy" className="py-3 transition-colors hover:text-paper/80">

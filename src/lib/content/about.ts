@@ -12,7 +12,7 @@ export const mission = {
 
 export const approach = {
   eyebrow: "Our approach",
-  body: "We're not building FARMILY in a vacuum. Every feature starts as a conversation with a real distributor, importer, or logistics operator — what breaks their week, what an auditor actually asks for, what a rejected shipment actually costs them. We'd rather ship something narrow that works than something broad that doesn't.",
+  body: "We're not building FARMILY in a vacuum. Every feature starts from a real problem: what breaks a distributor's week, what an auditor actually asks for, what a rejected shipment actually costs. We'd rather ship something narrow that works than something broad that doesn't.",
 };
 
 export const founderStory = {

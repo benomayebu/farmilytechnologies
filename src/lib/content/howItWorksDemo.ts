@@ -139,6 +139,6 @@ export const faqs = [
     key: "real",
     question: "Is this a real product today?",
     answer:
-      "It's a working prototype, being tested and refined with real operators. No deployed pilots, no customer list — and everything on this page is illustrative.",
+      "It's a working prototype, built and tested with simulated data. We're looking for our first pilot partners. No deployed pilots, no customer list, and everything on this page is illustrative.",
   },
 ] as const;
