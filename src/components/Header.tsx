@@ -102,7 +102,7 @@ export default function Header() {
 
         <Link
           href="/contact"
-          className="hidden rounded-full border border-ink/25 px-5 py-2.5 text-body font-medium text-ink transition-all duration-200 hover:border-ink hover:bg-ink/5 active:scale-[0.97] md:inline-flex"
+          className="hidden rounded-full border border-ink/25 px-5 py-2.5 text-body font-medium text-ink transition-[background-color,color,border-color,transform] duration-200 ease-out hover:border-ink hover:bg-ink/5 active:scale-[0.97] md:inline-flex"
         >
           Talk to us
         </Link>
