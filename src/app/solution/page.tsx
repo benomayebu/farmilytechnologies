@@ -44,8 +44,8 @@ export default function SolutionPage() {
               </h2>
               <p className="mt-4 max-w-md text-body text-ink/65">
                 Every lot gets its own temperature history, its flagged exceptions, and a
-                sealed compliance record — generated automatically, not assembled by hand
-                the night before an audit.
+                sealed compliance record. The report is built from sealed records, not
+                assembled by hand the night before an audit.
               </p>
             </div>
             <Reveal delay={120} variant="materialize">

@@ -1,5 +1,6 @@
 "use client";
 
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
 import { useState, type CSSProperties } from "react";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -117,9 +118,12 @@ export default function HowItWorksDemo() {
               </div>
 
               <div className="min-h-[220px] rounded-2xl border border-line bg-paper-deep p-6 sm:p-8">
-                <p className="text-eyebrow font-semibold uppercase text-ink/70">
-                  {warn.panelLabel}
-                </p>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-eyebrow font-semibold uppercase text-ink/70">
+                    {warn.panelLabel}
+                  </p>
+                  <SimulatedBadge />
+                </div>
 
                 {!fault && (
                   <p className="animate-fade-in mt-5 text-body-lg text-ink/65">

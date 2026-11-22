@@ -1,5 +1,6 @@
 "use client";
 
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
 import { useState } from "react";
 import { proof, shipment } from "@/lib/content/howItWorksDemo";
 
@@ -51,6 +52,7 @@ export default function SealedReport({
           <div>
             <p className="font-display text-xl text-ink">{proof.reportTitle}</p>
             <p className="mt-0.5 text-small text-ink/70">{shipment.id} · {shipment.description}</p>
+            <SimulatedBadge className="mt-2" />
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
 import { useRef, useState } from "react";
 import {
   CHART_X0,
@@ -75,9 +76,12 @@ export default function TimelineScrubber({
     <div className="rounded-2xl border border-line/20 bg-ink-soft p-6 sm:p-8">
       <div className="flex flex-wrap items-baseline justify-between gap-4">
         <div>
-          <p className="text-eyebrow font-semibold uppercase text-paper/70">
-            {chart.title}
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="text-eyebrow font-semibold uppercase text-paper/70">
+              {chart.title}
+            </p>
+            <SimulatedBadge tone="paper" />
+          </div>
           <div className="mt-2 flex items-baseline gap-3">
             <span className="font-display text-4xl text-paper sm:text-5xl">
               {temp.toFixed(1)}°C

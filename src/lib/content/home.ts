@@ -26,7 +26,7 @@ export const pillars = [
     key: "prove",
     name: "Prove",
     description:
-      "Tamper-evident, audit-ready records, generated in one click.",
+      "Reports built from sealed records. Each record is hash-chained and signed, so anyone can check the report offline.",
   },
 ] as const;
 

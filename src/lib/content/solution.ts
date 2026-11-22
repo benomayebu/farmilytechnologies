@@ -22,7 +22,7 @@ export const pillars = [
     key: "prove",
     name: "Tamper-Evident Compliance Records",
     description:
-      "When an auditor or buyer asks for proof, generate a complete, verifiable record in minutes — not a scramble through PDFs and spreadsheets.",
+      "When an auditor or buyer asks for proof, you hand over a report built from sealed records. Each record is hash-chained and signed, so it can be checked offline. No scramble through PDFs and spreadsheets.",
   },
 ] as const;
 

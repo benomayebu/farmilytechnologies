@@ -1,3 +1,5 @@
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
+
 const CORE_PTS =
   "40,150 90,148 140,152 190,149 230,151 260,150 280,120 300,52.5 318,70 336,95 356,120 400,148 460,150 520,149 560,151 580,150";
 
@@ -17,9 +19,12 @@ export default function ProductPreview() {
             Chilled Seafood · 1,800 kg · Muscat → Abu Dhabi
           </p>
         </div>
-        <span className="rounded-full bg-[#B3453A]/10 px-3 py-1.5 text-xs font-semibold tracking-wide text-[#9A3A30]">
-          1 exception
-        </span>
+        <div className="flex flex-wrap items-center gap-2">
+          <SimulatedBadge />
+          <span className="rounded-full bg-[#B3453A]/10 px-3 py-1.5 text-xs font-semibold tracking-wide text-[#9A3A30]">
+            1 exception
+          </span>
+        </div>
       </div>
 
       <div className="px-6 py-6 sm:px-8">
@@ -90,7 +95,7 @@ export default function ProductPreview() {
       </div>
 
       <p className="border-t border-line bg-paper-deep px-6 py-3 text-center text-small text-ink/70 sm:px-8">
-        Illustrative preview — fictional lot, not live shipment data.
+        Simulated data. A made-up lot, not a real shipment.
       </p>
     </div>
   );

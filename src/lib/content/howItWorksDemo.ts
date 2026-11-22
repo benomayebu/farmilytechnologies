@@ -88,7 +88,7 @@ export const chart = {
   startLabel: "0h",
   endLabel: "14h",
   gapLabel: "no signal",
-  hint: "Drag the handle, or use the arrow keys. Illustrative data.",
+  hint: "Drag the handle, or use the arrow keys.",
   sliderLabel: "Scrub the shipment timeline",
   status: {
     inRange: "In range",
