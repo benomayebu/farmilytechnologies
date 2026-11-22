@@ -60,7 +60,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
       <div className="mt-5">
         <div className="flex items-baseline justify-between text-xs text-ink/70">
           <span>{r.chartLabel}</span>
-          <span className="text-[#9A3A30]">{r.limitLabel}</span>
+          <span className="text-alert">{r.limitLabel}</span>
         </div>
         <svg
           viewBox={`0 0 ${W} ${H}`}
@@ -72,7 +72,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
             y={0}
             width={x(EXCURSION_END) - x(EXCURSION_START)}
             height={H}
-            fill="#B3453A"
+            fill="var(--alert-mark)"
             opacity={0.1}
           />
           <line
@@ -80,7 +80,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
             y1={y(LIMIT)}
             x2={W}
             y2={y(LIMIT)}
-            stroke="#9A3A30"
+            stroke="var(--alert)"
             strokeWidth={1}
             strokeDasharray="4 4"
           />
@@ -92,9 +92,9 @@ export default function HeroReport({ className = "" }: { className?: string }) {
             strokeLinejoin="round"
             strokeLinecap="round"
           />
-          <circle cx={x(PEAK_MINUTE)} cy={y(940)} r={3.5} fill="#B3453A" stroke="var(--paper)" strokeWidth={1.5} />
+          <circle cx={x(PEAK_MINUTE)} cy={y(940)} r={3.5} fill="var(--alert-mark)" stroke="var(--paper)" strokeWidth={1.5} />
         </svg>
-        <p className="mt-2 text-small text-[#9A3A30]">{r.excursionNote}</p>
+        <p className="mt-2 text-small text-alert">{r.excursionNote}</p>
       </div>
 
       <dl className="mt-4 grid grid-cols-3 gap-3 border-t border-line pt-4">

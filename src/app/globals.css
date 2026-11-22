@@ -10,6 +10,11 @@
   --wheat: #c69a4e;
   --wheat-light: #d4ad68; /* wheat text on --ink-soft panels: 5.45:1 */
   --line: rgba(16, 38, 58, 0.14);
+  /* Status colours, used for excursions, alerts and form errors. */
+  --alert: #9a3a30; /* text: 6.45:1 on paper */
+  --alert-mark: #b3453a; /* chart marks, tints and fills, not text */
+  --wheat-deep: #7d5816; /* wheat text on a wheat tint: 4.86:1 */
+  --neutral-on-ink: #8ca0b3; /* neutral chart lines on ink-soft */
 }
 
 @theme inline {
@@ -22,6 +27,10 @@
   --color-wheat: var(--wheat);
   --color-wheat-light: var(--wheat-light);
   --color-line: var(--line);
+  --color-alert: var(--alert);
+  --color-alert-mark: var(--alert-mark);
+  --color-wheat-deep: var(--wheat-deep);
+  --color-neutral-on-ink: var(--neutral-on-ink);
   --font-display: var(--font-fraunces);
   --font-body: var(--font-public-sans);
 }

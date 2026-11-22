@@ -15,13 +15,13 @@ import type { CurveSegments } from "@/lib/shipmentPhysics";
 // A muted neutral for "no signal" — needs to read clearly against the dark
 // ink-soft card, so neither --ink (too dark, near-invisible here) nor a
 // brand color (would wrongly imply good/bad) works.
-const NEUTRAL = "#8CA0B3";
+const NEUTRAL = "var(--neutral-on-ink)";
 
 // Matches ProductPreview.tsx's exception-tag red on this same Solution page
 // — an actual breach should read as visibly more severe than "still just a
 // warning," and reusing this color ties the two features together instead
 // of inventing a second "danger" hue.
-const DANGER = "#B3453A";
+const DANGER = "var(--alert-mark)";
 
 const STATUS_COLOR: Record<string, string> = {
   inRange: "var(--teal)",

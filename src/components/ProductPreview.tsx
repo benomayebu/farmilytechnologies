@@ -21,7 +21,7 @@ export default function ProductPreview() {
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <SimulatedBadge />
-          <span className="rounded-full bg-[#B3453A]/10 px-3 py-1.5 text-xs font-semibold tracking-wide text-[#9A3A30]">
+          <span className="rounded-full bg-alert-mark/10 px-3 py-1.5 text-xs font-semibold tracking-wide text-alert">
             1 exception
           </span>
         </div>
@@ -38,18 +38,18 @@ export default function ProductPreview() {
           aria-label="Temperature history chart showing a brief exception above the safe limit, back in range within the hour"
         >
           <rect x={40} y={107.5} width={540} height={62.5} fill="var(--teal)" opacity={0.07} />
-          <rect x={280} y={20} width={60} height={150} fill="#B3453A" opacity={0.08} />
+          <rect x={280} y={20} width={60} height={150} fill="var(--alert-mark)" opacity={0.08} />
           <line
             x1={40}
             y1={107.5}
             x2={580}
             y2={107.5}
-            stroke="#B3453A"
+            stroke="var(--alert-mark)"
             strokeWidth={1}
             strokeDasharray="4 4"
             opacity={0.5}
           />
-          <text x={578} y={101} textAnchor="end" className="fill-[#9A3A30]" fontSize={10} fontFamily="var(--font-body)">
+          <text x={578} y={101} textAnchor="end" className="fill-alert" fontSize={10} fontFamily="var(--font-body)">
             Safe limit 5°C
           </text>
           <polyline
@@ -60,7 +60,7 @@ export default function ProductPreview() {
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-          <circle cx={300} cy={52.5} r={4.5} fill="#B3453A" />
+          <circle cx={300} cy={52.5} r={4.5} fill="var(--alert-mark)" />
           <text x={200} y={200} textAnchor="middle" className="fill-ink/70" fontSize={10} fontFamily="var(--font-body)">
             11 Aug
           </text>

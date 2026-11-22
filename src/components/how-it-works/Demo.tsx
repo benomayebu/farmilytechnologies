@@ -139,7 +139,7 @@ export default function HowItWorksDemo() {
 
                 {demo.predicting && (
                   <div className="animate-fade-in mt-5 rounded-xl border border-wheat bg-wheat/10 px-5 py-4">
-                    <p className="text-eyebrow font-semibold uppercase text-[#7d5816]">
+                    <p className="text-eyebrow font-semibold uppercase text-wheat-deep">
                       {warn.predictionLabel}
                     </p>
                     <p className="mt-2 font-display text-title text-ink">
@@ -163,7 +163,7 @@ export default function HowItWorksDemo() {
                 )}
 
                 {demo.breached && (
-                  <p className="animate-fade-in mt-5 text-body text-[#9A3A30]">
+                  <p className="animate-fade-in mt-5 text-body text-alert">
                     {warn.breached(demo.leadMinutes)}
                   </p>
                 )}

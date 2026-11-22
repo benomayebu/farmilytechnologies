@@ -28,13 +28,13 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/mljrzevr";
 
 const fieldClass = (invalid: boolean) =>
   `w-full rounded-xl border bg-paper px-4 py-3 text-body text-ink placeholder:text-ink/65 transition-colors focus:border-teal-deep ${
-    invalid ? "border-red-700" : "border-ink/20"
+    invalid ? "border-alert" : "border-ink/20"
   }`;
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-1.5 text-small text-red-700">
+    <p id={id} className="mt-1.5 text-small text-alert">
       {message}
     </p>
   );
@@ -200,7 +200,7 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p role="alert" className="animate-fade-in text-small text-red-700">
+        <p role="alert" className="animate-fade-in text-small text-alert">
           {errorMessage}
         </p>
       )}
