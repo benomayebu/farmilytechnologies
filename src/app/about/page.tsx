@@ -60,9 +60,23 @@ export default function AboutPage() {
                     {p}
                   </p>
                 ))}
-                <p className="mt-6 border-t border-line pt-6 text-body text-ink/70">
-                  {founderStory.bio}
-                </p>
+                <div className="mt-6 space-y-2 border-t border-line pt-6 text-body text-ink/70">
+                  {founderStory.bio.lines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                  <p>
+                    {founderStory.bio.publication.lead}{" "}
+                    <a
+                      href={founderStory.bio.publication.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-teal-deep underline decoration-teal-deep/40 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+                    >
+                      &ldquo;{founderStory.bio.publication.title}&rdquo;
+                    </a>{" "}
+                    ({founderStory.bio.publication.source}).
+                  </p>
+                </div>
               </div>
             </div>
           </Reveal>
