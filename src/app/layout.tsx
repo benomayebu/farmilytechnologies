@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Public_Sans } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import IOSTapFix from "@/components/IOSTapFix";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
-});
-
+// One typeface for the whole site, matching the pitch deck's clean
+// sans-serif. Italic is loaded so the quotes don't use a faked slant.
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 const siteUrl = "https://farmilytechnologies.com";
@@ -46,7 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${publicSans.variable} h-full`}
+      className={`${publicSans.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body antialiased">
         {/* With JavaScript off, Reveal never adds .is-visible, so everything below

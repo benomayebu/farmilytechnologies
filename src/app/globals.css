@@ -3,8 +3,8 @@
 :root {
   --ink: #10263a;
   --ink-soft: #1c3c56;
-  --paper: #faf6ee;
-  --paper-deep: #f0e7d2;
+  --paper: #f8fafb;
+  --paper-deep: #ecf1f4;
   --teal: #1f8a7a;
   --teal-deep: #13574c;
   --wheat: #c69a4e;
@@ -31,7 +31,7 @@
   --color-alert-mark: var(--alert-mark);
   --color-wheat-deep: var(--wheat-deep);
   --color-neutral-on-ink: var(--neutral-on-ink);
-  --font-display: var(--font-fraunces);
+  --font-display: var(--font-public-sans);
   --font-body: var(--font-public-sans);
 }
 
@@ -88,10 +88,11 @@ body {
   font-family: var(--font-body);
 }
 
+/* Headings use the body typeface at a heavier weight, as in the deck:
+   navy and teal with a clean sans-serif. */
 .font-display {
   font-family: var(--font-display);
-  /* Fraunces is loaded with its opsz axis: let it pick the cut for each size. */
-  font-optical-sizing: auto;
+  font-weight: 600;
 }
 
 ::selection {

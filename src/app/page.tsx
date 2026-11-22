@@ -67,7 +67,7 @@ export default function Home() {
 
           <div className="max-w-3xl lg:col-start-1 lg:row-start-2 lg:self-start">
             <p
-              className="animate-hero-line mt-10 max-w-lg font-display text-title italic text-wheat lg:mt-6"
+              className="animate-hero-line mt-10 max-w-lg font-display text-title font-normal italic text-wheat lg:mt-6"
               style={{ animationDelay: "180ms" }}
             >
               &ldquo;{hero.supportingLine}&rdquo;

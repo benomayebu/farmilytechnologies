@@ -27,7 +27,7 @@ export default function ResearchPage() {
             delay={120}
             className="mt-12 max-w-3xl rounded-2xl border border-line bg-paper-deep p-8 sm:p-10"
           >
-            <p className="font-display text-lg italic leading-relaxed text-ink">
+            <p className="font-display text-lg font-normal italic leading-relaxed text-ink">
               {citation.text}
             </p>
             <a

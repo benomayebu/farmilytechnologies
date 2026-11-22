@@ -101,7 +101,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
         {r.stats.map((s) => (
           <div key={s.label}>
             <dt className="text-xs text-ink/70">{s.label}</dt>
-            <dd className="mt-1 font-display text-base leading-tight sm:text-lg">{s.value}</dd>
+            <dd className="mt-1 whitespace-nowrap font-display text-base leading-tight">{s.value}</dd>
           </div>
         ))}
       </dl>

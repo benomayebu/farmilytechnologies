@@ -26,7 +26,7 @@ export default function SolutionPage() {
   return (
     <>
       <PageHero eyebrow={intro.eyebrow} title={intro.headline}>
-        <p className="font-display text-xl italic text-teal-deep">
+        <p className="font-display text-xl font-normal italic text-teal-deep">
           {intro.sub}
         </p>
       </PageHero>
