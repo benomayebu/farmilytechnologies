@@ -2,7 +2,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
-import ColdChainIllustration from "@/components/ColdChainIllustration";
+import SectionBackdrop from "@/components/ui/SectionBackdrop";
 import HeroReport from "@/components/HeroReport";
 import LazyLoopVideo from "@/components/LazyLoopVideo";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
@@ -25,12 +25,20 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate flex items-center overflow-hidden bg-ink text-paper lg:min-h-[min(840px,calc(100svh-4rem))]">
-        {/* Still background: it sits behind the text, so it should not move. */}
-        <div aria-hidden="true" className="absolute inset-0 -z-20 opacity-[0.32]">
-          <ColdChainIllustration />
-        </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-transparent to-ink/40" />
+        {/* Still photo: it sits behind the text, so it should not move. The
+            navy gradient is strongest behind the headline and buttons on the
+            left and opens up toward the truck on the right. */}
+        <SectionBackdrop
+          image="/images/backgrounds/home-loading-dock-dusk.webp"
+          position="right center"
+          mobilePosition="85% center"
+          imageClassName="animate-illustration-in"
+          overlay="bg-ink/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-ink lg:from-25% lg:via-ink/80 lg:via-50% lg:to-ink/10"
+        />
+        <div
+          aria-hidden="true"
+          className="section-backdrop pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-transparent via-40% to-transparent"
+        />
 
         <Container className="relative grid gap-x-14 section-standard lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
           {/* Claim. On large screens the report card sits beside the text; on
