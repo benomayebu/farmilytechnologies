@@ -5,18 +5,17 @@ import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — FARMILY",
+  title: "Contact | FARMILY",
   description:
-    "Whether you're a distributor curious about piloting FARMILY, or an investor who wants to learn more — we'd like to hear from you.",
+    "A distributor thinking about a pilot, or an investor who wants to learn more? We'd like to hear from you.",
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHero eyebrow="Contact" title="Let's talk.">
-        Whether you&apos;re a distributor curious about piloting FARMILY, or
-        an investor who wants to learn more — we&apos;d like to hear from
-        you.
+        A distributor thinking about a pilot, or an investor who wants to
+        learn more? We&apos;d like to hear from you.
       </PageHero>
 
       <section>

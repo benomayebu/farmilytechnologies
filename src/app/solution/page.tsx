@@ -14,7 +14,7 @@ import {
 import { intro, pillars, segments, statusNote } from "@/lib/content/solution";
 
 export const metadata: Metadata = {
-  title: "Solution — FARMILY",
+  title: "Solution | FARMILY",
   description:
     "Continuous monitoring, smart rules and early warnings, and tamper-evident compliance records, for distributors, importers and cold storage operators.",
 };

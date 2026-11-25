@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import { approach, founderStory, intro, mission } from "@/lib/content/about";
 
 export const metadata: Metadata = {
-  title: "About — FARMILY",
+  title: "About | FARMILY",
   description:
     "Why FARMILY exists, what we believe, and the research it grew out of.",
 };

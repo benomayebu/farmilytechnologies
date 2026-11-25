@@ -3,7 +3,7 @@ import LegalPage from "@/components/LegalPage";
 import { termsOfUse } from "@/lib/content/legal";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — FARMILY",
+  title: "Terms of Use | FARMILY",
   description: "The terms covering your use of farmilytechnologies.com.",
 };
 

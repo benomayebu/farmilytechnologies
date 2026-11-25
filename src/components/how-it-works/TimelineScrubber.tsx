@@ -187,7 +187,7 @@ export default function TimelineScrubber({
 
       {inGap && (
         <p className="animate-fade-in mt-4 rounded-lg border-l-[3px] border-paper/30 bg-ink px-5 py-4 text-body text-paper">
-          No signal here — still recording, and it syncs once back in range.
+          No signal here. Still recording, and it syncs once back in range.
         </p>
       )}
       <p className="mt-4 text-small text-paper/70">{chart.hint}</p>

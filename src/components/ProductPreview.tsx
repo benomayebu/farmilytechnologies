@@ -69,7 +69,7 @@ export default function ProductPreview() {
           </text>
         </svg>
         <p className="mt-2 text-small text-ink/70">
-          14:12 — power disconnect at Port of Jebel Ali, 22 min. Back in spec by 15:26.
+          14:12: power cut at Port of Jebel Ali for 22 min. Back in spec by 15:26.
         </p>
 
         <div className="mt-6 grid grid-cols-3 gap-3 border-t border-line pt-6">
@@ -90,7 +90,7 @@ export default function ProductPreview() {
             <path d="M10 2.5 16 5v4.5C16 13.5 13.5 16.5 10 17.5 6.5 16.5 4 13.5 4 9.5V5z" strokeLinejoin="round" />
             <path d="M7.3 9.7 9.2 11.6 12.8 8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          Verified — tamper-evident record
+          Verified, tamper-evident record
         </div>
       </div>
 

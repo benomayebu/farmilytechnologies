@@ -14,7 +14,7 @@ export const pillars = [
     key: "sense",
     name: "Sense",
     description:
-      "Continuous IoT monitoring of temperature, location, and handling events.",
+      "Reads temperature, location and handling events from shipment sensors. Tested with simulated sensors so far.",
   },
   {
     key: "detect",

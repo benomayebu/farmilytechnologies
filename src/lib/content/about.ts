@@ -1,7 +1,7 @@
 export const intro = {
   eyebrow: "About us",
   headline: "Trust, from the farm to the shipment record.",
-  body: "FARMILY exists to close the gap between what a shipment is supposed to experience and what it actually experiences — and to make proving the difference take minutes, not days.",
+  body: "FARMILY exists to close the gap between what a shipment is supposed to experience and what it actually experienced, and to make that difference easy to prove.",
 };
 
 export const mission = {
@@ -19,7 +19,7 @@ export const founderStory = {
   eyebrow: "Where it started",
   paragraphs: [
     "FARMILY started with a simple, personal frustration: watching food lost, undervalued, or mistrusted somewhere between the farm and the people who needed it.",
-    "Benjamin Omayebu began researching the problem as an undergraduate at the University of Buckingham, and that research became the foundation for FARMILY today — now focused on giving small and mid-size food distributors the tools to prove their shipments are safe, without needing an enterprise budget.",
+    "Benjamin Omayebu began researching the problem as an undergraduate at the University of Buckingham, and that research became the foundation for FARMILY. Today the focus is giving small and mid-size food distributors the tools to prove their shipments are safe, without an enterprise budget.",
   ],
   // Every claim here can be checked: the degree and programme are named
   // exactly, and the publication links to the publisher's page.

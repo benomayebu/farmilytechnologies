@@ -14,7 +14,7 @@ const publicSans = Public_Sans({
 });
 
 const siteUrl = "https://farmilytechnologies.com";
-const title = "FARMILY — Supply Chain Compliance, Automated";
+const title = "FARMILY | Supply Chain Compliance, Automated";
 const description =
   "Sensor monitoring, smart rules, early warnings and audit-ready records. Built for food distributors and importers, not enterprise budgets.";
 

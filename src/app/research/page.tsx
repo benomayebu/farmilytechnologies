@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import { citation, framing, intro } from "@/lib/content/research";
 
 export const metadata: Metadata = {
-  title: "Research — FARMILY",
+  title: "Research | FARMILY",
   description:
     "The peer-reviewed research FARMILY grew out of, and how the product has evolved since.",
 };

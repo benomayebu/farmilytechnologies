@@ -10,13 +10,13 @@ export const pillars = [
     key: "sense",
     name: "Continuous Monitoring",
     description:
-      "Temperature, humidity, and location data captured throughout the journey — not just a single reading at pickup and drop-off.",
+      "Built to capture temperature, humidity and location for the whole journey, not just one reading at pickup and drop-off. Tested with simulated sensors so far.",
   },
   {
     key: "detect",
     name: "Smart Rules and Early Warnings",
     description:
-      "FARMILY flags a developing problem — a power disconnect, a door left open, a slow temperature drift — while there's still time to act, not after the shipment has already failed.",
+      "FARMILY is built to flag a problem while it is still developing: a power cut, a door left open, a slow temperature drift. The aim is time to act before the shipment fails. Tested on simulated trips so far.",
   },
   {
     key: "prove",
@@ -30,7 +30,7 @@ export const segments = [
   {
     key: "distributors",
     name: "Distributors & Importers",
-    line: "Stay audit-ready without hiring a compliance team.",
+    line: "Records built for audits, without an enterprise budget.",
     // Photo: Unsplash, "white truck parked near white building" — unsplash.com/photos/crHhZlES310
     image: "/images/segment-distributors.jpg",
   },
