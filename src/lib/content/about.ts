@@ -26,6 +26,7 @@ export const founderStory = {
   bio: {
     lines: [
       "BSc Computing with Business Management, First Class Honours, University of Buckingham.",
+      "Master in Management (MiM), Hult International Business School, Dubai. Completed in August 2026.",
       "Master in Finance at Hult International Business School, London. Due to finish in April 2027.",
     ],
     publication: {
