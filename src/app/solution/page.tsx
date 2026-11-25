@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import SectionBackdrop from "@/components/ui/SectionBackdrop";
 import ProductPreview from "@/components/ProductPreview";
 import HowItWorksDemo from "@/components/how-it-works/Demo";
 import AppScreens from "@/components/AppScreens";
@@ -26,7 +27,11 @@ const segmentIcons = { distributors: TruckIcon, coldstorage: WarehouseIcon };
 export default function SolutionPage() {
   return (
     <>
-      <PageHero eyebrow={intro.eyebrow} title={intro.headline}>
+      <PageHero
+        eyebrow={intro.eyebrow}
+        title={intro.headline}
+        backdrop={{ image: "/images/backgrounds/solution-reefer-trailer.webp" }}
+      >
         <p className="font-display text-xl font-normal italic text-teal-deep">
           {intro.sub}
         </p>
@@ -57,7 +62,15 @@ export default function SolutionPage() {
       </section>
 
       {/* Pillars, expanded */}
-      <section className="border-t border-line bg-paper-deep" aria-labelledby="pillars-heading">
+      <section
+        className="relative isolate overflow-hidden border-t border-line bg-paper-deep"
+        aria-labelledby="pillars-heading"
+      >
+        <SectionBackdrop
+          image="/images/backgrounds/solution-warehouse-aisle.webp"
+          position="center"
+          overlay="bg-paper-deep/55"
+        />
         <Container className="section-standard">
           <h2 id="pillars-heading" className="sr-only">
             What FARMILY does
