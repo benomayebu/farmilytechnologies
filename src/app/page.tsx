@@ -33,11 +33,11 @@ export default function Home() {
           position="right center"
           mobilePosition="85% center"
           imageClassName="animate-illustration-in"
-          overlay="bg-ink/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-ink lg:from-25% lg:via-ink/80 lg:via-50% lg:to-ink/10"
+          overlay="bg-ink/78 lg:bg-transparent lg:bg-gradient-to-r lg:from-ink/90 lg:from-30% lg:via-ink/60 lg:via-55% lg:to-transparent xl:from-ink/85 xl:from-15% xl:via-ink/45 xl:via-45%"
         />
         <div
           aria-hidden="true"
-          className="section-backdrop pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-transparent via-40% to-transparent"
+          className="section-backdrop pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-transparent via-45% to-transparent lg:from-ink/60 lg:via-30%"
         />
 
         <Container className="relative grid gap-x-14 section-standard lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">

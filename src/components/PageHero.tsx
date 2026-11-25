@@ -9,7 +9,7 @@ import SectionBackdrop from "@/components/ui/SectionBackdrop";
  * ends up behind the text, so the overlay is near solid there.
  */
 export const PALE_RIGHT_OVERLAY =
-  "bg-paper-deep/90 md:bg-transparent md:bg-gradient-to-r md:from-paper-deep md:from-30% md:via-paper-deep/85 md:via-55% md:to-paper-deep/0";
+  "bg-paper-deep/85 md:bg-transparent md:bg-gradient-to-r md:from-paper-deep/90 md:from-35% md:via-paper-deep/60 md:via-65% md:to-transparent xl:from-20% xl:via-paper-deep/50 xl:via-50%";
 
 export type PageHeroBackdrop = {
   image: string;

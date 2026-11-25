@@ -41,7 +41,7 @@ export default function AboutPage() {
         <SectionBackdrop
           image="/images/backgrounds/about-approach-logger.webp"
           position="left center"
-          overlay="bg-paper-deep/90 md:bg-transparent md:bg-gradient-to-r md:from-paper-deep/60 md:via-paper-deep/85 md:via-35% md:to-paper-deep md:to-60%"
+          overlay="bg-paper-deep/75 md:bg-transparent md:bg-gradient-to-r md:from-paper-deep/70 md:via-paper-deep/75 md:via-30% md:to-paper-deep/90 md:to-55%"
         />
         <Container className="section-compact">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">

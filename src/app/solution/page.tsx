@@ -69,7 +69,7 @@ export default function SolutionPage() {
         <SectionBackdrop
           image="/images/backgrounds/solution-warehouse-aisle.webp"
           position="center"
-          overlay="bg-paper-deep/55"
+          overlay="bg-paper-deep/20"
         />
         <Container className="section-standard">
           <h2 id="pillars-heading" className="sr-only">
