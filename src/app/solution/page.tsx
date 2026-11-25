@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ProductPreview from "@/components/ProductPreview";
 import HowItWorksDemo from "@/components/how-it-works/Demo";
+import AppScreens from "@/components/AppScreens";
 import {
   DetectIcon,
   ProveIcon,
@@ -83,6 +84,8 @@ export default function SolutionPage() {
           </div>
         </Container>
       </section>
+
+      <AppScreens />
 
       <HowItWorksDemo />
 
