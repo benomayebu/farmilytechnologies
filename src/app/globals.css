@@ -286,6 +286,17 @@ body {
   .reveal-materialize {
     transition-duration: 200ms;
   }
+
+  /* Decorative section photos drop away; each section's solid colour shows. */
+  .section-backdrop {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .section-backdrop {
+    display: none;
+  }
 }
 
 /* Keyboard focus — one ring everywhere, only for keyboard (not mouse) focus.

@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import PageHero from "@/components/PageHero";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
+import SectionBackdrop from "@/components/ui/SectionBackdrop";
 import { approach, founderStory, intro, mission } from "@/lib/content/about";
 
 export const metadata: Metadata = {
@@ -14,7 +15,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow={intro.eyebrow} title={intro.headline}>
+      <PageHero
+        eyebrow={intro.eyebrow}
+        title={intro.headline}
+        backdrop={{ image: "/images/backgrounds/about-crate-handover.webp" }}
+      >
         {intro.body}
       </PageHero>
 
@@ -30,8 +35,14 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Approach */}
-      <section className="border-b border-line bg-paper-deep">
+      {/* Approach. The logger photo sits on the far left, behind the label;
+          the overlay thickens toward the paragraph on the right. */}
+      <section className="relative isolate overflow-hidden border-b border-line bg-paper-deep">
+        <SectionBackdrop
+          image="/images/backgrounds/about-approach-logger.webp"
+          position="left center"
+          overlay="bg-paper-deep/75 md:bg-transparent md:bg-gradient-to-r md:from-paper-deep/70 md:via-paper-deep/75 md:via-30% md:to-paper-deep/90 md:to-55%"
+        />
         <Container className="section-compact">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow as="h2">{approach.eyebrow}</Eyebrow>

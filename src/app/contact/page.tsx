@@ -13,12 +13,16 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Let's talk.">
+      <PageHero
+        eyebrow="Contact"
+        title="Let's talk."
+        backdrop={{ image: "/images/backgrounds/contact-symbols.webp" }}
+      >
         A distributor thinking about a pilot, or an investor who wants to
         learn more? We&apos;d like to hear from you.
       </PageHero>
 
-      <section>
+      <section className="bg-paper">
         <Container className="grid gap-14 section-compact md:grid-cols-[2fr_1fr] md:gap-20">
           <Reveal>
             <ContactForm />

@@ -1,5 +1,5 @@
 import Container from "@/components/ui/Container";
-import PageHero from "@/components/PageHero";
+import PageHero, { type PageHeroBackdrop } from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { lastUpdated } from "@/lib/content/legal";
 
@@ -13,19 +13,22 @@ export default function LegalPage({
   title,
   intro,
   sections,
+  backdrop,
 }: {
   eyebrow: string;
   title: string;
   intro: string;
   sections: readonly Section[];
+  /** Decorative photo behind the title and opening paragraph only. */
+  backdrop?: PageHeroBackdrop;
 }) {
   return (
     <>
-      <PageHero eyebrow={eyebrow} title={title}>
+      <PageHero eyebrow={eyebrow} title={title} backdrop={backdrop}>
         {intro}
       </PageHero>
 
-      <section>
+      <section className="bg-paper">
         <Container className="max-w-3xl section-compact">
           <p className="text-small text-ink/70">Last updated {lastUpdated}</p>
 
@@ -39,7 +42,7 @@ export default function LegalPage({
                   {section.body.map((paragraph) => (
                     <p
                       key={paragraph.slice(0, 30)}
-                      className="text-body text-ink/70"
+                      className="text-body text-ink/70 [overflow-wrap:anywhere]"
                     >
                       {paragraph}
                     </p>

@@ -13,7 +13,11 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <>
-      <PageHero eyebrow={intro.eyebrow} title={intro.headline} />
+      <PageHero
+        eyebrow={intro.eyebrow}
+        title={intro.headline}
+        backdrop={{ image: "/images/backgrounds/research-sensor-notebook.webp" }}
+      />
 
       <section>
         <Container className="section-compact">
