@@ -14,6 +14,7 @@ export default function PrivacyPage() {
       title={privacyPolicy.title}
       intro={privacyPolicy.intro}
       sections={privacyPolicy.sections}
+      backdrop={{ image: "/images/backgrounds/privacy-file-dividers.webp" }}
     />
   );
 }

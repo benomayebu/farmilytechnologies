@@ -13,6 +13,7 @@ export default function TermsPage() {
       eyebrow={termsOfUse.eyebrow}
       title={termsOfUse.title}
       intro={termsOfUse.intro}
+      backdrop={{ image: "/images/backgrounds/terms-documents.webp" }}
       sections={termsOfUse.sections}
     />
   );
