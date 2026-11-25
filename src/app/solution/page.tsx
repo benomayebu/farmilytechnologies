@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ProductPreview from "@/components/ProductPreview";
 import HowItWorksDemo from "@/components/how-it-works/Demo";
+import AppScreens from "@/components/AppScreens";
 import {
   DetectIcon,
   ProveIcon,
@@ -14,9 +15,9 @@ import {
 import { intro, pillars, segments, statusNote } from "@/lib/content/solution";
 
 export const metadata: Metadata = {
-  title: "Solution — FARMILY",
+  title: "Solution | FARMILY",
   description:
-    "Continuous monitoring, AI exception detection, and tamper-evident compliance records — for distributors, importers, and cold storage operators.",
+    "Continuous monitoring, smart rules and early warnings, and tamper-evident compliance records, for distributors, importers and cold storage operators.",
 };
 
 const pillarIcons = { sense: SenseIcon, detect: DetectIcon, prove: ProveIcon };
@@ -26,26 +27,26 @@ export default function SolutionPage() {
   return (
     <>
       <PageHero eyebrow={intro.eyebrow} title={intro.headline}>
-        <p className="font-display text-xl italic text-teal-deep">
+        <p className="font-display text-xl font-normal italic text-teal-deep">
           {intro.sub}
         </p>
       </PageHero>
 
       {/* What it produces */}
       <section>
-        <Container className="py-16 sm:py-20">
-          <Reveal className="grid items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
+        <Container className="section-compact">
+          <Reveal className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1.1fr] md:gap-14">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-deep">
+              <p className="text-eyebrow font-semibold uppercase text-teal-deep">
                 What you get
               </p>
-              <h2 className="mt-4 font-display text-2xl leading-snug text-ink sm:text-3xl sm:tracking-[-0.02em]">
+              <h2 className="mt-4 font-display text-h3 text-ink">
                 A record that answers the question before anyone has to ask it twice.
               </h2>
-              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink/65">
+              <p className="mt-4 max-w-md text-body text-ink/65">
                 Every lot gets its own temperature history, its flagged exceptions, and a
-                sealed compliance record — generated automatically, not assembled by hand
-                the night before an audit.
+                sealed compliance record. The report is built from sealed records, not
+                assembled by hand the night before an audit.
               </p>
             </div>
             <Reveal delay={120} variant="materialize">
@@ -56,22 +57,25 @@ export default function SolutionPage() {
       </section>
 
       {/* Pillars, expanded */}
-      <section className="border-t border-line bg-paper-deep">
-        <Container className="py-20 sm:py-24">
-          <div className="grid gap-8 md:grid-cols-3">
+      <section className="border-t border-line bg-paper-deep" aria-labelledby="pillars-heading">
+        <Container className="section-standard">
+          <h2 id="pillars-heading" className="sr-only">
+            What FARMILY does
+          </h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {pillars.map((pillar, i) => {
               const Icon = pillarIcons[pillar.key];
               return (
                 <Reveal
                   key={pillar.key}
                   delay={i * 90}
-                  className="rounded-2xl border border-line bg-paper p-8 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5"
+                  className="rounded-2xl border border-line bg-paper p-6 sm:p-8 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5"
                 >
                   <Icon className="h-11 w-11 text-teal-deep" />
-                  <h2 className="mt-6 font-display text-2xl text-ink">
+                  <h3 className="mt-6 font-display text-2xl text-ink">
                     {pillar.name}
-                  </h2>
-                  <p className="mt-3 text-[15px] leading-relaxed text-ink/65">
+                  </h3>
+                  <p className="mt-3 text-body text-ink/65">
                     {pillar.description}
                   </p>
                 </Reveal>
@@ -81,13 +85,15 @@ export default function SolutionPage() {
         </Container>
       </section>
 
+      <AppScreens />
+
       <HowItWorksDemo />
 
       {/* Segments */}
       <section className="border-y border-line bg-ink text-paper">
-        <Container className="py-20 sm:py-24">
+        <Container className="section-standard">
           <Reveal>
-            <h2 className="font-display text-3xl tracking-tight sm:text-4xl sm:tracking-[-0.03em]">
+            <h2 className="font-display text-h2">
               Built around who you are
             </h2>
           </Reveal>
@@ -113,7 +119,7 @@ export default function SolutionPage() {
                     <h3 className="mt-5 font-display text-xl">
                       {segment.name}
                     </h3>
-                    <p className="mt-2.5 text-[15px] leading-relaxed text-paper/75">
+                    <p className="mt-2.5 text-body text-paper/75">
                       {segment.line}
                     </p>
                   </div>
@@ -126,8 +132,8 @@ export default function SolutionPage() {
 
       {/* Honest status note */}
       <section>
-        <Container className="py-12">
-          <p className="max-w-2xl text-sm leading-relaxed text-ink/55">
+        <Container className="section-compact">
+          <p className="max-w-2xl text-body text-ink/70">
             {statusNote}
           </p>
         </Container>

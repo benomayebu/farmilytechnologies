@@ -1,5 +1,6 @@
 "use client";
 
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
 import { useRef, useState } from "react";
 import {
   CHART_X0,
@@ -14,13 +15,13 @@ import type { CurveSegments } from "@/lib/shipmentPhysics";
 // A muted neutral for "no signal" — needs to read clearly against the dark
 // ink-soft card, so neither --ink (too dark, near-invisible here) nor a
 // brand color (would wrongly imply good/bad) works.
-const NEUTRAL = "#8CA0B3";
+const NEUTRAL = "var(--neutral-on-ink)";
 
 // Matches ProductPreview.tsx's exception-tag red on this same Solution page
 // — an actual breach should read as visibly more severe than "still just a
 // warning," and reusing this color ties the two features together instead
 // of inventing a second "danger" hue.
-const DANGER = "#B3453A";
+const DANGER = "var(--alert-mark)";
 
 const STATUS_COLOR: Record<string, string> = {
   inRange: "var(--teal)",
@@ -75,16 +76,19 @@ export default function TimelineScrubber({
     <div className="rounded-2xl border border-line/20 bg-ink-soft p-6 sm:p-8">
       <div className="flex flex-wrap items-baseline justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-paper/45">
-            {chart.title}
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="text-eyebrow font-semibold uppercase text-paper/70">
+              {chart.title}
+            </p>
+            <SimulatedBadge tone="paper" />
+          </div>
           <div className="mt-2 flex items-baseline gap-3">
             <span className="font-display text-4xl text-paper sm:text-5xl">
               {temp.toFixed(1)}°C
             </span>
-            <span className="text-base text-paper/60">at {clockText}</span>
+            <span className="text-base text-paper/70">at {clockText}</span>
           </div>
-          <p className="mt-1.5 text-[13px] text-wheat/90">
+          <p className="mt-1.5 text-small text-wheat-light">
             {chart.safeLimitLabel(`${limit}°C`)}
           </p>
         </div>
@@ -93,7 +97,7 @@ export default function TimelineScrubber({
             className="h-2.5 w-2.5 shrink-0 rounded-full transition-colors duration-200"
             style={{ backgroundColor: statusColor }}
           />
-          <span className="text-[15px] font-medium text-paper">{chart.status[status]}</span>
+          <span className="text-body font-medium text-paper">{chart.status[status]}</span>
         </div>
       </div>
 
@@ -106,7 +110,7 @@ export default function TimelineScrubber({
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(pos * 100)}
-        className="mt-6 w-full touch-none outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-4 focus-visible:ring-offset-ink-soft"
+        className="mt-6 w-full touch-none outline-none focus-visible:ring-2 focus-visible:ring-wheat focus-visible:ring-offset-4 focus-visible:ring-offset-ink-soft"
         style={{ overflow: "visible", cursor: "ew-resize" }}
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId);
@@ -176,17 +180,17 @@ export default function TimelineScrubber({
         />
       </svg>
 
-      <div className="mt-2 flex justify-between text-[13px] text-paper/45">
+      <div className="mt-2 flex justify-between text-small text-paper/70">
         <span>{chart.startLabel}</span>
         <span>{chart.endLabel}</span>
       </div>
 
       {inGap && (
-        <p className="animate-fade-in mt-4 rounded-lg border-l-[3px] border-paper/30 bg-ink px-5 py-4 text-[15px] leading-relaxed text-paper">
-          No signal here — still recording, and it syncs once back in range.
+        <p className="animate-fade-in mt-4 rounded-lg border-l-[3px] border-paper/30 bg-ink px-5 py-4 text-body text-paper">
+          No signal here. Still recording, and it syncs once back in range.
         </p>
       )}
-      <p className="mt-4 text-sm text-paper/40">{chart.hint}</p>
+      <p className="mt-4 text-small text-paper/70">{chart.hint}</p>
     </div>
   );
 }

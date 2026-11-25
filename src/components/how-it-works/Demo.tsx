@@ -1,5 +1,6 @@
 "use client";
 
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
 import { useState, type CSSProperties } from "react";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -28,14 +29,14 @@ export default function HowItWorksDemo() {
   const showTimeline = step === 2 || step === 3;
 
   return (
-    <section className="border-t border-line bg-paper">
-      <Container className="py-20 sm:py-28">
+    <section id="demo" className="scroll-mt-16 border-t border-line bg-paper">
+      <Container className="section-spacious">
         <div className="max-w-2xl">
           <Eyebrow>{intro.eyebrow}</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]">
+          <h2 className="mt-4 font-display text-h2 text-ink">
             {intro.headline}
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-ink/65">{intro.body}</p>
+          <p className="mt-4 text-body-lg text-ink/65">{intro.body}</p>
         </div>
 
         {/* Step nav */}
@@ -49,18 +50,19 @@ export default function HowItWorksDemo() {
                 type="button"
                 onClick={() => goToStep(n)}
                 aria-current={active ? "step" : undefined}
-                className="flex flex-col gap-3 py-1 text-left"
+                className="flex min-w-0 flex-col gap-3 py-1 text-left"
               >
                 <span
                   className={`block h-1 rounded-full transition-colors duration-300 ${active ? "bg-teal" : "bg-line"}`}
                 />
                 <span className="flex items-baseline gap-2.5">
                   <span
-                    className={`font-display text-[15px] font-semibold transition-colors duration-300 ${active ? "text-teal-deep" : "text-ink/35"}`}
+                    aria-hidden="true"
+                    className={`font-display text-body font-semibold transition-colors duration-300 ${active ? "text-teal-deep" : "text-ink/55"}`}
                   >
                     0{n}
                   </span>
-                  <span className="text-[15px] text-ink">{s.label}</span>
+                  <span className="min-w-0 text-body text-ink">{s.label}</span>
                 </span>
               </button>
             );
@@ -77,16 +79,16 @@ export default function HowItWorksDemo() {
 
           {step === 2 && (
             <div className="max-w-2xl">
-              <h3 className="font-display text-2xl text-ink sm:text-3xl">{watch.headline}</h3>
-              <p className="mt-4 text-lg leading-relaxed text-ink/65">{watch.body}</p>
+              <h3 className="font-display text-h3 text-ink">{watch.headline}</h3>
+              <p className="mt-4 text-body-lg text-ink/65">{watch.body}</p>
             </div>
           )}
 
           {step === 3 && (
-            <div className="grid items-start gap-10 md:grid-cols-[1fr_1fr] md:gap-14">
+            <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-14">
               <div>
-                <h3 className="font-display text-2xl text-ink sm:text-3xl">{warn.headline}</h3>
-                <p className="mt-4 text-lg leading-relaxed text-ink/65">{warn.body}</p>
+                <h3 className="font-display text-h3 text-ink">{warn.headline}</h3>
+                <p className="mt-4 text-body-lg text-ink/65">{warn.body}</p>
                 {!fault ? (
                   <button
                     type="button"
@@ -94,7 +96,7 @@ export default function HowItWorksDemo() {
                       setFault(true);
                       setPos(FAULT_START - 0.008);
                     }}
-                    className="mt-7 inline-flex items-center gap-3 rounded-xl bg-wheat px-6 py-4 text-[17px] font-semibold text-ink transition-colors duration-200 hover:brightness-95 active:scale-[0.98]"
+                    className="mt-7 inline-flex items-center gap-3 rounded-xl bg-wheat px-6 py-4 text-body-lg font-semibold text-ink transition-colors duration-200 hover:brightness-95 active:scale-[0.98]"
                   >
                     <svg width="20" height="20" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                       <path d="M12.4 1.5 3 12.2h6L8.6 20.5 18 9.8h-6z" fill="currentColor" />
@@ -108,7 +110,7 @@ export default function HowItWorksDemo() {
                       setFault(false);
                       setPos(0.12);
                     }}
-                    className="mt-7 rounded-xl border border-line px-6 py-4 text-[16px] text-ink/70 transition-colors hover:border-ink/40 hover:text-ink"
+                    className="mt-7 rounded-xl border border-line px-6 py-4 text-body text-ink/70 transition-colors hover:border-ink/40 hover:text-ink"
                   >
                     {warn.resetCta}
                   </button>
@@ -116,28 +118,31 @@ export default function HowItWorksDemo() {
               </div>
 
               <div className="min-h-[220px] rounded-2xl border border-line bg-paper-deep p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/45">
-                  {warn.panelLabel}
-                </p>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-eyebrow font-semibold uppercase text-ink/70">
+                    {warn.panelLabel}
+                  </p>
+                  <SimulatedBadge />
+                </div>
 
                 {!fault && (
-                  <p className="animate-fade-in mt-5 text-[17px] leading-relaxed text-ink/65">
+                  <p className="animate-fade-in mt-5 text-body-lg text-ink/65">
                     {warn.noEvent}
                   </p>
                 )}
 
                 {fault && !demo.alertSent && (
-                  <p className="animate-fade-in mt-5 text-[17px] leading-relaxed text-ink/65">
+                  <p className="animate-fade-in mt-5 text-body-lg text-ink/65">
                     {warn.watching(demo.faultAtText)}
                   </p>
                 )}
 
                 {demo.predicting && (
                   <div className="animate-fade-in mt-5 rounded-xl border border-wheat bg-wheat/10 px-5 py-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#9a6f1f]">
+                    <p className="text-eyebrow font-semibold uppercase text-wheat-deep">
                       {warn.predictionLabel}
                     </p>
-                    <p className="mt-2 font-display text-xl leading-snug text-ink sm:text-2xl">
+                    <p className="mt-2 font-display text-title text-ink">
                       {warn.prediction(`${SAFE_LIMIT}°C`, demo.predictedMinutes)}
                     </p>
                   </div>
@@ -150,20 +155,20 @@ export default function HowItWorksDemo() {
                       <rect x="16" y="7" width="14" height="3" rx="1.5" fill="var(--teal)" />
                       <circle cx="23" cy="66" r="3.4" fill="var(--teal)" />
                     </svg>
-                    <div className="rounded-2xl rounded-bl-md bg-teal px-5 py-4 text-[15px] leading-relaxed text-paper">
+                    <div className="rounded-2xl rounded-bl-md bg-teal-deep px-5 py-4 text-body text-paper">
                       {warn.alert.message}
-                      <p className="mt-2 text-[13px] text-paper/70">{warn.alert.sentAt(demo.sentAtText)}</p>
+                      <p className="mt-2 text-small text-paper/80">{warn.alert.sentAt(demo.sentAtText)}</p>
                     </div>
                   </div>
                 )}
 
                 {demo.breached && (
-                  <p className="animate-fade-in mt-5 text-[15.5px] leading-relaxed text-[#9A3A30]">
+                  <p className="animate-fade-in mt-5 text-body text-alert">
                     {warn.breached(demo.leadMinutes)}
                   </p>
                 )}
                 {demo.resolved && (
-                  <p className="animate-fade-in mt-5 text-[15.5px] leading-relaxed text-teal-deep">
+                  <p className="animate-fade-in mt-5 text-body text-teal-deep">
                     {warn.resolved(demo.excursionMinutes)}
                   </p>
                 )}
@@ -202,7 +207,7 @@ export default function HowItWorksDemo() {
             <button
               type="button"
               onClick={() => goToStep(step - 1)}
-              className="rounded-xl border border-line px-6 py-3.5 text-[16px] text-ink/70 transition-colors hover:border-ink/40 hover:text-ink"
+              className="rounded-xl border border-line px-6 py-3.5 text-body text-ink/70 transition-colors hover:border-ink/40 hover:text-ink"
             >
               Back
             </button>
@@ -211,7 +216,7 @@ export default function HowItWorksDemo() {
             <button
               type="button"
               onClick={() => goToStep(step + 1)}
-              className="group inline-flex items-center gap-2.5 rounded-xl bg-teal px-6 py-3.5 text-[16px] font-medium text-paper transition-colors duration-200 hover:bg-teal-deep active:scale-[0.98]"
+              className="group inline-flex items-center gap-2.5 rounded-xl bg-teal-deep px-6 py-3.5 text-body font-medium text-paper transition-colors duration-200 hover:bg-ink active:scale-[0.98]"
             >
               {step === 1 ? "See it watching" : step === 2 ? "Break it on purpose" : "See the proof"}
               <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>

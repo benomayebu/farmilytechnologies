@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
@@ -15,20 +16,18 @@ export default function Footer() {
       <Container className="flex flex-col gap-10 py-14 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
           <Link href="/" className="flex items-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            {/* 579x640 source, shown 48px tall. */}
+            <Image
               src="/logo.png"
               alt="FARMILY"
+              width={43}
+              height={48}
               className="h-12 w-auto invert"
             />
           </Link>
-          <p className="mt-4 text-sm leading-relaxed text-paper/60">
-            Supply chain compliance, automated — for the distributors and
-            importers who don&apos;t have an enterprise budget for it.
-          </p>
         </div>
 
-        <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3 text-small">
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -40,11 +39,11 @@ export default function Footer() {
           ))}
         </nav>
 
-        <div className="text-sm">
-          <p className="text-paper/50">Get in touch</p>
+        <div className="text-small">
+          <p className="text-paper/60">Get in touch</p>
           <a
             href="mailto:benjamin.omayebu@farmilytechnologies.com"
-            className="mt-1 inline-block py-3 text-paper transition-colors hover:text-wheat"
+            className="mt-1 inline-block py-3 text-paper [overflow-wrap:anywhere] transition-colors hover:text-wheat"
           >
             benjamin.omayebu@farmilytechnologies.com
           </a>
@@ -52,10 +51,9 @@ export default function Footer() {
       </Container>
 
       <div className="border-t border-paper/10">
-        <Container className="flex flex-col gap-3 py-5 text-xs text-paper/45 sm:flex-row sm:items-center sm:justify-between">
+        <Container className="flex flex-col gap-3 py-5 text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} Farmily Technologies. Built by a
-            team of one, working with early pilot partners.
+            © {new Date().getFullYear()} Farmily Technologies. Built by a team of one, looking for first pilot partners.
           </p>
           <div className="flex gap-5">
             <Link href="/privacy" className="py-3 transition-colors hover:text-paper/80">

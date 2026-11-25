@@ -3,15 +3,15 @@ import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Reveal from "@/components/Reveal";
 import ColdChainIllustration from "@/components/ColdChainIllustration";
-import Parallax from "@/components/Parallax";
+import HeroReport from "@/components/HeroReport";
 import LazyLoopVideo from "@/components/LazyLoopVideo";
 import { DetectIcon, ProveIcon, SenseIcon } from "@/components/icons";
 import {
   closingCta,
+  demoTeaser,
   hero,
   pillars,
   videoSection,
-  whatWeDo,
 } from "@/lib/content/home";
 
 const pillarIcons = {
@@ -24,108 +24,109 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate flex min-h-[640px] items-center overflow-hidden bg-ink text-paper sm:min-h-[760px] lg:min-h-[840px]">
-        <Parallax strength={18} className="-z-20 opacity-[0.32]">
+      <section className="relative isolate flex items-center overflow-hidden bg-ink text-paper lg:min-h-[min(840px,calc(100svh-4rem))]">
+        {/* Still background: it sits behind the text, so it should not move. */}
+        <div aria-hidden="true" className="absolute inset-0 -z-20 opacity-[0.32]">
           <ColdChainIllustration />
-        </Parallax>
+        </div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-transparent to-ink/40" />
 
-        <Container className="relative py-24 sm:py-28">
-          <div className="max-w-3xl">
+        <Container className="relative grid gap-x-14 section-standard lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
+          {/* Claim. On large screens the report card sits beside the text; on
+              small screens it comes straight after the sub-line. */}
+          <div className="max-w-3xl lg:col-start-1 lg:row-start-1 lg:self-end">
             <Eyebrow
               tone="paper"
               className="animate-hero-line"
-              style={{ animationDelay: "40ms" }}
+              style={{ animationDelay: "0ms" }}
             >
               Compliance software for food supply chains
             </Eyebrow>
             <h1
-              className="animate-hero-line mt-6 font-display text-5xl leading-[1.05] tracking-tight text-paper sm:text-6xl sm:tracking-[-0.03em] md:text-7xl md:tracking-[-0.035em]"
-              style={{ animationDelay: "130ms" }}
+              className="animate-hero-line mt-6 font-display text-display text-paper"
+              style={{ animationDelay: "60ms" }}
             >
               {hero.headline}
             </h1>
             <p
-              className="animate-hero-line mt-7 max-w-xl text-lg leading-relaxed text-paper/80 sm:text-xl"
-              style={{ animationDelay: "240ms" }}
+              className="animate-hero-line mt-7 max-w-xl text-body-lg text-paper/80 sm:text-xl"
+              style={{ animationDelay: "120ms" }}
             >
               {hero.subLine}
             </p>
+          </div>
+
+          {/* Product proof: one sealed report, simulated and labelled as such. */}
+          <div
+            className="animate-pop-in mt-10 w-full max-w-md lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:max-w-none lg:self-center"
+            style={{ animationDelay: "120ms" }}
+          >
+            <HeroReport />
+          </div>
+
+          <div className="max-w-3xl lg:col-start-1 lg:row-start-2 lg:self-start">
             <p
-              className="animate-hero-line mt-5 max-w-lg font-display text-xl italic leading-snug text-wheat sm:text-2xl"
-              style={{ animationDelay: "330ms" }}
+              className="animate-hero-line mt-10 max-w-lg font-display text-title font-normal italic text-wheat lg:mt-6"
+              style={{ animationDelay: "180ms" }}
             >
               &ldquo;{hero.supportingLine}&rdquo;
             </p>
             <div
-              className="animate-hero-line mt-10"
-              style={{ animationDelay: "420ms" }}
+              className="animate-hero-line mt-10 lg:mt-8"
+              style={{ animationDelay: "240ms" }}
             >
-              <a
-                href="#what-we-do"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-teal px-6 py-3.5 text-[15px] font-medium tracking-wide text-paper transition-all duration-200 hover:bg-teal-deep active:scale-[0.97]"
-              >
-                {hero.cta}
-                <span className="transition-transform duration-200 group-hover:translate-y-0.5">
-                  ↓
-                </span>
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button href={hero.primaryCta.href} variant="primary">
+                  {hero.primaryCta.label}
+                </Button>
+                <Button href={hero.secondaryCta.href} variant="ghostOnDark">
+                  {hero.secondaryCta.label}
+                </Button>
+              </div>
+              <p className="mt-5 text-small text-paper/70">{hero.status}</p>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* What We Do */}
-      <section id="what-we-do" className="border-y border-line bg-paper-deep scroll-mt-20">
-        <Container className="py-20 sm:py-24">
-          <Reveal className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-            <Eyebrow>{whatWeDo.eyebrow}</Eyebrow>
-            <p className="max-w-2xl text-2xl leading-relaxed text-ink sm:text-[1.75rem]">
-              {whatWeDo.body}
+      {/* How it works: the three parts, then one shipment end to end */}
+      <section aria-labelledby="how-heading" className="border-t border-line bg-paper-deep">
+        <Container className="section-spacious">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <Eyebrow>{videoSection.eyebrow}</Eyebrow>
+            <h2
+              id="how-heading"
+              className="mt-4 font-display text-h2 text-ink"
+            >
+              {videoSection.headline}
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-body-lg text-ink/65">
+              {videoSection.body}
             </p>
           </Reveal>
-        </Container>
-      </section>
 
-      {/* Three pillars */}
-      <section>
-        <Container className="py-20 sm:py-28">
-          <div className="grid gap-x-10 gap-y-14 sm:grid-cols-3">
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-3">
             {pillars.map((pillar, i) => {
               const Icon = pillarIcons[pillar.key];
               return (
                 <Reveal key={pillar.key} delay={i * 90}>
-                  <span className="font-display text-sm text-ink/35">
+                  <span aria-hidden="true" className="font-display text-small text-ink/55">
                     0{i + 1}
                   </span>
                   <Icon className="mt-4 h-11 w-11 text-teal-deep" />
                   <h3 className="mt-5 font-display text-2xl text-ink">
                     {pillar.name}
                   </h3>
-                  <p className="mt-2.5 text-[15px] leading-relaxed text-ink/65">
+                  <p className="mt-2.5 text-body text-ink/65">
                     {pillar.description}
                   </p>
                 </Reveal>
               );
             })}
           </div>
-        </Container>
-      </section>
 
-      {/* Shipment journey video */}
-      <section className="border-t border-line bg-paper-deep">
-        <Container className="py-20 sm:py-28">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <Eyebrow>{videoSection.eyebrow}</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl sm:tracking-[-0.03em]">
-              {videoSection.headline}
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink/65">
-              {videoSection.body}
-            </p>
-          </Reveal>
-          <Reveal delay={120} variant="materialize" className="mt-12">
+          <Reveal delay={120} variant="materialize" className="mt-14">
             <div className="overflow-hidden rounded-2xl border border-line shadow-lg shadow-ink/5">
               <LazyLoopVideo
                 src="/videos/shipment-journey.mp4"
@@ -140,11 +141,34 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Try it: a pointer to the interactive demo, not a copy of it */}
+      <section aria-labelledby="demo-teaser-heading" className="border-t border-line">
+        <Container className="section-standard">
+          <Reveal className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-xl">
+              <Eyebrow>{demoTeaser.eyebrow}</Eyebrow>
+              <h2
+                id="demo-teaser-heading"
+                className="mt-4 font-display text-h2 text-ink"
+              >
+                {demoTeaser.headline}
+              </h2>
+              <p className="mt-4 text-body-lg text-ink/70">
+                {demoTeaser.body}
+              </p>
+            </div>
+            <Button href={demoTeaser.cta.href} variant="ghost" className="shrink-0">
+              {demoTeaser.cta.label}
+            </Button>
+          </Reveal>
+        </Container>
+      </section>
+
       {/* Closing CTA */}
       <section className="bg-ink text-paper">
-        <Container className="py-20 sm:py-24">
+        <Container className="section-standard">
           <Reveal className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-xl font-display text-2xl leading-snug sm:text-3xl sm:tracking-[-0.02em]">
+            <p className="max-w-xl font-display text-h3">
               {closingCta.line}
             </p>
             <Button href="/contact" variant="primary" className="shrink-0">

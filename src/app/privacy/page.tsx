@@ -3,7 +3,7 @@ import LegalPage from "@/components/LegalPage";
 import { privacyPolicy } from "@/lib/content/legal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — FARMILY",
+  title: "Privacy Policy | FARMILY",
   description: "What information FARMILY collects through this website, and why.",
 };
 

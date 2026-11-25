@@ -4,19 +4,19 @@ export const privacyPolicy = {
   eyebrow: "Legal",
   title: "Privacy Policy",
   intro:
-    "FARMILY (\"we\", \"us\") operates farmilytechnologies.com. This policy explains what information we collect through this website, why, and what you can do about it. We're a small, pre-seed team — this policy covers exactly what this site does today, not a hypothetical future product.",
+    "FARMILY (\"we\", \"us\") operates farmilytechnologies.com. This policy explains what information we collect through this website, why, and what you can do about it. We're a small, pre-seed team. This policy covers exactly what this site does today, not a hypothetical future product.",
   sections: [
     {
       heading: "1. Information we collect",
       body: [
         "Information you give us directly: when you submit the contact form, we receive your name, company (if provided), email address, and message.",
-        "Information collected automatically: like any website, our hosting provider (Vercel) logs standard technical data for every visit — IP address, browser type, and pages requested — for security and reliability purposes. We don't layer any additional tracking, advertising pixels, or analytics scripts on top of that.",
+        "Information collected automatically: like any website, our hosting provider (Vercel) logs standard technical data for every visit (IP address, browser type and pages requested) for security and reliability purposes. We don't layer any additional tracking, advertising pixels, or analytics scripts on top of that.",
       ],
     },
     {
       heading: "2. How we use it",
       body: [
-        "To respond to your message — whether you're a prospective pilot partner, an investor, or asking a general question.",
+        "To respond to your message, whether you're a prospective pilot partner, an investor, or asking a general question.",
         "To keep a record of who we've spoken with, so we don't lose track of conversations as a small team.",
         "We do not use your information for advertising, and we do not sell it to anyone.",
       ],
@@ -32,7 +32,7 @@ export const privacyPolicy = {
     {
       heading: "4. How long we keep it",
       body: [
-        "We keep contact form submissions for as long as reasonably useful for ongoing conversations (typically as long as we're in active contact, or up to a few years of business records after). You can ask us to delete your information at any time — see \"Your rights\" below.",
+        "We keep contact form submissions for as long as reasonably useful for ongoing conversations (typically as long as we're in active contact, or up to a few years of business records after). You can ask us to delete your information at any time. See \"Your rights\" below.",
       ],
     },
     {
@@ -50,7 +50,7 @@ export const privacyPolicy = {
     {
       heading: "7. Your rights",
       body: [
-        "You can ask us what information we hold about you, ask us to correct it, or ask us to delete it. As a small team, we handle these requests manually rather than through an automated tool — email benjamin.omayebu@farmilytechnologies.com and we'll respond promptly.",
+        "You can ask us what information we hold about you, ask us to correct it, or ask us to delete it. As a small team, we handle these requests manually rather than through an automated tool. Email benjamin.omayebu@farmilytechnologies.com and we'll respond promptly.",
       ],
     },
     {
@@ -66,7 +66,7 @@ export const termsOfUse = {
   eyebrow: "Legal",
   title: "Terms of Use",
   intro:
-    "These terms cover your use of farmilytechnologies.com. FARMILY is currently a pre-seed company in active development — this website is informational, not a live product with accounts, subscriptions, or transactions. If we launch a product with its own terms, those will be published separately.",
+    "These terms cover your use of farmilytechnologies.com. FARMILY is currently a pre-seed company in active development. This website is informational, not a live product with accounts, subscriptions, or transactions. If we launch a product with its own terms, those will be published separately.",
   sections: [
     {
       heading: "1. Use of this site",

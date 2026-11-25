@@ -1,5 +1,6 @@
 "use client";
 
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
 import { useState } from "react";
 import { proof, shipment } from "@/lib/content/howItWorksDemo";
 
@@ -19,15 +20,15 @@ export default function SealedReport({
   const flaggedValue = fault ? `In transit, ${leadMinutes} min early` : proof.noFlag;
 
   return (
-    <div className="grid items-start gap-10 md:grid-cols-2 md:gap-14">
+    <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-14">
       <div>
-        <h3 className="font-display text-2xl text-ink sm:text-3xl">{proof.headline}</h3>
-        <p className="mt-4 text-lg leading-relaxed text-ink/65">{proof.body}</p>
+        <h3 className="font-display text-h3 text-ink">{proof.headline}</h3>
+        <p className="mt-4 text-body-lg text-ink/65">{proof.body}</p>
         <button
           type="button"
           onClick={() => setTamperOpen((v) => !v)}
           aria-expanded={tamperOpen}
-          className="mt-7 inline-flex items-center rounded-lg border border-line px-5 py-3 text-[15px] font-medium text-teal-deep transition-colors hover:border-teal"
+          className="mt-7 inline-flex items-center rounded-lg border border-line px-5 py-3 text-body font-medium text-teal-deep transition-colors hover:border-teal"
         >
           {proof.tamperToggle}
         </button>
@@ -35,7 +36,7 @@ export default function SealedReport({
           className={`grid transition-[grid-template-rows] duration-300 ease-out ${tamperOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
         >
           <div className="overflow-hidden">
-            <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-[15px] leading-relaxed text-ink/80">
+            <div className="mt-4 rounded-lg border-l-[3px] border-teal bg-paper-deep px-6 py-5 text-body text-ink/80">
               {proof.tamperBody}
             </div>
           </div>
@@ -50,7 +51,8 @@ export default function SealedReport({
           </svg>
           <div>
             <p className="font-display text-xl text-ink">{proof.reportTitle}</p>
-            <p className="mt-0.5 text-sm text-ink/55">{shipment.id} · {shipment.description}</p>
+            <p className="mt-0.5 text-small text-ink/70">{shipment.id} · {shipment.description}</p>
+            <SimulatedBadge className="mt-2" />
           </div>
         </div>
 
@@ -61,8 +63,8 @@ export default function SealedReport({
             [proof.fields.signalGaps, proof.signalGapsValue],
             [proof.fields.flagged, flaggedValue],
           ].map(([label, value]) => (
-            <div key={label} className="flex items-baseline justify-between border-t border-line py-3.5 text-[16px]">
-              <dt className="text-ink/60">{label}</dt>
+            <div key={label} className="flex items-baseline justify-between border-t border-line py-3.5 text-body">
+              <dt className="text-ink/70">{label}</dt>
               <dd className="font-display font-medium text-ink">{value}</dd>
             </div>
           ))}
@@ -72,7 +74,7 @@ export default function SealedReport({
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" className="shrink-0">
             <path d="M10 1l8 3.2v5.9c0 5.1-3.3 8.8-8 10.1-4.7-1.3-8-5-8-10.1V4.2z" fill="var(--teal-deep)" />
           </svg>
-          <span className="text-sm text-teal-deep">{proof.footer}</span>
+          <span className="text-small text-teal-deep">{proof.footer}</span>
         </div>
       </div>
     </div>

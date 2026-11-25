@@ -5,15 +5,18 @@ import { ArrowRight } from "@/components/icons";
 type ButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "ghostOnDark";
   className?: string;
 };
 
 const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  primary: "bg-teal text-paper hover:bg-teal-deep",
+  primary: "bg-teal-deep text-paper hover:bg-ink",
   secondary: "bg-ink text-paper hover:bg-ink-soft",
   ghost:
     "bg-transparent text-ink border border-ink/25 hover:border-ink hover:bg-ink/5",
+  // Quiet secondary on ink sections: border paper/40 (3.47:1), text 14.32:1.
+  ghostOnDark:
+    "bg-transparent text-paper border border-paper/40 hover:border-paper hover:bg-paper/10",
 };
 
 export default function Button({
@@ -23,7 +26,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const isExternal = href.startsWith("http") || href.startsWith("mailto:");
-  const classes = `group inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-[15px] font-medium tracking-wide transition-all duration-200 active:scale-[0.97] ${variants[variant]} ${className}`;
+  const classes = `group inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-body font-medium tracking-wide transition-[background-color,color,border-color,transform] duration-200 ease-out active:scale-[0.97] ${variants[variant]} ${className}`;
 
   const content = (
     <>

@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Container from "@/components/ui/Container";
 import { CloseIcon, MenuIcon } from "@/components/icons";
 
@@ -14,10 +15,21 @@ const NAV = [
   { href: "/contact", label: "Contact" },
 ];
 
+const MENU_ID = "mobile-menu";
+
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Close the menu whenever the route changes. Adjusting state during render
+  // (instead of in an effect) is React's recommended pattern for this.
+  const [lastPathname, setLastPathname] = useState(pathname);
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
+    setOpen(false);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
@@ -26,23 +38,46 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Escape closes the menu and hands focus back to the button that opened it.
+  useEffect(() => {
+    if (!open) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header
       className={`material-header sticky top-0 z-50 ${scrolled ? "is-scrolled" : ""}`}
     >
 
-      <Container className="flex h-20 items-center justify-between">
+      <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"
           className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="FARMILY" className="h-14 w-auto sm:h-16" />
+          {/* Source is 579x640; width/height are the size it is shown at
+              (40px tall), keeping that ratio, so Next serves a 1x/2x file
+              sized for the header instead of the full PNG. */}
+          <Image
+            src="/logo.png"
+            alt="FARMILY"
+            width={36}
+            height={40}
+            preload
+            className="h-10 w-auto"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
-          {NAV.map((item) => {
+        {/* Desktop nav leaves out "Home": the logo already links there. */}
+        <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
+          {NAV.filter((item) => item.href !== "/").map((item) => {
             const active =
               item.href === "/"
                 ? pathname === "/"
@@ -51,8 +86,9 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-1 text-[15px] font-medium transition-colors active:opacity-60 ${
-                  active ? "text-ink" : "text-ink/60 hover:text-ink"
+                aria-current={active ? "page" : undefined}
+                className={`relative rounded-sm py-1 text-body font-medium transition-colors active:opacity-60 ${
+                  active ? "text-ink" : "text-ink/70 hover:text-ink"
                 }`}
               >
                 {item.label}
@@ -66,14 +102,17 @@ export default function Header() {
 
         <Link
           href="/contact"
-          className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-all duration-200 hover:bg-ink-soft active:scale-[0.97] md:inline-flex"
+          className="hidden rounded-full border border-ink/25 px-5 py-2.5 text-body font-medium text-ink transition-[background-color,color,border-color,transform] duration-200 ease-out hover:border-ink hover:bg-ink/5 active:scale-[0.97] md:inline-flex"
         >
           Talk to us
         </Link>
 
         <button
+          ref={menuButtonRef}
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls={MENU_ID}
           onClick={() => setOpen((v) => !v)}
           className="-mr-2 p-2 text-ink transition-transform duration-150 active:scale-90 md:hidden"
         >
@@ -81,24 +120,37 @@ export default function Header() {
         </button>
       </Container>
 
+      {/* `inert` while closed: the panel is only collapsed visually, so without
+          it its links would still be reachable with Tab. */}
       <div
-        className={`grid border-line bg-paper transition-[grid-template-rows] duration-300 ease-out md:hidden ${
+        id={MENU_ID}
+        inert={!open}
+        className={`grid border-line bg-paper transition-[grid-template-rows] duration-300 ease-[var(--ease-out)] md:hidden ${
           open ? "grid-rows-[1fr] border-t" : "grid-rows-[0fr]"
         }`}
       >
         <div className="overflow-hidden">
-          <Container className="flex flex-col gap-1 py-4">
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-base font-medium text-ink/80 transition-colors active:bg-ink/10 hover:bg-ink/5 hover:text-ink"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </Container>
+          <nav aria-label="Main">
+            <Container className="flex flex-col gap-1 py-4">
+              {NAV.map((item) => {
+                const active =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname?.startsWith(item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    onClick={() => setOpen(false)}
+                    className="rounded-lg px-2 py-3 text-base font-medium text-ink/80 transition-colors active:bg-ink/10 hover:bg-ink/5 hover:text-ink"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </Container>
+          </nav>
         </div>
       </div>
     </header>

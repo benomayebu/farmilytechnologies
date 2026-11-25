@@ -10,19 +10,19 @@ export const pillars = [
     key: "sense",
     name: "Continuous Monitoring",
     description:
-      "Temperature, humidity, and location data captured throughout the journey — not just a single reading at pickup and drop-off.",
+      "Built to capture temperature, humidity and location for the whole journey, not just one reading at pickup and drop-off. Tested with simulated sensors so far.",
   },
   {
     key: "detect",
-    name: "AI Exception Detection",
+    name: "Smart Rules and Early Warnings",
     description:
-      "FARMILY flags a developing problem — a power disconnect, a door left open, a slow temperature drift — while there's still time to act, not after the shipment has already failed.",
+      "FARMILY is built to flag a problem while it is still developing: a power cut, a door left open, a slow temperature drift. The aim is time to act before the shipment fails. Tested on simulated trips so far.",
   },
   {
     key: "prove",
     name: "Tamper-Evident Compliance Records",
     description:
-      "When an auditor or buyer asks for proof, generate a complete, verifiable record in minutes — not a scramble through PDFs and spreadsheets.",
+      "When an auditor or buyer asks for proof, you hand over a report built from sealed records. Each record is hash-chained and signed, so it can be checked offline. No scramble through PDFs and spreadsheets.",
   },
 ] as const;
 
@@ -30,7 +30,7 @@ export const segments = [
   {
     key: "distributors",
     name: "Distributors & Importers",
-    line: "Stay audit-ready without hiring a compliance team.",
+    line: "Records built for audits, without an enterprise budget.",
     // Photo: Unsplash, "white truck parked near white building" — unsplash.com/photos/crHhZlES310
     image: "/images/segment-distributors.jpg",
   },
@@ -44,4 +44,54 @@ export const segments = [
 ] as const;
 
 export const statusNote =
-  "FARMILY is currently in active development, working directly with early pilot partners to shape the product around real operational needs.";
+  "FARMILY is in active development. It is built and tested with simulated data, and we're looking for our first pilot partners.";
+
+/**
+ * Real screens from the FARMILY web app, captured from a local run on
+ * simulated trips. Test labels (lot codes, account names) were swapped for
+ * plain demo names; every reading, status and banner is as the app shows it.
+ */
+export const appScreens = {
+  eyebrow: "Inside the app",
+  headline: "The real product, on simulated trips.",
+  sub: "These are screens from the FARMILY app as it runs today. The trips come from our simulator, not a real truck.",
+  items: [
+    {
+      key: "shipments",
+      title: "Every lot in one list.",
+      body: "Status, lane and the last 24 hours of readings for each shipment. Flagged lots stand out.",
+      image: "/images/app/shipments.png",
+      width: 1600,
+      height: 1075,
+      alt: "FARMILY shipments list showing nine simulated lots. Two are flagged, the rest are on track, draft or delivered.",
+    },
+    {
+      key: "lot",
+      title: "See what went wrong, and when.",
+      body: "The temperature line, the limits and events like a power loss, on one screen.",
+      image: "/images/app/lot.png",
+      width: 1600,
+      height: 1075,
+      alt: "A flagged simulated lot of chilled lobster. The chart shows the temperature rising to 9.4 °C after a power loss, then recovering. 75.8% of the trip was in spec.",
+    },
+    {
+      key: "alert",
+      title: "Alerts that reach a person.",
+      body: "The alert opens on a phone. One tap tells the team someone has seen it, so it stops going to the next person.",
+      image: "/images/app/alert-phone.png",
+      width: 780,
+      height: 1688,
+      alt: "A critical alert on a phone for a simulated lot of chilled lamb: peak 9.4 °C against a 5 °C limit, with an I've seen this button.",
+      phone: true,
+    },
+    {
+      key: "report",
+      title: "A report anyone can check.",
+      body: "Each report is built from sealed records. FARMILY checks that nothing has changed since they were sealed.",
+      image: "/images/app/report.png",
+      width: 1600,
+      height: 1075,
+      alt: "A simulated lot report: no temperature excursion, 100% time in spec, and a Verified badge confirming the sealed records are unchanged.",
+    },
+  ],
+} as const;
