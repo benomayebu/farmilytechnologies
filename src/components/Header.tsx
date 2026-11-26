@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -58,14 +59,20 @@ export default function Header() {
       <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="flex min-h-11 items-center"
+          className="flex items-center"
           onClick={() => setOpen(false)}
         >
-          {/* Text wordmark: the stamp logo's lettering can't be read at
-              header size, so the stamp is kept for large uses only. */}
-          <span className="font-display text-xl font-bold tracking-[0.14em] text-ink">
-            FARMILY
-          </span>
+          {/* Source is 579x640; width/height are the size it is shown at
+              (40px tall), keeping that ratio, so Next serves a 1x/2x file
+              sized for the header instead of the full PNG. */}
+          <Image
+            src="/logo.png"
+            alt="FARMILY"
+            width={36}
+            height={40}
+            preload
+            className="h-10 w-auto"
+          />
         </Link>
 
         {/* Desktop nav leaves out "Home": the logo already links there. */}
