@@ -98,7 +98,7 @@ export default function Home() {
       {/* How it works: the three parts, then one shipment end to end */}
       <section aria-labelledby="how-heading" className="border-t border-line bg-paper-deep">
         <Container className="section-spacious">
-          <Reveal className="mx-auto max-w-2xl text-center">
+          <Reveal className="max-w-2xl">
             <Eyebrow>{videoSection.eyebrow}</Eyebrow>
             <h2
               id="how-heading"
@@ -106,7 +106,7 @@ export default function Home() {
             >
               {videoSection.headline}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-body-lg text-ink/65">
+            <p className="mt-4 max-w-xl text-body-lg text-ink/65">
               {videoSection.body}
             </p>
           </Reveal>
