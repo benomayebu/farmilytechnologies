@@ -5,7 +5,7 @@ import SimulatedBadge from "@/components/ui/SimulatedBadge";
 import { appScreens } from "@/lib/content/solution";
 
 /**
- * Real screenshots of the FARMILY web app, each with a short caption and a
+ * Real screenshots from a FARMILY development build, each with a short caption and a
  * "Simulated data" badge. Rows alternate sides on wide screens and stack
  * (text first) on narrow ones.
  */
@@ -72,7 +72,7 @@ export default function AppScreens() {
                       />
                     </div>
                     <figcaption className="mt-3 text-small text-ink/70">
-                      Screen from the FARMILY app.
+                      Screen from a FARMILY development build.
                     </figcaption>
                   </figure>
                 </Reveal>

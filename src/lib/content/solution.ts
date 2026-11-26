@@ -47,14 +47,14 @@ export const statusNote =
   "FARMILY is in active development. It is built and tested with simulated data, and we're looking for our first pilot partners.";
 
 /**
- * Real screens from the FARMILY web app, captured from a local run on
+ * Real screens from a FARMILY development build, captured from a local run on
  * simulated trips. Test labels (lot codes, account names) were swapped for
  * plain demo names; every reading, status and banner is as the app shows it.
  */
 export const appScreens = {
-  eyebrow: "Inside the app",
-  headline: "The real product, on simulated trips.",
-  sub: "These are screens from the FARMILY app as it runs today. The trips come from our simulator, not a real truck.",
+  eyebrow: "Inside FARMILY",
+  headline: "Real screens, on simulated trips.",
+  sub: "These screens come from a development build of FARMILY, running on trips from our simulator. Alerts, the web screens and the first real sensor are still in progress.",
   items: [
     {
       key: "shipments",
@@ -76,8 +76,8 @@ export const appScreens = {
     },
     {
       key: "alert",
-      title: "Alerts that reach a person.",
-      body: "The alert opens on a phone. One tap tells the team someone has seen it, so it stops going to the next person.",
+      title: "An alert page made for a phone.",
+      body: "One tap tells the team someone has seen the alert, so it stops going to the next person. How alerts get sent, by text or another channel, is not set yet.",
       image: "/images/app/alert-phone.png",
       width: 780,
       height: 1688,
