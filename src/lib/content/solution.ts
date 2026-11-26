@@ -95,3 +95,28 @@ export const appScreens = {
     },
   ],
 } as const;
+
+/**
+ * Where FARMILY stands. Update this every time a milestone is finished.
+ */
+export const status = {
+  eyebrow: "Where things stand",
+  headline: "What is built, what is next.",
+  groups: [
+    {
+      key: "built",
+      label: "Built and tested with simulated data",
+      items: ["Rules and early warnings", "Sealed records", "Offline checker", "The demo on this page"],
+    },
+    {
+      key: "progress",
+      label: "In progress",
+      items: ["Alerts", "Web screens", "First real sensor"],
+    },
+    {
+      key: "planned",
+      label: "Planned",
+      items: ["Sensor partners", "Pricing", "Hardware subscription"],
+    },
+  ],
+} as const;
