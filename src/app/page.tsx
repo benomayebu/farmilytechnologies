@@ -75,15 +75,9 @@ export default function Home() {
           </div>
 
           <div className="max-w-3xl lg:col-start-1 lg:row-start-2 lg:self-start">
-            <p
-              className="animate-hero-line mt-10 max-w-lg font-display text-title font-normal italic text-wheat lg:mt-6"
-              style={{ animationDelay: "180ms" }}
-            >
-              &ldquo;{hero.supportingLine}&rdquo;
-            </p>
             <div
               className="animate-hero-line mt-10 lg:mt-8"
-              style={{ animationDelay: "240ms" }}
+              style={{ animationDelay: "180ms" }}
             >
               <div className="flex flex-wrap items-center gap-3">
                 <Button href={hero.primaryCta.href} variant="primary">
