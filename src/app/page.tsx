@@ -34,16 +34,16 @@ export default function Home() {
           mobilePosition="right center"
           imageClassName="animate-illustration-in"
           overlay="lg:bg-gradient-to-r lg:from-ink/90 lg:from-30% lg:via-ink/55 lg:via-55% lg:to-transparent lg:to-75% xl:from-ink/70 xl:from-10% xl:via-ink/25 xl:via-40% xl:to-55%"
-          band={{ below: "lg", height: "20rem", fade: "var(--ink)" }}
+          band={{ below: "lg", height: "15rem", fade: "var(--ink)" }}
         />
         <div
           aria-hidden="true"
           className="section-backdrop pointer-events-none absolute inset-0 -z-10 hidden bg-gradient-to-t from-ink/50 via-transparent via-30% to-transparent lg:block"
         />
 
-        <Container className="relative grid gap-x-14 section-standard max-lg:pt-[19rem] lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
+        <Container className="relative grid gap-x-14 section-standard max-lg:pt-[14rem] lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
           {/* Claim. On large screens the report card sits beside the text; on
-              small screens it comes straight after the sub-line. */}
+              small screens the buttons come straight after the sub-line. */}
           <div className="max-w-3xl lg:col-start-1 lg:row-start-1 lg:self-end">
             <Eyebrow
               tone="paper"
@@ -66,9 +66,11 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Product proof: one sealed report, simulated and labelled as such. */}
+          {/* Product proof: one sealed report, simulated and labelled as such.
+              On small screens it comes after the buttons, so they stay in
+              the first screen. */}
           <div
-            className="animate-pop-in mt-10 w-full max-w-md lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:max-w-none lg:self-center"
+            className="animate-pop-in order-last mt-10 w-full lg:order-none max-w-md lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:max-w-none lg:self-center"
             style={{ animationDelay: "120ms" }}
           >
             <HeroReport />
