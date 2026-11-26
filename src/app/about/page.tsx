@@ -41,9 +41,10 @@ export default function AboutPage() {
         <SectionBackdrop
           image="/images/backgrounds/about-approach-logger.webp"
           position="left center"
-          overlay="bg-paper-deep/75 md:bg-transparent md:bg-gradient-to-r md:from-paper-deep/70 md:via-paper-deep/75 md:via-30% md:to-paper-deep/90 md:to-55%"
+          overlay="md:bg-gradient-to-r md:from-paper-deep/70 md:via-paper-deep/70 md:via-30% md:to-paper-deep/70 md:to-55%"
+          band={{ below: "md", height: "11rem", fade: "var(--paper-deep)" }}
         />
-        <Container className="section-compact">
+        <Container className="section-compact max-md:pt-[11rem]">
           <Reveal className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
             <Eyebrow as="h2">{approach.eyebrow}</Eyebrow>
             <p className="max-w-2xl text-body-lg text-ink/75">
