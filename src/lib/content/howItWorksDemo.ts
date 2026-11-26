@@ -13,7 +13,7 @@ export const steps = [
 
 export const shipment = {
   id: "SR-5182",
-  description: "Chilled Seafood · Dubai → Riyadh · demo trip",
+  description: "Example trip · Chilled seafood · Dubai → Riyadh",
 };
 
 export const pairing = {
@@ -22,7 +22,7 @@ export const pairing = {
   checklist: [
     "Scan the sensor's code",
     "Pick the shipment",
-    "Set the safe range: 0–4°C",
+    "Set the example limit: 6°C",
     "Seal it and shut the door",
   ],
   ctaLabels: [
@@ -59,7 +59,7 @@ export const warn = {
     message: "Idris, cargo temp climbing on SR-5182. Check reefer power at Stop 4.",
     sentAt: (time: string) => `Sent ${time} (simulated)`,
   },
-  breached: (mins: number) => `Now above the safe limit, but flagged ${mins} minutes before it got here.`,
+  breached: (mins: number) => `Now above the example limit, but flagged ${mins} minutes before it got here.`,
   resolved: (mins: number) => `Power restored, load cooling. Total excursion ${mins} minutes. Recorded, not hidden.`,
 };
 
@@ -84,7 +84,7 @@ export const proof = {
 
 export const chart = {
   title: "Cargo temperature · 14 hour trip",
-  safeLimitLabel: (limit: string) => `safe limit ${limit}`,
+  safeLimitLabel: (limit: string) => `example limit ${limit}`,
   startLabel: "0h",
   endLabel: "14h",
   gapLabel: "no signal",
@@ -93,7 +93,7 @@ export const chart = {
   status: {
     inRange: "In range",
     noSignal: "No signal",
-    aboveLimit: "Above safe limit",
+    aboveLimit: "Above example limit",
     alertSent: "Alert sent",
     rising: "Rise detected",
     cooling: "Cooling",
