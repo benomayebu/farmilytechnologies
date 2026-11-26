@@ -4,12 +4,12 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import SectionBackdrop from "@/components/ui/SectionBackdrop";
 
 /**
- * Pale overlay for a photo whose subject sits on the right. Solid behind the
- * headline on the left, thinning out toward the subject. On phones the photo
- * ends up behind the text, so the overlay is near solid there.
+ * Light shade for a photo whose subject sits on the right. The supplied
+ * photos already fade to pale on the left, so this only firms up the strip
+ * behind the headline and leaves the subject clear.
  */
 export const PALE_RIGHT_OVERLAY =
-  "bg-paper-deep/85 md:bg-transparent md:bg-gradient-to-r md:from-paper-deep/90 md:from-35% md:via-paper-deep/60 md:via-65% md:to-transparent xl:from-20% xl:via-paper-deep/50 xl:via-50%";
+  "lg:bg-gradient-to-r lg:from-paper-deep/85 lg:from-35% lg:via-paper-deep/55 lg:via-65% lg:to-transparent lg:to-85% xl:from-paper-deep/80 xl:from-20% xl:via-paper-deep/30 xl:via-45% xl:to-65%";
 
 export type PageHeroBackdrop = {
   image: string;
@@ -27,7 +27,8 @@ export default function PageHero({
   eyebrow: string;
   title: ReactNode;
   children?: ReactNode;
-  /** Optional decorative photo behind the hero. */
+  /** Optional decorative photo behind the hero. On phones it shows as a
+   *  clear band above the text. */
   backdrop?: PageHeroBackdrop;
 }) {
   return (
@@ -38,9 +39,12 @@ export default function PageHero({
           position={backdrop.position ?? "right center"}
           mobilePosition={backdrop.mobilePosition}
           overlay={backdrop.overlay ?? PALE_RIGHT_OVERLAY}
+          band={{ below: "lg", height: "14rem", fade: "var(--paper-deep)" }}
         />
       )}
-      <Container className="section-standard">
+      <Container
+        className={`section-standard ${backdrop ? "max-lg:pt-[14rem]" : ""}`}
+      >
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-6 max-w-3xl font-display text-h1 text-ink">
           {title}

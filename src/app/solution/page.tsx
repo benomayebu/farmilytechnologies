@@ -30,7 +30,12 @@ export default function SolutionPage() {
       <PageHero
         eyebrow={intro.eyebrow}
         title={intro.headline}
-        backdrop={{ image: "/images/backgrounds/solution-reefer-trailer.webp" }}
+        backdrop={{
+          image: "/images/backgrounds/solution-reefer-trailer.webp",
+          // The long headline runs further right, so its strip is firmer.
+          overlay:
+            "lg:bg-gradient-to-r lg:from-paper-deep/90 lg:from-45% lg:via-paper-deep/65 lg:via-70% lg:to-transparent lg:to-90% xl:from-35% xl:via-paper-deep/55 xl:via-60% xl:to-80%",
+        }}
       >
         <p className="font-display text-xl font-normal italic text-teal-deep">
           {intro.sub}
@@ -69,7 +74,6 @@ export default function SolutionPage() {
         <SectionBackdrop
           image="/images/backgrounds/solution-warehouse-aisle.webp"
           position="center"
-          overlay="bg-paper-deep/20"
         />
         <Container className="section-standard">
           <h2 id="pillars-heading" className="sr-only">

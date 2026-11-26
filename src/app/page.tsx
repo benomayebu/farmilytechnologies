@@ -31,16 +31,17 @@ export default function Home() {
         <SectionBackdrop
           image="/images/backgrounds/home-loading-dock-dusk.webp"
           position="right center"
-          mobilePosition="85% center"
+          mobilePosition="right center"
           imageClassName="animate-illustration-in"
-          overlay="bg-ink/78 lg:bg-transparent lg:bg-gradient-to-r lg:from-ink/90 lg:from-30% lg:via-ink/60 lg:via-55% lg:to-transparent xl:from-ink/85 xl:from-15% xl:via-ink/45 xl:via-45%"
+          overlay="lg:bg-gradient-to-r lg:from-ink/90 lg:from-30% lg:via-ink/55 lg:via-55% lg:to-transparent lg:to-75% xl:from-ink/70 xl:from-10% xl:via-ink/25 xl:via-40% xl:to-55%"
+          band={{ below: "lg", height: "20rem", fade: "var(--ink)" }}
         />
         <div
           aria-hidden="true"
-          className="section-backdrop pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-transparent via-45% to-transparent lg:from-ink/60 lg:via-30%"
+          className="section-backdrop pointer-events-none absolute inset-0 -z-10 hidden bg-gradient-to-t from-ink/50 via-transparent via-30% to-transparent lg:block"
         />
 
-        <Container className="relative grid gap-x-14 section-standard lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
+        <Container className="relative grid gap-x-14 section-standard max-lg:pt-[19rem] lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-x-12 lg:py-16">
           {/* Claim. On large screens the report card sits beside the text; on
               small screens it comes straight after the sub-line. */}
           <div className="max-w-3xl lg:col-start-1 lg:row-start-1 lg:self-end">
