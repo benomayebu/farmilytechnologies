@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
@@ -15,15 +14,11 @@ export default function Footer() {
     <footer className="border-t border-line bg-ink text-paper">
       <Container className="flex flex-col gap-10 py-14 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
-          <Link href="/" className="flex items-center">
-            {/* 579x640 source, shown 48px tall. */}
-            <Image
-              src="/logo.png"
-              alt="FARMILY"
-              width={43}
-              height={48}
-              className="h-12 w-auto invert"
-            />
+          <Link
+            href="/"
+            className="inline-flex min-h-11 items-center font-display text-xl font-bold tracking-[0.14em] text-paper"
+          >
+            FARMILY
           </Link>
         </div>
 
@@ -32,7 +27,7 @@ export default function Footer() {
             <Link
               key={item.href}
               href={item.href}
-              className="py-3 text-paper/70 transition-colors hover:text-paper"
+              className="inline-flex min-h-11 min-w-11 items-center py-3 text-paper/70 transition-colors hover:text-paper"
             >
               {item.label}
             </Link>
@@ -51,15 +46,15 @@ export default function Footer() {
       </Container>
 
       <div className="border-t border-paper/10">
-        <Container className="flex flex-col gap-3 py-5 text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
+        <Container className="flex flex-col gap-3 py-5 text-small text-paper/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} Farmily Technologies. Built by a team of one, looking for first pilot partners.
           </p>
           <div className="flex gap-5">
-            <Link href="/privacy" className="py-3 transition-colors hover:text-paper/80">
+            <Link href="/privacy" className="inline-flex min-h-11 items-center transition-colors hover:text-paper/80">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="py-3 transition-colors hover:text-paper/80">
+            <Link href="/terms" className="inline-flex min-h-11 items-center transition-colors hover:text-paper/80">
               Terms of Use
             </Link>
           </div>

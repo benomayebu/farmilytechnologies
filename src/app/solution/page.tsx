@@ -13,7 +13,7 @@ import {
   TruckIcon,
   WarehouseIcon,
 } from "@/components/icons";
-import { intro, pillars, segments, statusNote } from "@/lib/content/solution";
+import { intro, pillars, segments, status, statusNote } from "@/lib/content/solution";
 
 export const metadata: Metadata = {
   title: "Solution | FARMILY",
@@ -147,12 +147,34 @@ export default function SolutionPage() {
         </Container>
       </section>
 
-      {/* Honest status note */}
-      <section>
+      {/* Where things stand. Update the lists as milestones finish. */}
+      <section aria-labelledby="status-heading">
         <Container className="section-compact">
-          <p className="max-w-2xl text-body text-ink/70">
-            {statusNote}
+          <p className="text-eyebrow font-semibold uppercase text-teal-deep">
+            {status.eyebrow}
           </p>
+          <h2 id="status-heading" className="mt-4 font-display text-h3 text-ink">
+            {status.headline}
+          </h2>
+          <p className="mt-4 max-w-2xl text-body text-ink/70">{statusNote}</p>
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {status.groups.map((group) => (
+              <div
+                key={group.key}
+                className="rounded-2xl border border-line bg-paper-deep p-6"
+              >
+                <h3 className="font-display text-title text-ink">{group.label}</h3>
+                <ul className="mt-4 flex flex-col gap-2 text-body text-ink/70">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span aria-hidden="true" className="text-teal-deep">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
     </>

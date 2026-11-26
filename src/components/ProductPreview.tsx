@@ -16,7 +16,7 @@ export default function ProductPreview() {
         <div>
           <p className="font-display text-lg text-ink">Lot #4521</p>
           <p className="text-xs text-ink/70">
-            Chilled Seafood · 1,800 kg · Muscat → Abu Dhabi
+            Example trip · Chilled seafood · 1,800 kg · Muscat → Abu Dhabi
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -35,7 +35,7 @@ export default function ProductPreview() {
           viewBox="0 0 600 200"
           className="h-auto w-full"
           role="img"
-          aria-label="Temperature history chart showing a brief exception above the safe limit, back in range within the hour"
+          aria-label="Temperature history chart showing a brief exception above the example limit, back in range within the hour"
         >
           <rect x={40} y={107.5} width={540} height={62.5} fill="var(--teal)" opacity={0.07} />
           <rect x={280} y={20} width={60} height={150} fill="var(--alert-mark)" opacity={0.08} />
@@ -50,7 +50,7 @@ export default function ProductPreview() {
             opacity={0.5}
           />
           <text x={578} y={101} textAnchor="end" className="fill-alert" fontSize={10} fontFamily="var(--font-body)">
-            Safe limit 5°C
+            Example limit 5°C
           </text>
           <polyline
             points={CORE_PTS}

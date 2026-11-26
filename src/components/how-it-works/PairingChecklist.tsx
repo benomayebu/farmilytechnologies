@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { pairing } from "@/lib/content/howItWorksDemo";
+import SimulatedBadge from "@/components/ui/SimulatedBadge";
 
 function CheckIcon({ done }: { done: boolean }) {
   return done ? (
@@ -52,7 +53,8 @@ export default function PairingChecklist() {
       </div>
 
       <div className="rounded-2xl border border-line bg-paper-deep p-6 sm:p-8">
-        <div className="flex flex-col">
+        <SimulatedBadge />
+        <div className="mt-2 flex flex-col">
           {pairing.checklist.map((item, i) => (
             <div
               key={item}

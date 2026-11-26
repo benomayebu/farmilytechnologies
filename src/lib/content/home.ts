@@ -1,9 +1,7 @@
 export const hero = {
-  headline: "Supply Chain Compliance, Automated.",
+  headline: "Prove your cold chain stayed cold.",
   subLine:
     "Sensor monitoring, smart rules, early warnings and audit-ready records. Built for food distributors and importers, not enterprise budgets.",
-  supportingLine:
-    "When a shipment arrives, or an auditor asks for proof, you shouldn't have to scramble for it.",
   primaryCta: { label: "Talk to us about piloting", href: "/contact" },
   secondaryCta: { label: "See how it works", href: "/solution#demo" },
   status: "Working prototype. Tested with simulated sensors. First real device next.",
@@ -53,10 +51,10 @@ export const closingCta = {
 // as simulated.
 export const heroReport = {
   title: "Sealed shipment report",
-  lot: "Lot S2-DEMO · Chilled seafood",
+  lot: "Example trip · Lot S2-DEMO · Chilled seafood",
   simulatedLabel: "Simulated data",
   chartLabel: "Temperature over 2 hours",
-  limitLabel: "Limit 5°C",
+  limitLabel: "Example limit 5°C",
   excursionNote: "Reefer power lost for 22 minutes. Peak 9.4°C.",
   stats: [
     { label: "Peak", value: "9.4°C" },
@@ -66,5 +64,5 @@ export const heroReport = {
   integrityLabel: "Sealed record unchanged",
   integrityValue: "Integrity: PASS",
   ariaLabel:
-    "Example sealed shipment report, simulated data. Lot S2-DEMO, chilled seafood. Over a 2-hour run, reefer power was lost for 22 minutes and the temperature rose above the 5°C limit for 22 minutes, peaking at 9.4°C. In spec 98 of 120 minutes. Integrity check: pass.",
+    "Example sealed shipment report, simulated data. Example trip, lot S2-DEMO, chilled seafood. Over a 2-hour run, reefer power was lost for 22 minutes and the temperature rose above the 5°C example limit for 22 minutes, peaking at 9.4°C. In spec 98 of 120 minutes. Integrity check: pass.",
 } as const;
