@@ -1,5 +1,5 @@
 export const hero = {
-  headline: "Supply Chain Compliance, Automated.",
+  headline: "Prove your cold chain stayed cold.",
   subLine:
     "Sensor monitoring, smart rules, early warnings and audit-ready records. Built for food distributors and importers, not enterprise budgets.",
   primaryCta: { label: "Talk to us about piloting", href: "/contact" },
