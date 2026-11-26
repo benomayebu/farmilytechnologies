@@ -10,6 +10,9 @@ import type { CSSProperties } from "react";
  * padding so its text starts below the photo instead of on top of it. Wider
  * screens show the photo across the whole section with `overlay`.
  *
+ * The photos are generated, not taken at a real site, so each one carries a
+ * small "Illustration" label in its top-right corner.
+ *
  * Both layers are aria-hidden, so screen readers go straight to the content.
  * The parent section must be `relative isolate overflow-hidden` and carry a
  * solid background colour, which is what shows when the layers are hidden
@@ -76,6 +79,12 @@ export default function SectionBackdrop({
         className={`section-backdrop pointer-events-none absolute inset-0 -z-10 ${bandClasses.shade} ${overlay}`}
         style={band ? ({ "--band": band.height, "--fade": band.fade } as CSSProperties) : undefined}
       />
+      <span
+        aria-hidden="true"
+        className="section-backdrop pointer-events-none absolute right-3 top-3 rounded-full bg-ink/80 px-2.5 py-1 text-[0.8125rem] leading-none text-paper/90 sm:right-4 sm:top-4"
+      >
+        Illustration
+      </span>
     </>
   );
 }
