@@ -47,7 +47,7 @@ export default function HeroReport({ className = "" }: { className?: string }) {
       className={`rounded-2xl border border-paper/15 bg-paper p-5 text-ink shadow-2xl shadow-black/30 sm:p-6 ${className}`}
       aria-label={r.ariaLabel}
     >
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex flex-col-reverse items-start gap-3 min-[480px]:flex-row min-[480px]:justify-between">
         <div>
           <p className="font-display text-lg leading-tight">{r.title}</p>
           <p className="mt-1 text-small text-ink/70">{r.lot}</p>
