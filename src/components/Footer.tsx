@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
@@ -14,11 +15,15 @@ export default function Footer() {
     <footer className="border-t border-line bg-ink text-paper">
       <Container className="flex flex-col gap-10 py-14 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
-          <Link
-            href="/"
-            className="inline-flex min-h-11 items-center font-display text-xl font-bold tracking-[0.14em] text-paper"
-          >
-            FARMILY
+          <Link href="/" className="flex items-center">
+            {/* 579x640 source, shown 48px tall. */}
+            <Image
+              src="/logo.png"
+              alt="FARMILY"
+              width={43}
+              height={48}
+              className="h-12 w-auto invert"
+            />
           </Link>
         </div>
 
