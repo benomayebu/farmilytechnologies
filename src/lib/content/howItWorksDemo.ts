@@ -79,7 +79,7 @@ export const proof = {
   noExcursions: "None",
   noFlag: "Nothing to flag",
   cleanPeak: "2.4°C",
-  footer: "Verified, time-stamped, cannot be edited after the fact.",
+  footer: "Sealed. Any later change is detectable.",
 };
 
 export const chart = {
